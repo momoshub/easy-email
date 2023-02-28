@@ -60,9 +60,10 @@ import { CustomBlocksType } from './components/CustomBlocks/constants';
 import localesData from 'easy-email-editor/lib/locales.json';
 console.log(localesData);
 
-const defaultCategories: ExtensionProps['categories'] = [
+const defaultCategories = [
   {
-    label: 'Content',
+    label: <div>Content</div>,
+    key: 'Content',
     active: true,
     blocks: [
       {
@@ -122,7 +123,7 @@ const defaultCategories: ExtensionProps['categories'] = [
     ],
   },
   {
-    label: 'Custom',
+    label: <div>Content</div>,
     active: true,
     displayType: 'custom',
     blocks: [
@@ -478,6 +479,7 @@ export default function Editor() {
               <StandardLayout
                 compact={!smallScene}
                 categories={defaultCategories}
+                extensionActiveKey={['Layout', 'Content', 'Custom']}
               >
                 <EmailEditor />
               </StandardLayout>
