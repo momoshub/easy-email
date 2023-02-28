@@ -8,17 +8,17 @@ import styles from './index.module.scss';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 
 export function Blocks() {
-  const { categories } = useExtensionProps();
+  const { categories, extensionActiveKey } = useExtensionProps();
 
   const defaultActiveKey = useMemo(
-    () => [
-      ...categories.filter((item) => item.active).map((item) => item.label),
-    ],
-    [categories]
+    () => [...categories.filter(item => item.active).map(item => item.label)],
+    [categories],
   );
+
   return (
     <Collapse
       defaultActiveKey={defaultActiveKey}
+      {...(extensionActiveKey ? { activeKey: extensionActiveKey } : {})}
       style={{ paddingBottom: 30, minHeight: '100%' }}
     >
       {categories.map((cat, index) => {
@@ -33,7 +33,7 @@ export function Blocks() {
               <Space direction='vertical'>
                 <div />
               </Space>
-              {cat.blocks.map((item) => (
+              {cat.blocks.map(item => (
                 <LayoutItem
                   key={item.title}
                   title={item.title || ''}
@@ -73,7 +73,13 @@ export function Blocks() {
           >
             <Grid.Row>
               {cat.blocks.map((item, index) => {
-                return <BlockItem key={index} {...(item as any)} />;
+                return (
+                  <BlockItem
+                    key={index}
+                    {...(item as any)}
+                    onClick={() => item?.onClick?.(item)}
+                  />
+                );
               })}
             </Grid.Row>
           </Collapse.Item>
@@ -88,17 +94,25 @@ function BlockItem({
   payload,
   title,
   filterType,
+  onClick,
 }: {
   type: string;
   payload?: Partial<IBlockData>;
   title?: string;
   filterType: string | undefined;
+  onClick?: () => void;
 }) {
   const block = BlockManager.getBlockByType(type);
 
   return (
-    <div className={styles.blockItem}>
-      <BlockAvatarWrapper type={type} payload={payload}>
+    <div
+      className={styles.blockItem}
+      onClick={onClick}
+    >
+      <BlockAvatarWrapper
+        type={type}
+        payload={payload}
+      >
         <div className={styles.blockItemContainer}>
           <IconFont
             style={{ fontSize: 20 }}
@@ -113,19 +127,13 @@ function BlockItem({
   );
 }
 
-function LayoutItem({
-  columns,
-  title,
-}: {
-  columns: string[][];
-  title: string;
-}) {
+function LayoutItem({ columns, title }: { columns: string[][]; title: string }) {
   const [visible, setVisible] = useState(false);
 
   return (
     <div>
       <p
-        onClick={() => setVisible((v) => !v)}
+        onClick={() => setVisible(v => !v)}
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -142,7 +150,7 @@ function LayoutItem({
         const payload = {
           type: AdvancedType.SECTION,
           attributes: {},
-          children: item.map((col) => ({
+          children: item.map(col => ({
             type: AdvancedType.COLUMN,
             attributes: {
               width: col,
@@ -163,17 +171,21 @@ function LayoutItem({
               marginBottom: hide ? 0 : 20,
             }}
           >
-            <BlockAvatarWrapper type={AdvancedType.SECTION} payload={payload}>
+            <BlockAvatarWrapper
+              type={AdvancedType.SECTION}
+              payload={payload}
+            >
               <div
                 style={{
                   border: '1px solid rgb(229, 229, 229)',
                   width: '100%',
-                  padding: 10,
+                  height: 62,
+                  padding: 5,
                 }}
               >
                 <div
                   style={{
-                    height: 16,
+                    height: 52,
                     border: '1px solid rgb(85, 85, 85)',
                     borderRadius: 3,
                     display: 'flex',
@@ -188,10 +200,18 @@ function LayoutItem({
                             index === item.length - 1
                               ? undefined
                               : '1px solid rgb(85, 85, 85)',
-                          height: '100%',
+                          height: 50,
                           width: column,
+                          textAlign: 'center',
+                          padding: 5,
                         }}
-                      />
+                      >
+                        <img
+                          height={40}
+                          width={40}
+                          src='https://easy-email-m-ryan.vercel.app/images/06ca521d-9728-4de6-a709-1b75a828bfc3-2a9b1224-3d71-43b8-b52f-e7cdcdc9107b.png'
+                        />
+                      </div>
                     );
                   })}
                 </div>

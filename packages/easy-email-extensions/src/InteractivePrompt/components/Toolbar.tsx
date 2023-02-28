@@ -4,6 +4,7 @@ import { useBlock, useFocusIdx, useEditorProps, isTextBlock } from 'easy-email-e
 import { classnames } from '@extensions/utils/classnames';
 import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
 import { getBlockTitle } from '@extensions/utils/getBlockTitle';
+import { Tooltip, Typography } from '@arco-design/web-react';
 
 export function Toolbar() {
   const { moveBlock, copyBlock, removeBlock, focusBlock } = useBlock();
@@ -29,7 +30,7 @@ export function Toolbar() {
     setModalVisible(true);
   };
 
-  const handleCopy: React.MouseEventHandler<HTMLDivElement> = (ev) => {
+  const handleCopy: React.MouseEventHandler<HTMLDivElement> = ev => {
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
     }
@@ -72,27 +73,29 @@ export function Toolbar() {
             // justifyContent: 'space-between',
           }}
         >
-          <div
-            style={{
-              color: '#ffffff',
-              backgroundColor: 'var(--selected-color)',
-              height: '22px',
+          <Tooltip content='Select parent'>
+            <div
+              style={{
+                color: '#ffffff',
+                backgroundColor: 'var(--selected-color)',
+                height: '22px',
 
-              display: 'inline-flex',
-              padding: '1px 5px',
-              boxSizing: 'border-box',
-              whiteSpace: 'nowrap',
-              maxWidth: 300,
-              overflow: 'hidden',
-            }}
-          >
-            {focusBlock && getBlockTitle(focusBlock, false)}
-          </div>
+                display: 'inline-flex',
+                padding: '1px 5px',
+                boxSizing: 'border-box',
+                whiteSpace: 'nowrap',
+                maxWidth: 300,
+                overflow: 'hidden',
+              }}
+            >
+              {focusBlock && getBlockTitle(focusBlock, false)}
+            </div>
+          </Tooltip>
           <div
-            onClick={(e) => {
+            onClick={e => {
               e.stopPropagation();
             }}
-            onMouseDown={(ev) => {
+            onMouseDown={ev => {
               ev.preventDefault();
             }}
             style={{
@@ -102,19 +105,41 @@ export function Toolbar() {
               pointerEvents: 'auto',
             }}
           >
-            <ToolItem
-              width={12}
-              iconName='icon-back-parent'
-              onClick={handleSelectParent}
-            />
-            <ToolItem iconName='icon-copy' onClick={handleCopy} />
+            <Tooltip content='Select parent'>
+              <div>
+                <ToolItem
+                  width={12}
+                  iconName='icon-back-parent'
+                  onClick={handleSelectParent}
+                />
+              </div>
+            </Tooltip>
+            <Tooltip content='Copy'>
+              <div>
+                <ToolItem
+                  iconName='icon-copy'
+                  onClick={handleCopy}
+                />
+              </div>
+            </Tooltip>
             {props.onAddCollection && (
-              <ToolItem
-                iconName='icon-collection'
-                onClick={handleAddToCollection}
-              />
+              <Tooltip content='Add To Collection'>
+                <div>
+                  <ToolItem
+                    iconName='icon-collection'
+                    onClick={handleAddToCollection}
+                  />
+                </div>
+              </Tooltip>
             )}
-            <ToolItem iconName='icon-delete' onClick={handleDelete} />
+            <Tooltip content='Delete'>
+              <div>
+                <ToolItem
+                  iconName='icon-delete'
+                  onClick={handleDelete}
+                />
+              </div>
+            </Tooltip>
           </div>
         </div>
       </div>

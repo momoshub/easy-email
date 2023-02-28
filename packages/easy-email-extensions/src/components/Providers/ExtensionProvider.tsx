@@ -11,6 +11,7 @@ export interface ExtensionProps extends BlockLayerProps {
           type: string;
           payload?: any;
           title?: string | undefined;
+          onClick?: (data: any) => void;
         }>;
         displayType?: 'grid';
       }
@@ -20,6 +21,7 @@ export interface ExtensionProps extends BlockLayerProps {
         blocks: Array<{
           payload?: any;
           title?: string | undefined;
+          onClick?: (data: any) => void;
         }>;
         displayType: 'column';
       }
@@ -28,6 +30,7 @@ export interface ExtensionProps extends BlockLayerProps {
         active?: boolean;
         blocks: Array<{
           payload?: any;
+          onClick?: (data: any) => void;
         }>;
         displayType: 'widget';
       }
@@ -40,6 +43,7 @@ export interface ExtensionProps extends BlockLayerProps {
   >;
   showSourceCode?: boolean;
   compact?: boolean;
+  extensionActiveKey?: string[];
 }
 
 export const ExtensionContext = React.createContext<ExtensionProps>({
