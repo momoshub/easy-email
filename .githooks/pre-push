@@ -1,0 +1,15 @@
+#!/bin/sh
+
+branches="main master pre-release* release*" 
+
+while read local_ref local_sha remote_ref remote_sha 
+do
+  remote_branch_name=`echo $remote_ref | cut -d '/' -f 3`
+  for protected_branch in $branches
+  do
+    if [[ $remote_branch_name == $protected_branch ]]; then
+      echo "You can't commit directly to $remote_branch_name branch"
+      exit 1
+    fi
+  done
+done
