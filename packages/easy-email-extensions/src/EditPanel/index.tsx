@@ -1,6 +1,6 @@
 import { Layout, Tabs } from '@arco-design/web-react';
 import { useEditorProps } from 'easy-email-editor';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Blocks } from './Blocks';
 import { BlockLayer } from '@extensions/BlockLayer';
 import { FullHeightOverlayScrollbars } from '@extensions/components/FullHeightOverlayScrollbars';
@@ -10,7 +10,19 @@ import { useExtensionProps } from '@extensions/components/Providers/ExtensionPro
 
 const TabPane = Tabs.TabPane;
 
-export function EditPanel({ showSourceCode }: { showSourceCode: boolean }) {
+export type ExtraTab = {
+  title: string;
+  content: ReactNode;
+  key?: string;
+};
+
+export function EditPanel({
+  showSourceCode,
+  extraTabs,
+}: {
+  showSourceCode: boolean;
+  extraTabs?: ExtraTab[];
+}) {
   const { height } = useEditorProps();
   const { compact = true } = useExtensionProps();
 
@@ -53,6 +65,18 @@ export function EditPanel({ showSourceCode }: { showSourceCode: boolean }) {
             </div>
           </FullHeightOverlayScrollbars>
         </TabPane>
+        {extraTabs?.map(tab => {
+          return (
+            <TabPane
+              key={tab.key || tab.title}
+              title={tab.title}
+            >
+              <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
+                <div style={{ padding: 20 }}>{tab.content}</div>
+              </FullHeightOverlayScrollbars>
+            </TabPane>
+          );
+        })}
       </Tabs>
       {!compact && (
         <ConfigurationDrawer

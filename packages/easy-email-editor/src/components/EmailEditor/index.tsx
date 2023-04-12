@@ -17,7 +17,11 @@ import { EventManager, EventType } from '@/utils/EventManager';
 
 (window as any).global = window; // react-codemirror
 
-export const EmailEditor = () => {
+type EmailEditorProps = {
+  extraTop?: React.ReactNode;
+};
+
+export const EmailEditor = ({ extraTop }: EmailEditorProps) => {
   const { height: containerHeight } = useEditorProps();
   const { setActiveTab, activeTab } = useActiveTab();
 
@@ -65,6 +69,7 @@ export const EmailEditor = () => {
             }
             key={ActiveTabKeys.EDIT}
           >
+            {extraTop}
             <EditEmailPreview />
           </TabPane>
           <TabPane
