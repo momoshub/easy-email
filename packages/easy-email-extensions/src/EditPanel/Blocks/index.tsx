@@ -8,17 +8,25 @@ import styles from './index.module.scss';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 
 export function Blocks() {
-  const { categories, extensionActiveKey } = useExtensionProps();
+  const { categories, extensionActiveKey, onChangeExtensionActiveKey } =
+    useExtensionProps();
 
   const defaultActiveKey = useMemo(
-    () => [...categories.filter(item => item.active).map(item => item.label)],
+    () => [...categories.filter(item => item.active).map(item => item.key || item.label)],
     [categories],
   );
 
   return (
     <Collapse
       defaultActiveKey={defaultActiveKey}
-      {...(extensionActiveKey ? { activeKey: extensionActiveKey } : {})}
+      {...(extensionActiveKey
+        ? {
+            activeKey: extensionActiveKey,
+            onChange: (key, keys, event) => {
+              onChangeExtensionActiveKey(key, keys, event);
+            },
+          }
+        : {})}
       style={{ paddingBottom: 30, minHeight: '100%' }}
     >
       {categories.map((cat, index) => {
@@ -27,7 +35,7 @@ export function Blocks() {
             <Collapse.Item
               key={index}
               contentStyle={{ padding: '0px 20px' }}
-              name={cat.label}
+              name={cat?.key || cat?.label}
               header={cat.label}
             >
               <Space direction='vertical'>
@@ -53,7 +61,7 @@ export function Blocks() {
             <Collapse.Item
               key={index}
               contentStyle={{ padding: 0, paddingBottom: 0, paddingTop: 20 }}
-              name={cat.label}
+              name={cat?.key || cat?.label}
               header={cat.label}
             >
               <Grid.Row>
@@ -68,7 +76,7 @@ export function Blocks() {
           <Collapse.Item
             key={index}
             contentStyle={{ padding: 0, paddingBottom: 0, paddingTop: 20 }}
-            name={cat.label}
+            name={cat?.key || cat?.label}
             header={cat.label}
           >
             <Grid.Row>

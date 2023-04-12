@@ -8,6 +8,7 @@ export interface ExtensionProps extends BlockLayerProps {
     | {
         label: string;
         active?: boolean;
+        key?: string;
         blocks: Array<{
           type: string;
           payload?: any;
@@ -19,6 +20,7 @@ export interface ExtensionProps extends BlockLayerProps {
     | {
         label: string;
         active?: boolean;
+        key?: string;
         blocks: Array<{
           payload?: any;
           title?: string | undefined;
@@ -29,6 +31,7 @@ export interface ExtensionProps extends BlockLayerProps {
     | {
         label: string;
         active?: boolean;
+        key?: string;
         blocks: Array<{
           payload?: any;
           onClick?: (data: any) => void;
@@ -37,6 +40,7 @@ export interface ExtensionProps extends BlockLayerProps {
       }
     | {
         label: string;
+        key?: string;
         active?: boolean;
         blocks: Array<React.ReactNode>;
         displayType: 'custom';
@@ -45,6 +49,7 @@ export interface ExtensionProps extends BlockLayerProps {
   showSourceCode?: boolean;
   compact?: boolean;
   extensionActiveKey?: string[];
+  onChangeExtensionActiveKey?: any;
   extraTabs?: ExtraTab[];
 }
 
