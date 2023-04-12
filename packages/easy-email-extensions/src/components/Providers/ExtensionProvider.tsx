@@ -1,4 +1,5 @@
 import { BlockLayerProps } from '@extensions/BlockLayer';
+import { ExtraTab } from '@extensions/EditPanel';
 import { isEqual, omit } from 'lodash';
 import React, { useContext, useMemo, useRef } from 'react';
 
@@ -44,6 +45,7 @@ export interface ExtensionProps extends BlockLayerProps {
   showSourceCode?: boolean;
   compact?: boolean;
   extensionActiveKey?: string[];
+  extraTabs?: ExtraTab[];
 }
 
 export const ExtensionContext = React.createContext<ExtensionProps>({

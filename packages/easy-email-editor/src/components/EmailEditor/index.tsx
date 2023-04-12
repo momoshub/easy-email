@@ -17,7 +17,11 @@ import { EventManager, EventType } from '@/utils/EventManager';
 
 (window as any).global = window; // react-codemirror
 
-export const EmailEditor = () => {
+type EmailEditorProps = {
+  extraTop?: React.ReactNode;
+};
+
+export const EmailEditor = ({ extraTop }: EmailEditorProps) => {
   const { height: containerHeight } = useEditorProps();
   const { setActiveTab, activeTab } = useActiveTab();
 
@@ -29,9 +33,12 @@ export const EmailEditor = () => {
     return EventManager.exec(EventType.ACTIVE_TAB_CHANGE, { currentTab, nextTab });
   }, []);
 
-  const onChangeTab = useCallback((nextTab: string) => {
-    setActiveTab(nextTab as any);
-  }, [setActiveTab]);
+  const onChangeTab = useCallback(
+    (nextTab: string) => {
+      setActiveTab(nextTab as any);
+    },
+    [setActiveTab],
+  );
 
   return useMemo(
     () => (
@@ -55,33 +62,34 @@ export const EmailEditor = () => {
         >
           <TabPane
             style={{ height: 'calc(100% - 50px)' }}
-            tab={(
+            tab={
               <Stack spacing='tight'>
                 <IconFont iconName='icon-editor' />
               </Stack>
-            )}
+            }
             key={ActiveTabKeys.EDIT}
           >
+            {extraTop}
             <EditEmailPreview />
           </TabPane>
           <TabPane
             style={{ height: 'calc(100% - 50px)' }}
-            tab={(
+            tab={
               <Stack spacing='tight'>
                 <IconFont iconName='icon-desktop' />
               </Stack>
-            )}
+            }
             key={ActiveTabKeys.PC}
           >
             <DesktopEmailPreview />
           </TabPane>
           <TabPane
             style={{ height: 'calc(100% - 50px)' }}
-            tab={(
+            tab={
               <Stack spacing='tight'>
                 <IconFont iconName='icon-mobile' />
               </Stack>
-            )}
+            }
             key={ActiveTabKeys.MOBILE}
           >
             <MobileEmailPreview />
@@ -91,6 +99,6 @@ export const EmailEditor = () => {
         {fixedContainer}
       </div>
     ),
-    [activeTab, containerHeight, fixedContainer, onBeforeChangeTab, onChangeTab]
+    [activeTab, containerHeight, fixedContainer, onBeforeChangeTab, onChangeTab],
   );
 };

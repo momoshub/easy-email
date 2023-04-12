@@ -2,7 +2,7 @@ import { IEmailTemplate } from '@/typings';
 import { Form, useForm, useFormState, useField } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
 import React, { useMemo, useEffect, useState } from 'react';
-import { BlocksProvider } from '..//BlocksProvider';
+import { ActiveTabKeys, BlocksProvider } from '..//BlocksProvider';
 import { HoverIdxProvider } from '../HoverIdxProvider';
 import { PropsProvider, PropsProviderProps } from '../PropsProvider';
 import { RecordProvider } from '../RecordProvider';
@@ -22,12 +22,19 @@ export interface EmailEditorProviderProps<T extends IEmailTemplate = any>
   ) => React.ReactNode;
   onSubmit?: Config<IEmailTemplate, Partial<IEmailTemplate>>['onSubmit'];
   validationSchema?: Config<IEmailTemplate, Partial<IEmailTemplate>>['validate'];
+  defaultActiveTab?: ActiveTabKeys;
 }
 
 export const EmailEditorProvider = <T extends any>(
   props: EmailEditorProviderProps & T,
 ) => {
-  const { data, children, onSubmit = () => {}, validationSchema } = props;
+  const {
+    data,
+    children,
+    onSubmit = () => {},
+    validationSchema,
+    defaultActiveTab,
+  } = props;
 
   const initialValues = useMemo(() => {
     return {
@@ -54,7 +61,7 @@ export const EmailEditorProvider = <T extends any>(
             <LanguageProvider locale={props.locale}>
               <PreviewEmailProvider>
                 <RecordProvider>
-                  <BlocksProvider>
+                  <BlocksProvider defaultActiveTab={defaultActiveTab}>
                     <HoverIdxProvider>
                       <ScrollProvider>
                         <FocusBlockLayoutProvider>
