@@ -16,6 +16,7 @@ import services from '@demo/services';
 import { IconMoonFill, IconSunFill } from '@arco-design/web-react/icon';
 import { Liquid } from 'liquidjs';
 import {
+  ActiveTabKeys,
   BlockAvatarWrapper,
   EmailEditor,
   EmailEditorProvider,
@@ -396,6 +397,8 @@ export default function Editor() {
         onBeforePreview={onBeforePreview}
         socialIcons={[]}
         locale={localesData[locale]}
+        isPreview
+        defaultActiveTab={'PC' as ActiveTabKeys}
       >
         {({ values }, { submit }) => {
           return (
