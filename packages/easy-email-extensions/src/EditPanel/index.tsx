@@ -13,7 +13,7 @@ const TabPane = Tabs.TabPane;
 
 export type ExtraTab = {
   title: string;
-  showInPreviewMode: boolean;
+  showInPreviewMode?: boolean;
   content: ReactNode;
   key?: string;
 };
