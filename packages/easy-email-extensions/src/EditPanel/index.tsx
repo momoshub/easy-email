@@ -82,7 +82,7 @@ export function EditPanel({
                 title={tab.title}
               >
                 <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
-                  <div style={{ padding: 20 }}>{tab.content}</div>
+                  <div>{tab.content}</div>
                 </FullHeightOverlayScrollbars>
               </TabPane>
             );
