@@ -1,5 +1,5 @@
 import { Card, ConfigProvider, Layout } from '@arco-design/web-react';
-import { useEditorProps, useFocusIdx } from 'easy-email-editor';
+import { useEditorProps, useFocusIdx, useActiveTab } from 'easy-email-editor';
 import React, { useEffect } from 'react';
 import { InteractivePrompt } from '../InteractivePrompt';
 import styles from './index.module.scss';
@@ -96,6 +96,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
   } = props;
 
   const { setFocusIdx } = useFocusIdx();
+  const { activeTab } = useActiveTab();
 
   useEffect(() => {
     if (!compact) {
@@ -128,6 +129,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
             {compact && (
               <EditPanel
                 showSourceCode={showSourceCode}
+                activeTab={activeTab}
                 extraTabs={extraTabs}
               />
             )}
@@ -135,6 +137,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
             {!compact && (
               <EditPanel
                 showSourceCode={showSourceCode}
+                activeTab={activeTab}
                 extraTabs={extraTabs}
               />
             )}

@@ -7,7 +7,6 @@ import { FullHeightOverlayScrollbars } from '@extensions/components/FullHeightOv
 import styles from './index.module.scss';
 import { ConfigurationDrawer } from './ConfigurationDrawer';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
-import { BlocksContext } from '@/components/Provider/BlocksProvider';
 
 const TabPane = Tabs.TabPane;
 
@@ -21,15 +20,15 @@ export type ExtraTab = {
 export function EditPanel({
   showSourceCode,
   extraTabs,
+  activeTab,
 }: {
   showSourceCode: boolean;
   extraTabs?: ExtraTab[];
+  activeTab?: string;
 }) {
   const { height } = useEditorProps();
   const { compact = true } = useExtensionProps();
-  const { isPreview } = useContext(BlocksContext);
   let key = 0;
-
   return (
     <Layout.Sider
       className={styles.blocksPanel}
@@ -50,7 +49,7 @@ export function EditPanel({
           </div>
         )}
       >
-        {!isPreview && (
+        {activeTab === 'EDIT' && (
           <TabPane
             key={`${key++}`}
             title={t('Block')}
@@ -61,7 +60,7 @@ export function EditPanel({
           </TabPane>
         )}
 
-        {!isPreview && (
+        {activeTab === 'EDIT' && (
           <TabPane
             key={`${key++}`}
             title={t('Layer')}
@@ -74,7 +73,11 @@ export function EditPanel({
           </TabPane>
         )}
         {extraTabs
-          ?.filter(tab => !isPreview || !!tab.showInPreviewMode)
+          ?.filter(
+            tab =>
+              (activeTab === 'EDIT' && !tab.showInPreviewMode) ||
+              (activeTab !== 'EDIT' && !!tab.showInPreviewMode),
+          )
           ?.map(tab => {
             return (
               <TabPane
