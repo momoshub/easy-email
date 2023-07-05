@@ -62,6 +62,7 @@ const defaultCategories: ExtensionProps['categories'] = [
     blocks: [
       {
         type: AdvancedType.TEXT,
+        icon: <div>Text Icon</div>,
       },
       {
         type: AdvancedType.IMAGE,
@@ -397,8 +398,8 @@ export default function Editor() {
         onBeforePreview={onBeforePreview}
         socialIcons={[]}
         locale={localesData[locale]}
-        isPreview
-        defaultActiveTab={'PC' as ActiveTabKeys}
+        jsonReadOnly
+        mjmlReadOnly
       >
         {({ values }, { submit }) => {
           return (
