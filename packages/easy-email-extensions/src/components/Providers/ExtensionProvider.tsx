@@ -1,7 +1,7 @@
 import { BlockLayerProps } from '@extensions/BlockLayer';
 import { ExtraTab } from '@extensions/EditPanel';
 import { isEqual, omit } from 'lodash';
-import React, { useContext, useMemo, useRef } from 'react';
+import React, { ReactNode, useContext, useMemo, useRef } from 'react';
 
 export interface ExtensionProps extends BlockLayerProps {
   categories: Array<
@@ -14,6 +14,7 @@ export interface ExtensionProps extends BlockLayerProps {
           payload?: any;
           title?: string | undefined;
           onClick?: (data: any) => void;
+          icon?: ReactNode;
         }>;
         displayType?: 'grid';
       }
@@ -25,6 +26,7 @@ export interface ExtensionProps extends BlockLayerProps {
           payload?: any;
           title?: string | undefined;
           onClick?: (data: any) => void;
+          icon?: ReactNode;
         }>;
         displayType: 'column';
       }
@@ -35,6 +37,7 @@ export interface ExtensionProps extends BlockLayerProps {
         blocks: Array<{
           payload?: any;
           onClick?: (data: any) => void;
+          icon?: ReactNode;
         }>;
         displayType: 'widget';
       }

@@ -1,7 +1,7 @@
 import { Collapse, Grid, Space, Typography } from '@arco-design/web-react';
 import { AdvancedType, BlockManager, IBlockData } from 'easy-email-core';
 import { BlockAvatarWrapper, IconFont } from 'easy-email-editor';
-import React, { useMemo, useState } from 'react';
+import React, { ReactNode, useMemo, useState } from 'react';
 import { IconCaretRight, IconCaretUp } from '@arco-design/web-react/icon';
 import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
 import styles from './index.module.scss';
@@ -103,12 +103,14 @@ function BlockItem({
   title,
   filterType,
   onClick,
+  icon,
 }: {
   type: string;
   payload?: Partial<IBlockData>;
   title?: string;
   filterType: string | undefined;
   onClick?: () => void;
+  icon?: ReactNode;
 }) {
   const block = BlockManager.getBlockByType(type);
 
@@ -122,10 +124,12 @@ function BlockItem({
         payload={payload}
       >
         <div className={styles.blockItemContainer}>
-          <IconFont
-            style={{ fontSize: 20 }}
-            iconName={getIconNameByBlockType(type)}
-          />
+          {icon || (
+            <IconFont
+              style={{ fontSize: 20 }}
+              iconName={getIconNameByBlockType(type)}
+            />
+          )}
           <Typography.Text style={{ marginTop: 10 }}>
             {title || block?.name}
           </Typography.Text>
