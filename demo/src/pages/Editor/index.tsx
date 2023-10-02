@@ -52,6 +52,7 @@ import { useMergeTagsModal } from './components/useMergeTagsModal';
 import { useWindowSize } from 'react-use';
 import { CustomBlocksType } from './components/CustomBlocks/constants';
 import localesData from 'easy-email-localization/locales/locales.json';
+import { ThirdPartyLink } from '../../../../packages/easy-email-extensions/src/AttributePanel/components/attributes/ThirdPartyLink';
 
 console.log(localesData);
 
@@ -488,6 +489,38 @@ export default function Editor() {
                     content: <div>Auto Generate</div>,
                   },
                 ]}
+                thirdPartyLinks={
+                  [
+                    {
+                      label: 'Social',
+                      value: 'social',
+                      options: [
+                        {
+                          label: 'facebook0',
+                          value: 'https://facebook2.com',
+                        },
+                        {
+                          label: 'facebook1',
+                          value: 'https://facebook3.com',
+                        },
+                      ],
+                    },
+                    {
+                      label: 'Momos Microsite',
+                      value: 'microsite',
+                      options: [
+                        {
+                          label: 'facebook2',
+                          value: 'https://facebook2.com',
+                        },
+                        {
+                          label: 'facebook3',
+                          value: 'https://facebook3.com',
+                        },
+                      ],
+                    },
+                  ] as ThirdPartyLink[]
+                }
               >
                 <EmailEditor extraTop={<div style={{ height: 100 }}>extraTop</div>} />
               </StandardLayout>

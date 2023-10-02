@@ -14,7 +14,13 @@ import { FontFamily } from '../../attributes/FontFamily';
 import { TextDecoration } from '../../attributes/TextDecoration';
 import { LineHeight } from '../../attributes/LineHeight';
 import { LetterSpacing } from '../../attributes/LetterSpacing';
-import { Collapse, Grid, Popover, Space, Button as ArcoButton } from '@arco-design/web-react';
+import {
+  Collapse,
+  Grid,
+  Popover,
+  Space,
+  Button as ArcoButton,
+} from '@arco-design/web-react';
 import { TextField } from '../../../../components/Form';
 import { IconFont, useEditorProps, useFocusIdx } from 'easy-email-editor';
 import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
@@ -22,6 +28,8 @@ import { MergeTags } from '../../attributes';
 import { useField } from 'react-final-form';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
+import { ThirdPartyLink } from '../../attributes/ThirdPartyLink';
+import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 
 export function Button() {
   const { focusIdx } = useFocusIdx();
@@ -40,18 +48,18 @@ export function Button() {
         >
           <Space direction='vertical'>
             <TextField
-              label={(
+              label={
                 <Space>
-                  <span>{t('Content')}</span>
+                  <span>{t('Button Text')}</span>
                   {mergeTags && (
                     <Popover
                       trigger='click'
-                      content={(
+                      content={
                         <MergeTags
                           value={input.value}
                           onChange={input.onChange}
                         />
-                      )}
+                      }
                     >
                       <ArcoButton
                         type='text'
@@ -60,10 +68,11 @@ export function Button() {
                     </Popover>
                   )}
                 </Space>
-              )}
+              }
               name={`${focusIdx}.data.value.content`}
             />
-            <Link />
+
+            <ThirdPartyLink />
           </Space>
         </Collapse.Item>
 

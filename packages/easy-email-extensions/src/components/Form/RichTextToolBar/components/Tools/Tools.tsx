@@ -22,6 +22,7 @@ import { Italic } from '../Italic';
 import { Bold } from '../Bold';
 import { FontSize } from '../FontSize';
 import { RICH_TEXT_TOOL_BAR } from '@extensions/constants';
+import { ThirdPartyLink } from '../ThirdPartyLink';
 
 export interface ToolsProps {
   onChange: (content: string) => any;
@@ -173,12 +174,11 @@ export function Tools(props: ToolsProps) {
         />
 
         <div className='easy-email-extensions-divider' />
-        <Link
+        <ThirdPartyLink
           currentRange={selectionRange}
           onChange={values => execCommand('createLink', values)}
           getPopupContainer={getPopoverMountNode}
         />
-        <div className='easy-email-extensions-divider' />
         <Unlink
           currentRange={selectionRange}
           onChange={() => execCommand('')}
