@@ -29,7 +29,6 @@ import { useField } from 'react-final-form';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 import { ThirdPartyLink } from '../../attributes/ThirdPartyLink';
-import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 
 export function Button() {
   const { focusIdx } = useFocusIdx();
@@ -45,35 +44,34 @@ export function Button() {
         <Collapse.Item
           name='-1'
           header={t('Setting')}
+          style={{ paddingBottom: '1rem' }}
         >
-          <Space direction='vertical'>
-            <TextField
-              label={
-                <Space>
-                  <span>{t('Button Text')}</span>
-                  {mergeTags && (
-                    <Popover
-                      trigger='click'
-                      content={
-                        <MergeTags
-                          value={input.value}
-                          onChange={input.onChange}
-                        />
-                      }
-                    >
-                      <ArcoButton
-                        type='text'
-                        icon={<IconFont iconName='icon-merge-tags' />}
+          <TextField
+            label={
+              <Space>
+                <span>{t('Button Text')}</span>
+                {mergeTags && (
+                  <Popover
+                    trigger='click'
+                    content={
+                      <MergeTags
+                        value={input.value}
+                        onChange={input.onChange}
                       />
-                    </Popover>
-                  )}
-                </Space>
-              }
-              name={`${focusIdx}.data.value.content`}
-            />
+                    }
+                  >
+                    <ArcoButton
+                      type='text'
+                      icon={<IconFont iconName='icon-merge-tags' />}
+                    />
+                  </Popover>
+                )}
+              </Space>
+            }
+            name={`${focusIdx}.data.value.content`}
+          />
 
-            <ThirdPartyLink />
-          </Space>
+          <ThirdPartyLink />
         </Collapse.Item>
 
         <Collapse.Item
