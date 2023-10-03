@@ -24,56 +24,50 @@ export function ThirdPartyLink() {
   );
 
   return useMemo(() => {
+    const hasThirdPartyLink = thirdPartyLinks?.length && thirdPartyLinks?.length > 0;
+
     return (
       <Grid.Row>
-        {thirdPartyLinks?.length && thirdPartyLinks?.length > 0 && (
-          <Grid.Col span={24}>
-            <SelectField
-              label={t('Link Type')}
-              name={`${focusIdx}.attributes.linkType`}
-              defaultValue='custom'
-              options={[
-                ...(thirdPartyLinks || []),
-                { label: 'Custom URL', value: 'custom' },
-              ]}
-            />
-          </Grid.Col>
-        )}
-
-        {attributes?.linkType === 'custom' || thirdPartyLinks?.length === 0 ? (
-          <Grid.Col span={24}>
-            <TextField
-              prefix={<IconLink />}
-              label={t('Link')}
-              name={`${focusIdx}.attributes.href`}
-            />
-          </Grid.Col>
-        ) : (
-          <Grid.Col span={24}>
-            <SelectField
-              label={t('Link')}
-              name={`${focusIdx}.attributes.href`}
-              options={links}
-            />
-          </Grid.Col>
-        )}
-        <Grid.Col span={24}>
+        {hasThirdPartyLink && (
           <SelectField
-            label={t('When Link is Clicked')}
-            name={`${focusIdx}.attributes.target`}
+            label={t('Link Type')}
+            name={`${focusIdx}.attributes.linkType`}
+            defaultValue='custom'
             options={[
-              {
-                value: '_self',
-                label: t('Open in Same Tab'),
-              },
-              {
-                value: '_blank',
-                label: t('Open in New Tab'),
-              },
+              ...(thirdPartyLinks || []),
+              { label: 'Custom URL', value: 'custom' },
             ]}
           />
-        </Grid.Col>
+        )}
+
+        {attributes?.linkType === 'custom' || !hasThirdPartyLink ? (
+          <TextField
+            prefix={<IconLink />}
+            label={t('Link')}
+            name={`${focusIdx}.attributes.href`}
+          />
+        ) : (
+          <SelectField
+            label={t('Link')}
+            name={`${focusIdx}.attributes.href`}
+            options={links}
+          />
+        )}
+        <SelectField
+          label={t('When Link is Clicked')}
+          name={`${focusIdx}.attributes.target`}
+          options={[
+            {
+              value: '_self',
+              label: t('Open in Same Tab'),
+            },
+            {
+              value: '_blank',
+              label: t('Open in New Tab'),
+            },
+          ]}
+        />
       </Grid.Row>
     );
-  }, [focusIdx, attributes?.linkType]);
+  }, [focusIdx, attributes?.linkType, thirdPartyLinks]);
 }

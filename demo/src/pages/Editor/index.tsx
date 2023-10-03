@@ -399,8 +399,8 @@ export default function Editor() {
         onBeforePreview={onBeforePreview}
         socialIcons={[]}
         locale={localesData[locale]}
-        jsonReadOnly
-        mjmlReadOnly
+        // jsonReadOnly
+        // mjmlReadOnly
       >
         {({ values }, { submit }) => {
           return (

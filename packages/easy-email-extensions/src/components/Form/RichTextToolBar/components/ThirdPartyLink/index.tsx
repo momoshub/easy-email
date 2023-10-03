@@ -85,7 +85,7 @@ export function ThirdPartyLink(props: LinkProps) {
             trigger='click'
             color='#fff'
             position='tl'
-            content={
+            content={(
               <div style={{ color: '#333' }}>
                 {Boolean(thirdPartyLinks?.length && thirdPartyLinks?.length > 0) && (
                   <Grid.Col span={24}>
@@ -125,6 +125,7 @@ export function ThirdPartyLink(props: LinkProps) {
                 <Grid.Row>
                   <Grid.Col span={24}>
                     <SelectField
+                      style={{ marginTop: '0.5rem' }}
                       label={t('When Link is Clicked')}
                       name='blank'
                       options={[
@@ -141,7 +142,10 @@ export function ThirdPartyLink(props: LinkProps) {
                     />
                   </Grid.Col>
                   <Grid.Col span={24}>
-                    <Space align='center'>
+                    <Space
+                      align='center'
+                      style={{ marginTop: '0.5rem' }}
+                    >
                       <TextStyle>{t('Underline')}</TextStyle>
                       <SwitchField
                         label={t('Underline')}
@@ -172,7 +176,7 @@ export function ThirdPartyLink(props: LinkProps) {
                   </button>
                 </Grid.Row>
               </div>
-            }
+            )}
           >
             <ToolItem
               isActive={Boolean(initialValues.link)}
