@@ -215,13 +215,15 @@ function LayoutItem({ columns, title }: { columns: string[][]; title: string }) 
                           height: 50,
                           width: column,
                           textAlign: 'center',
-                          padding: 5,
+                          padding: 10,
                         }}
                       >
                         <img
-                          height={40}
-                          width={40}
-                          src='https://easy-email-m-ryan.vercel.app/images/06ca521d-9728-4de6-a709-1b75a828bfc3-2a9b1224-3d71-43b8-b52f-e7cdcdc9107b.png'
+                          height={30}
+                          width={30}
+                          src={
+                            'https://stg-sg-notification-email-static-objects-bucket.s3.ap-southeast-1.amazonaws.com/images/text.png'
+                          }
                         />
                       </div>
                     );
