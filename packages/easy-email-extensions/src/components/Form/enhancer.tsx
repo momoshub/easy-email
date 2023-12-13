@@ -1,8 +1,8 @@
-import { Field, UseFieldConfig } from 'react-final-form';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useRefState } from 'easy-email-editor';
-import { debounce } from 'lodash';
+import { useRefState } from '@ant066/easy-email-editor';
 import { Form, FormItemProps } from '@arco-design/web-react';
+import { debounce } from 'lodash';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Field, UseFieldConfig } from 'react-final-form';
 
 export interface EnhancerProps {
   name: string;

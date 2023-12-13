@@ -17,11 +17,11 @@ import {
 import React, { useMemo } from 'react';
 
 import { ISocial } from '@ant066/easy-email-core';
+import { useBlock, useEditorProps, useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { LineHeight } from '@extensions/AttributePanel/components/attributes/LineHeight';
 import { TextDecoration } from '@extensions/AttributePanel/components/attributes/TextDecoration';
-import { useBlock, useEditorProps, useFocusIdx } from 'easy-email-editor';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

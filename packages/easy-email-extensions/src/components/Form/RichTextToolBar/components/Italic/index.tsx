@@ -1,7 +1,7 @@
 import { EMAIL_BLOCK_CLASS_NAME } from '@ant066/easy-email-core';
+import { IconFont } from '@ant066/easy-email-editor';
 import { PopoverProps, Tooltip } from '@arco-design/web-react';
 import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
-import { IconFont } from 'easy-email-editor';
 import React, { useCallback, useMemo } from 'react';
 import { ToolItem } from '../ToolItem';
 

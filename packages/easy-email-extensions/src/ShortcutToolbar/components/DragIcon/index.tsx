@@ -1,7 +1,7 @@
 import { BlockManager, IBlockData, RecursivePartial } from '@ant066/easy-email-core';
+import { BlockAvatarWrapper, IconFont } from '@ant066/easy-email-editor';
 import { Button } from '@arco-design/web-react';
 import { getIconNameByBlockType } from '@extensions';
-import { BlockAvatarWrapper, IconFont } from 'easy-email-editor';
 import React from 'react';
 
 export interface DragIconProps<T extends IBlockData> {

@@ -1,6 +1,6 @@
 import { BasicType, getParentByIdx } from '@ant066/easy-email-core';
+import { useBlock, useFocusIdx } from '@ant066/easy-email-editor';
 import { InputWithUnitProps } from '@extensions/components/Form/InputWithUnit';
-import { useBlock, useFocusIdx } from 'easy-email-editor';
 import React, { useCallback } from 'react';
 import { UseFieldConfig } from 'react-final-form';
 import { InputWithUnitField } from '../../../components/Form';

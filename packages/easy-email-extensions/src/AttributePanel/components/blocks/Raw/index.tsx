@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { IconFont, useFocusIdx } from 'easy-email-editor';
-import { TextAreaField } from '@extensions/components/Form';
-import { AttributesPanelWrapper } from '../../attributes';
+import { IconFont, useFocusIdx } from '@ant066/easy-email-editor';
 import { Button, Tooltip } from '@arco-design/web-react';
+import { TextAreaField } from '@extensions/components/Form';
+import React, { useState } from 'react';
 import { HtmlEditor } from '../../UI/HtmlEditor';
+import { AttributesPanelWrapper } from '../../attributes';
 
 export function Raw() {
   const { focusIdx } = useFocusIdx();
@@ -11,14 +11,14 @@ export function Raw() {
   return (
     <AttributesPanelWrapper
       style={{ padding: 20 }}
-      extra={(
+      extra={
         <Tooltip content={t('Html mode')}>
           <Button
             onClick={() => setVisible(true)}
             icon={<IconFont iconName='icon-html' />}
           />
         </Tooltip>
-      )}
+      }
     >
       <TextAreaField
         label=''

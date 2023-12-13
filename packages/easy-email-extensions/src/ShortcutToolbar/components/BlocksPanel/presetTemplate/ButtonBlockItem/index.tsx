@@ -1,8 +1,8 @@
 import { AdvancedType, IButton, RecursivePartial } from '@ant066/easy-email-core';
+import { Stack } from '@ant066/easy-email-editor';
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';
 import { Picture } from '@extensions/ShortcutToolbar/components/Picture';
 import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
-import { Stack } from 'easy-email-editor';
 import React from 'react';
 
 const buttonList = [

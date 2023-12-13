@@ -1,5 +1,5 @@
 import { AdvancedType } from '@ant066/easy-email-core';
-import { Stack } from 'easy-email-editor';
+import { Stack } from '@ant066/easy-email-editor';
 import React from 'react';
 
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';

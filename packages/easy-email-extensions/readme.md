@@ -19,12 +19,12 @@ $ yarn add easy-email-extensions
 ```js
 import React from 'react';
 import { BlockManager, BasicType, AdvancedType } from '@ant066/easy-email-core';
-import { EmailEditor, EmailEditorProvider } from 'easy-email-editor';
-import { ExtensionProps, StandardLayout } from 'easy-email-extensions';
+import { EmailEditor, EmailEditorProvider } from '@ant066/easy-email-editor';
+import { ExtensionProps, StandardLayout } from '@ant066/easy-email-extensions';
 import { useWindowSize } from 'react-use';
 
-import 'easy-email-editor/lib/style.css';
-import 'easy-email-extensions/lib/style.css';
+import '@ant066/easy-email-editor/lib/style.css';
+import '@ant066/easy-email-extensions/lib/style.css';
 
 const categories: ExtensionProps['categories'] = [
   {

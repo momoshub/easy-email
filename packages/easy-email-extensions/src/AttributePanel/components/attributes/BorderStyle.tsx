@@ -1,5 +1,5 @@
+import { useFocusIdx } from '@ant066/easy-email-editor';
 import React, { useMemo } from 'react';
-import { useFocusIdx } from 'easy-email-editor';
 import { SelectField } from '../../../components/Form';
 
 export const borderStyleOptions = [

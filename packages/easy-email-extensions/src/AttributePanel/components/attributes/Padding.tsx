@@ -1,6 +1,12 @@
 import { createBlockDataByType } from '@ant066/easy-email-core';
+import {
+  IconFont,
+  Stack,
+  TextStyle,
+  useBlock,
+  useFocusIdx,
+} from '@ant066/easy-email-editor';
 import { Button, Grid, Space, Tooltip } from '@arco-design/web-react';
-import { IconFont, Stack, TextStyle, useBlock, useFocusIdx } from 'easy-email-editor';
 import { get } from 'lodash';
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { Form, useFormState } from 'react-final-form';

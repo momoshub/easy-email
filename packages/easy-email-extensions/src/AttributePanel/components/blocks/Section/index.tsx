@@ -1,10 +1,10 @@
 import { BasicType, BlockManager } from '@ant066/easy-email-core';
+import { Stack, useBlock } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space, Switch } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { Background } from '@extensions/AttributePanel/components/attributes/Background';
 import { Border } from '@extensions/AttributePanel/components/attributes/Border';
 import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
-import { Stack, useBlock } from 'easy-email-editor';
 import React, { useCallback } from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

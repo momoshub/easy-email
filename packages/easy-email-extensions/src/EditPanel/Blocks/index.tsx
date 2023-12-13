@@ -1,9 +1,9 @@
 import { AdvancedType, BlockManager, IBlockData } from '@ant066/easy-email-core';
+import { BlockAvatarWrapper, IconFont } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space, Typography } from '@arco-design/web-react';
 import { IconCaretRight, IconCaretUp } from '@arco-design/web-react/icon';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
-import { BlockAvatarWrapper, IconFont } from 'easy-email-editor';
 import React, { ReactNode, useMemo, useState } from 'react';
 import styles from './index.module.scss';
 

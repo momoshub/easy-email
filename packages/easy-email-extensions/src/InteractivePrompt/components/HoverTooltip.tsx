@@ -1,14 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { BlockManager, getNodeTypeFromClassName } from '@ant066/easy-email-core';
-import { awaitForElement } from '@extensions/utils/awaitForElement';
 import {
   getEditorRoot,
   useEditorContext,
   useFocusIdx,
   useHoverIdx,
   useLazyState,
-} from 'easy-email-editor';
+} from '@ant066/easy-email-editor';
+import { awaitForElement } from '@extensions/utils/awaitForElement';
 import { createPortal } from 'react-dom';
 
 export function HoverTooltip() {

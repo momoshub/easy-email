@@ -1,6 +1,6 @@
 import { BasicType, BlockManager } from '@ant066/easy-email-core';
+import { Stack, TextStyle, useBlock } from '@ant066/easy-email-editor';
 import { IconEye, IconEyeInvisible } from '@arco-design/web-react/icon';
-import { Stack, TextStyle, useBlock } from 'easy-email-editor';
 import React, { useCallback } from 'react';
 
 export interface AttributesPanelWrapper {

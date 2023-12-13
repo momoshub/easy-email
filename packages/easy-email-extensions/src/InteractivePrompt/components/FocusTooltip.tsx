@@ -7,7 +7,7 @@ import {
   useBlock,
   useFocusBlockLayout,
   useFocusIdx,
-} from 'easy-email-editor';
+} from '@ant066/easy-email-editor';
 import { createPortal } from 'react-dom';
 import { Toolbar } from './Toolbar';
 

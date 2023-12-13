@@ -1,15 +1,15 @@
-import { ShortcutToolbar } from '../ShortcutToolbar';
+import { useEditorProps } from '@ant066/easy-email-editor';
 import { Button, Card, ConfigProvider, Layout, Tabs } from '@arco-design/web-react';
-import { useEditorProps } from 'easy-email-editor';
+import enUS from '@arco-design/web-react/es/locale/en-US';
+import { IconLeft, IconRight } from '@arco-design/web-react/icon';
+import { MergeTagBadgePrompt } from '@extensions/MergeTagBadgePrompt';
 import React, { useState } from 'react';
-import { SourceCodePanel } from '../SourceCodePanel';
 import { AttributePanel } from '../AttributePanel';
 import { BlockLayer, BlockLayerProps } from '../BlockLayer';
 import { InteractivePrompt } from '../InteractivePrompt';
+import { ShortcutToolbar } from '../ShortcutToolbar';
+import { SourceCodePanel } from '../SourceCodePanel';
 import styles from './index.module.scss';
-import enUS from '@arco-design/web-react/es/locale/en-US';
-import { MergeTagBadgePrompt } from '@extensions/MergeTagBadgePrompt';
-import { IconLeft, IconRight } from '@arco-design/web-react/icon';
 
 export const SimpleLayout: React.FC<
   {
@@ -104,7 +104,9 @@ export const SimpleLayout: React.FC<
             <Tabs className={styles.layoutTabs}>
               <Tabs.TabPane
                 title={
-                  <div style={{ height: 31, lineHeight: '31px' }}>{t('Configuration')}</div>
+                  <div style={{ height: 31, lineHeight: '31px' }}>
+                    {t('Configuration')}
+                  </div>
                 }
               >
                 <AttributePanel />
@@ -114,7 +116,9 @@ export const SimpleLayout: React.FC<
                   destroyOnHide
                   key='Source code'
                   title={
-                    <div style={{ height: 31, lineHeight: '31px' }}>{t('Source code')}</div>
+                    <div style={{ height: 31, lineHeight: '31px' }}>
+                      {t('Source code')}
+                    </div>
                   }
                 >
                   <SourceCodePanel />

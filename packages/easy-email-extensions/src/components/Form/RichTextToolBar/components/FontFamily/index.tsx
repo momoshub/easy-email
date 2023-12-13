@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 
+import { IconFont } from '@ant066/easy-email-editor';
 import { Menu, Popover } from '@arco-design/web-react';
-import { ToolItem } from '../ToolItem';
-import { IconFont } from 'easy-email-editor';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
 import styleText from '../../styles/ToolsPopover.css?inline';
+import { ToolItem } from '../ToolItem';
 
 export interface FontFamilyProps {
   execCommand: (cmd: string, value: any) => void;
@@ -36,7 +36,7 @@ export function FontFamily(props: FontFamilyProps) {
       className='easy-email-extensions-Tools-Popover'
       popupVisible={visible}
       onVisibleChange={onVisibleChange}
-      content={(
+      content={
         <>
           <style>{styleText}</style>
           <div
@@ -63,7 +63,7 @@ export function FontFamily(props: FontFamilyProps) {
             </Menu>
           </div>
         </>
-      )}
+      }
       getPopupContainer={props.getPopupContainer}
     >
       <ToolItem

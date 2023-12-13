@@ -1,12 +1,12 @@
+import { useEditorProps } from '@ant066/easy-email-editor';
 import { Layout, Tabs } from '@arco-design/web-react';
-import { useEditorProps } from 'easy-email-editor';
-import React, { ReactNode, useContext } from 'react';
-import { Blocks } from './Blocks';
 import { BlockLayer } from '@extensions/BlockLayer';
 import { FullHeightOverlayScrollbars } from '@extensions/components/FullHeightOverlayScrollbars';
-import styles from './index.module.scss';
-import { ConfigurationDrawer } from './ConfigurationDrawer';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
+import React, { ReactNode } from 'react';
+import { Blocks } from './Blocks';
+import { ConfigurationDrawer } from './ConfigurationDrawer';
+import styles from './index.module.scss';
 
 const TabPane = Tabs.TabPane;
 

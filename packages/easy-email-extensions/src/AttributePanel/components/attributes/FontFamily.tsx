@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
-import { useFocusIdx } from 'easy-email-editor';
-import { AutoCompleteField } from '../../../components/Form';
+import { useFocusIdx } from '@ant066/easy-email-editor';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
+import React, { useMemo } from 'react';
+import { AutoCompleteField } from '../../../components/Form';
 
 export function FontFamily({ name }: { name?: string }) {
   const { focusIdx } = useFocusIdx();

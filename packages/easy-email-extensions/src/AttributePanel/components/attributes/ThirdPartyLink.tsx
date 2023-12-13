@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
-import { useBlock, useFocusIdx } from 'easy-email-editor';
-import { IconLink } from '@arco-design/web-react/icon';
-import { SelectField, TextField } from '../../../components/Form';
+import { useBlock, useFocusIdx } from '@ant066/easy-email-editor';
 import { Grid } from '@arco-design/web-react';
+import { IconLink } from '@arco-design/web-react/icon';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
+import React, { useMemo } from 'react';
+import { SelectField, TextField } from '../../../components/Form';
 
 export type ThirdPartyLink = {
   label: string;

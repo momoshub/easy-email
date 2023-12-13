@@ -11,7 +11,7 @@ import {
   useEditorContext,
   useHoverIdx,
   useRefState,
-} from 'easy-email-editor';
+} from '@ant066/easy-email-editor';
 import { debounce, get } from 'lodash';
 import { useCallback, useEffect, useState } from 'react';
 import { IBlockDataWithId } from '..';

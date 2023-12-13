@@ -7,7 +7,8 @@
       "@extensions/*": ["./src/*"],
       "easy-email-core": ["../easy-email-core"],
       "@ant066/easy-email-core": ["../easy-email-core"],
-      "easy-email-editor": ["../easy-email-editor"]
+      "easy-email-editor": ["../easy-email-editor"],
+      "@ant066/easy-email-editor": ["../easy-email-editor"]
     }
   }
 }

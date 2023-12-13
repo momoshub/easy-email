@@ -7,13 +7,13 @@ import {
   getPageIdx,
   getParentByIdx,
 } from '@ant066/easy-email-core';
-import { Collapse, Input, Message } from '@arco-design/web-react';
 import {
   useBlock,
   useEditorContext,
   useEditorProps,
   useFocusIdx,
-} from 'easy-email-editor';
+} from '@ant066/easy-email-editor';
+import { Collapse, Input, Message } from '@arco-design/web-react';
 import { cloneDeep } from 'lodash';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
