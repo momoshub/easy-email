@@ -82,7 +82,7 @@
     "react-use": "^17.3.1"
   },
   "peerDependencies": {
-    "easy-email-core": "^4.3.6",
+    "@ant066/easy-email-core": "^4.3.6",
     "easy-email-editor": "^4.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

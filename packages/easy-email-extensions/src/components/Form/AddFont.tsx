@@ -1,11 +1,11 @@
-import { FieldArray } from 'react-final-form-arrays';
-import React from 'react';
-import { IconDelete, IconPlus } from '@arco-design/web-react/icon';
-import { TextField } from '.';
+import { IPage } from '@ant066/easy-email-core';
 import { Button } from '@arco-design/web-react';
-import { Stack, TextStyle, useBlock, useFocusIdx } from 'easy-email-editor';
+import { IconDelete, IconPlus } from '@arco-design/web-react/icon';
 import { Help } from '@extensions/AttributePanel/components/UI/Help';
-import { IPage } from 'easy-email-core';
+import { Stack, TextStyle, useBlock, useFocusIdx } from 'easy-email-editor';
+import React from 'react';
+import { FieldArray } from 'react-final-form-arrays';
+import { TextField } from '.';
 
 export function AddFont() {
   const { focusBlock } = useBlock();

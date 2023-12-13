@@ -28,6 +28,7 @@
       "@extensions": ["./src"],
       "@extensions/*": ["./src/*"],
       "easy-email-core": ["../easy-email-core/src/index.tsx"],
+      "@ant066/easy-email-core": ["../easy-email-core/src/index.tsx"],
       "easy-email-editor": ["../easy-email-editor/src/index.tsx"]
     }
   },

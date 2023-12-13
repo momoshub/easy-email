@@ -1,8 +1,14 @@
 import React from 'react';
 
-import { BasicType } from 'easy-email-core';
+import { BasicType } from '@ant066/easy-email-core';
+import {
+  BlockAvatarWrapper,
+  IconFont,
+  useBlock,
+  useFocusBlockLayout,
+  useFocusIdx,
+} from 'easy-email-editor';
 import { createPortal } from 'react-dom';
-import { IconFont, useBlock, useFocusIdx, BlockAvatarWrapper, useFocusBlockLayout } from 'easy-email-editor';
 import { Toolbar } from './Toolbar';
 
 export function FocusTooltip() {
@@ -106,7 +112,7 @@ export function FocusTooltip() {
           </div>
         </div>,
 
-        focusBlockNode
+        focusBlockNode,
       )}
     </>
   );

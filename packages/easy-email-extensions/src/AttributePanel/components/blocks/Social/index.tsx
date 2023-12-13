@@ -1,4 +1,11 @@
-import React, { useMemo } from 'react';
+import { IconLink } from '@arco-design/web-react/icon';
+import { Align } from '@extensions/AttributePanel/components/attributes/Align';
+import { Color } from '@extensions/AttributePanel/components/attributes/Color';
+import { ContainerBackgroundColor } from '@extensions/AttributePanel/components/attributes/ContainerBackgroundColor';
+import { FontFamily } from '@extensions/AttributePanel/components/attributes/FontFamily';
+import { FontSize } from '@extensions/AttributePanel/components/attributes/FontSize';
+import { FontStyle } from '@extensions/AttributePanel/components/attributes/FontStyle';
+import { FontWeight } from '@extensions/AttributePanel/components/attributes/FontWeight';
 import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
 import {
   EditGridTabField,
@@ -7,21 +14,14 @@ import {
   RadioGroupField,
   TextField,
 } from '@extensions/components/Form';
-import { Align } from '@extensions/AttributePanel/components/attributes/Align';
-import { IconLink } from '@arco-design/web-react/icon';
-import { Color } from '@extensions/AttributePanel/components/attributes/Color';
-import { ContainerBackgroundColor } from '@extensions/AttributePanel/components/attributes/ContainerBackgroundColor';
-import { FontFamily } from '@extensions/AttributePanel/components/attributes/FontFamily';
-import { FontSize } from '@extensions/AttributePanel/components/attributes/FontSize';
-import { FontStyle } from '@extensions/AttributePanel/components/attributes/FontStyle';
-import { FontWeight } from '@extensions/AttributePanel/components/attributes/FontWeight';
+import React, { useMemo } from 'react';
 
-import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
+import { ISocial } from '@ant066/easy-email-core';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
-import { TextDecoration } from '@extensions/AttributePanel/components/attributes/TextDecoration';
+import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { LineHeight } from '@extensions/AttributePanel/components/attributes/LineHeight';
+import { TextDecoration } from '@extensions/AttributePanel/components/attributes/TextDecoration';
 import { useBlock, useEditorProps, useFocusIdx } from 'easy-email-editor';
-import { ISocial } from 'easy-email-core';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

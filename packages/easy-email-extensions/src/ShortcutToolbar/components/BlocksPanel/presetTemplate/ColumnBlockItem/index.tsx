@@ -1,10 +1,10 @@
-import React from 'react';
-import { AdvancedType } from 'easy-email-core';
+import { AdvancedType } from '@ant066/easy-email-core';
 import { Stack } from 'easy-email-editor';
+import React from 'react';
 
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';
-import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
 import { Picture } from '@extensions/ShortcutToolbar/components/Picture';
+import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
 
 export function ColumnBlockItem() {
   return (
@@ -104,8 +104,7 @@ const list = [
           type: 'text',
           data: {
             value: {
-              content:
-                'Far far away, behind the word mountains, far from the countries',
+              content: 'Far far away, behind the word mountains, far from the countries',
             },
           },
           attributes: {

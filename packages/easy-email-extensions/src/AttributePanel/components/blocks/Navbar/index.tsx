@@ -1,14 +1,18 @@
-import React from 'react';
-import { ColorPickerField, EditTabField, SelectField, TextField } from '@extensions/components/Form';
-import { Align } from '@extensions/AttributePanel/components/attributes/Align';
-import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
+import { INavbar } from '@ant066/easy-email-core';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { IconLink } from '@arco-design/web-react/icon';
+import { Align } from '@extensions/AttributePanel/components/attributes/Align';
+import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { NavbarLinkPadding } from '@extensions/AttributePanel/components/attributes/NavbarLinkPadding';
-import { useFocusIdx, Stack } from 'easy-email-editor';
-import { INavbar } from 'easy-email-core';
-import { ClassName } from '../../attributes/ClassName';
-import { CollapseWrapper } from '../../attributes/CollapseWrapper';
+import {
+  ColorPickerField,
+  EditTabField,
+  SelectField,
+  TextField,
+} from '@extensions/components/Form';
+import { Stack, useFocusIdx } from 'easy-email-editor';
+import React from 'react';
+import { pixelAdapter } from '../../adapter';
 import {
   FontFamily,
   FontStyle,
@@ -18,7 +22,8 @@ import {
   TextDecoration,
   TextTransform,
 } from '../../attributes';
-import { pixelAdapter } from '../../adapter';
+import { ClassName } from '../../attributes/ClassName';
+import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 
 export function Navbar() {
   const { focusIdx } = useFocusIdx();

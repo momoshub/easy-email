@@ -1,10 +1,10 @@
-import React from 'react';
-import { AdvancedType, IImage, RecursivePartial } from 'easy-email-core';
+import { AdvancedType, IImage, RecursivePartial } from '@ant066/easy-email-core';
 import { Stack } from 'easy-email-editor';
+import React from 'react';
 
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';
-import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
 import { Picture } from '@extensions/ShortcutToolbar/components/Picture';
+import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
 
 const imageList = [
   getImg('IMAGE_39'),

@@ -1,35 +1,38 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import {
+  BasicType,
+  BlockManager,
+  IBlockData,
+  getChildIdx,
+  getIndexByIdx,
+  getNodeIdxClassName,
+  getPageIdx,
+  getParentIdx,
+} from '@ant066/easy-email-core';
+import { Space } from '@arco-design/web-react';
+import { classnames } from '@extensions/utils/classnames';
+import { getBlockTitle } from '@extensions/utils/getBlockTitle';
+import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
 import {
   DATA_ATTRIBUTE_DROP_CONTAINER,
   IconFont,
-  scrollBlockEleIntoView,
   TextStyle,
+  scrollBlockEleIntoView,
   useBlock,
   useEditorContext,
   useFocusIdx,
   useHoverIdx,
   useRefState,
 } from 'easy-email-editor';
-import {
-  BasicType,
-  BlockManager,
-  getChildIdx,
-  getIndexByIdx,
-  getNodeIdxClassName,
-  getPageIdx,
-  getParentIdx,
-  IBlockData,
-} from 'easy-email-core';
-import styles from './index.module.scss';
-import { cloneDeep, get, isString, isEqual } from 'lodash';
-import { EyeIcon } from './components/EyeIcon';
+import { cloneDeep, get, isEqual, isString } from 'lodash';
+import React, { useCallback, useMemo, useState } from 'react';
 import { BlockTree, BlockTreeProps } from './components/BlockTree';
 import { ContextMenu } from './components/ContextMenu';
-import { classnames } from '@extensions/utils/classnames';
-import { getDirectionFormDropPosition, useAvatarWrapperDrop } from './hooks/useAvatarWrapperDrop';
-import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
-import { Space } from '@arco-design/web-react';
-import { getBlockTitle } from '@extensions/utils/getBlockTitle';
+import { EyeIcon } from './components/EyeIcon';
+import {
+  getDirectionFormDropPosition,
+  useAvatarWrapperDrop,
+} from './hooks/useAvatarWrapperDrop';
+import styles from './index.module.scss';
 
 export interface IBlockDataWithId extends IBlockData {
   id: string;

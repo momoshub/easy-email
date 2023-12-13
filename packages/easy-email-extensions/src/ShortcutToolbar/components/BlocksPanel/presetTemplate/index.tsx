@@ -1,21 +1,21 @@
-import React from 'react';
-import { AdvancedType } from 'easy-email-core';
+import { AdvancedType } from '@ant066/easy-email-core';
 import { Stack, TextStyle } from 'easy-email-editor';
+import React from 'react';
 
-import { TextBlockItem } from './TextBlockItem';
-import { ImageBlockItem } from './ImageBlockItem';
-import { SpacerBlockItem } from './SpacerBlockItem';
-import { DividerBlockItem } from './DividerBlockItem';
-import { HeroBlockItem } from './HeroBlockItem';
-import { ButtonBlockItem } from './ButtonBlockItem';
 import { AccordionBlockItem } from './AccordionBlockItem';
+import { ButtonBlockItem } from './ButtonBlockItem';
 import { CarouselBlockItem } from './CarouselBlockItem';
-import { NavbarBlockItem } from './NavbarBlockItem';
-import { SocialBlockItem } from './SocialBlockItem';
-import { WrapperBlockItem } from './WrapperBlockItem';
-import { SectionBlockItem } from './SectionBlockItem';
-import { GroupBlockItem } from './GroupBlockItem';
 import { ColumnBlockItem } from './ColumnBlockItem';
+import { DividerBlockItem } from './DividerBlockItem';
+import { GroupBlockItem } from './GroupBlockItem';
+import { HeroBlockItem } from './HeroBlockItem';
+import { ImageBlockItem } from './ImageBlockItem';
+import { NavbarBlockItem } from './NavbarBlockItem';
+import { SectionBlockItem } from './SectionBlockItem';
+import { SocialBlockItem } from './SocialBlockItem';
+import { SpacerBlockItem } from './SpacerBlockItem';
+import { TextBlockItem } from './TextBlockItem';
+import { WrapperBlockItem } from './WrapperBlockItem';
 
 export const defaultCategories = [
   {
@@ -47,7 +47,7 @@ export const defaultCategories = [
             >
               <TextStyle>
                 {t(
-                  'Displays a responsive image in your email. It is similar to the HTML \'&lt;img/&gt;\' tag. Note that if no width is provided, the image will use the parent column width.',
+                  "Displays a responsive image in your email. It is similar to the HTML '&lt;img/&gt;' tag. Note that if no width is provided, the image will use the parent column width.",
                 )}
               </TextStyle>
             </Stack>
@@ -72,7 +72,7 @@ export const defaultCategories = [
         },
         get description() {
           return t(
-            'This block displays a hero image. It behaves like an \'section\' with a single \'column\'.',
+            "This block displays a hero image. It behaves like an 'section' with a single 'column'.",
           );
         },
         component: HeroBlockItem,
@@ -130,7 +130,7 @@ export const defaultCategories = [
         },
         get description() {
           return t(
-            'This block displays a gallery of images or \'carousel\'. Readers can interact by hovering and clicking on thumbnails depending on the email client they use.',
+            "This block displays a gallery of images or 'carousel'. Readers can interact by hovering and clicking on thumbnails depending on the email client they use.",
           );
         },
         component: CarouselBlockItem,

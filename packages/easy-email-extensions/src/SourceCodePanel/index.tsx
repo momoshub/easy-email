@@ -1,18 +1,18 @@
-import { Collapse, Input, Message } from '@arco-design/web-react';
 import {
   BasicType,
   BlockManager,
-  getPageIdx,
-  getParentByIdx,
   IBlockData,
   JsonToMjml,
   MjmlToJson,
-} from 'easy-email-core';
+  getPageIdx,
+  getParentByIdx,
+} from '@ant066/easy-email-core';
+import { Collapse, Input, Message } from '@arco-design/web-react';
 import {
   useBlock,
-  useFocusIdx,
   useEditorContext,
   useEditorProps,
+  useFocusIdx,
 } from 'easy-email-editor';
 import { cloneDeep } from 'lodash';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
