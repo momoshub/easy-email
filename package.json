@@ -12,10 +12,10 @@
     "test": "cd packages/easy-email-core && yarn test",
     "translate": "ts-node scripts/translate.ts",
     "lint": "lerna exec -- yarn format",
-    "pub": "yarn pub:core && yarn pub:editor && yarn pub:extensions",
-    "pub:core": "cd packages/easy-email-core && yarn pub",
-    "pub:editor": "cd packages/easy-email-editor && yarn pub",
-    "pub:extensions": "cd packages/easy-email-extensions && yarn pub"
+    "pub": "npm run pub:core && npm run pub:editor && npm run pub:extensions",
+    "pub:core": "cd packages/easy-email-core && npm run pub",
+    "pub:editor": "cd packages/easy-email-editor && npm run pub",
+    "pub:extensions": "cd packages/easy-email-extensions && npm run pub"
   },
   "dependencies": {
     "easy-localized-translation": "^1.1.0",
