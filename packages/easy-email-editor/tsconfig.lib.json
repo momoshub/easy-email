@@ -2,15 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@": [
-        "./src"
-      ],
-      "@/*": [
-        "./src/*"
-      ],
-      "easy-email-core": [
-        "../easy-email-core"
-      ]
+      "@": ["./src"],
+      "@/*": ["./src/*"],
+      "easy-email-core": ["../easy-email-core"],
+      "@ant066/easy-email-core": ["../easy-email-core"]
     }
   }
 }

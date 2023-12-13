@@ -1,15 +1,15 @@
-import { useEffect, useMemo, useState, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { getNodeIdxFromClassName } from 'easy-email-core';
-import { getBlockNodeByChildEle } from '@/utils/getBlockNodeByChildEle';
-import { useBlock } from '@/hooks/useBlock';
-import { getDirectionPosition } from '@/utils/getDirectionPosition';
-import { useFocusIdx } from './useFocusIdx';
-import { useDataTransfer } from './useDataTransfer';
-import { useHoverIdx } from './useHoverIdx';
-import { getInsertPosition } from '@/utils/getInsertPosition';
-import { useEditorProps } from './useEditorProps';
 import { DATA_ATTRIBUTE_DROP_CONTAINER } from '@/constants';
+import { useBlock } from '@/hooks/useBlock';
+import { getBlockNodeByChildEle } from '@/utils/getBlockNodeByChildEle';
+import { getDirectionPosition } from '@/utils/getDirectionPosition';
+import { getInsertPosition } from '@/utils/getInsertPosition';
+import { getNodeIdxFromClassName } from '@ant066/easy-email-core';
+import { useDataTransfer } from './useDataTransfer';
+import { useEditorProps } from './useEditorProps';
+import { useFocusIdx } from './useFocusIdx';
+import { useHoverIdx } from './useHoverIdx';
 
 export function useDropBlock() {
   const [ref, setRef] = useState<HTMLElement | null>(null);
@@ -27,8 +27,7 @@ export function useDropBlock() {
     cacheDataTransfer.current = dataTransfer;
   }, [dataTransfer]);
   const { setFocusIdx, focusIdx } = useFocusIdx();
-  const { setHoverIdx, setDirection, isDragging, hoverIdx, direction } =
-    useHoverIdx();
+  const { setHoverIdx, setDirection, isDragging, hoverIdx, direction } = useHoverIdx();
 
   useEffect(() => {
     if (ref) {
@@ -139,12 +138,10 @@ export function useDropBlock() {
 
       const onCheckDragLeave = (ev: DragEvent) => {
         const dropEleList = [
-          ...document.querySelectorAll(
-            `[${DATA_ATTRIBUTE_DROP_CONTAINER}="true"]`
-          ),
+          ...document.querySelectorAll(`[${DATA_ATTRIBUTE_DROP_CONTAINER}="true"]`),
         ];
         const target = ev.target as HTMLElement;
-        const isDropContainer = dropEleList.some((ele) => ele.contains(target));
+        const isDropContainer = dropEleList.some(ele => ele.contains(target));
 
         if (!isDropContainer) {
           setDirection('');
@@ -172,14 +169,7 @@ export function useDropBlock() {
         window.removeEventListener('dragover', onCheckDragLeave);
       };
     }
-  }, [
-    autoComplete,
-    cacheDataTransfer,
-    ref,
-    setDataTransfer,
-    setDirection,
-    setHoverIdx,
-  ]);
+  }, [autoComplete, cacheDataTransfer, ref, setDataTransfer, setDirection, setHoverIdx]);
 
   useEffect(() => {
     if (!ref) return;
@@ -219,6 +209,6 @@ export function useDropBlock() {
     () => ({
       setRef,
     }),
-    [setRef]
+    [setRef],
   );
 }
