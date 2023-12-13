@@ -1,5 +1,5 @@
 {
-  "name": "easy-email-extensions",
+  "name": "@truongan106/easy-email-extensions",
   "license": "MIT",
   "description": "Email editor",
   "version": "4.8.0",
@@ -88,5 +88,8 @@
     "react-dom": "^17.0.2",
     "react-final-form": "^6.5.7"
   },
-  "gitHead": "bb5757eb3146f55c31d4354f1480939c3af8efe1"
+  "gitHead": "bb5757eb3146f55c31d4354f1480939c3af8efe1",
+  "publishConfig": {
+    "access": "public"
+  }
 }

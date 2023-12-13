@@ -82,5 +82,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "gitHead": "f6cf54160ffdba0d4d6b23483293dd9190d2d2c2"
+  "gitHead": "f6cf54160ffdba0d4d6b23483293dd9190d2d2c2",
+  "publishConfig": {
+    "access": "public"
+  }
 }
