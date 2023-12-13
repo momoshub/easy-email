@@ -13,7 +13,7 @@ import React from 'react';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { Border } from '@extensions/AttributePanel/components/attributes/Border';
-import { Stack, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { Stack, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import { imageHeightAdapter, pixelAdapter } from '../../adapter';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

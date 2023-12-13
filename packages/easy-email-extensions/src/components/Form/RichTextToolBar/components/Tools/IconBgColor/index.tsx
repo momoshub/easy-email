@@ -1,5 +1,5 @@
 import { ColorPicker } from '@extensions/components/Form/ColorPicker';
-import { IconFont } from '@truongan106/easy-email-editor';
+import { IconFont } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import { ToolItem } from '../../ToolItem';
 

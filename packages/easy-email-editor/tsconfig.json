@@ -26,7 +26,7 @@
       "@core": ["../easy-email-core/src"],
       "@core/*": ["../easy-email-core/src/*"],
       "easy-email-core": ["../easy-email-core"],
-      "@truongan106/easy-email-core": ["../easy-email-core"]
+      "@momos/easy-email-core": ["../easy-email-core"]
     }
   },
   "include": ["./src"],

@@ -1,5 +1,5 @@
 import { Form, FormItemProps } from '@arco-design/web-react';
-import { useRefState } from '@truongan106/easy-email-editor';
+import { useRefState } from '@momos/easy-email-editor';
 import { debounce } from 'lodash';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Field, UseFieldConfig } from 'react-final-form';

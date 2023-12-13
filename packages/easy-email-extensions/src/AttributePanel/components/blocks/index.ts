@@ -9,7 +9,7 @@ import { Spacer } from './Spacer';
 import { Text } from './Text';
 import { Wrapper } from './Wrapper';
 
-import { AdvancedType, BasicType } from '@truongan106/easy-email-core';
+import { AdvancedType, BasicType } from '@momos/easy-email-core';
 import { Accordion } from './Accordion';
 import { AccordionElement } from './AccordionElement';
 import { AccordionText } from './AccordionText';

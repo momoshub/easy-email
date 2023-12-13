@@ -1,8 +1,8 @@
 import { Button } from '@arco-design/web-react';
 import { IconDelete, IconPlus } from '@arco-design/web-react/icon';
 import { Help } from '@extensions/AttributePanel/components/UI/Help';
-import { IPage } from '@truongan106/easy-email-core';
-import { Stack, TextStyle, useBlock, useFocusIdx } from '@truongan106/easy-email-editor';
+import { IPage } from '@momos/easy-email-core';
+import { Stack, TextStyle, useBlock, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { FieldArray } from 'react-final-form-arrays';
 import { TextField } from '.';

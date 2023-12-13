@@ -1,5 +1,5 @@
-import { BlockType } from '@truongan106/easy-email-core';
-import { BlockAvatarWrapper, IconFont } from '@truongan106/easy-email-editor';
+import { BlockType } from '@momos/easy-email-core';
+import { BlockAvatarWrapper, IconFont } from '@momos/easy-email-editor';
 import React, { useCallback, useEffect, useRef } from 'react';
 import styles from './index.module.scss';
 

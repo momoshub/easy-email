@@ -1,6 +1,6 @@
 import { Card, Tabs } from '@arco-design/web-react';
 import { Help } from '@extensions/AttributePanel/components/UI/Help';
-import { IconFont, Stack, useHoverIdx } from '@truongan106/easy-email-editor';
+import { IconFont, Stack, useHoverIdx } from '@momos/easy-email-editor';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { BlockMarketCategory, BlockMarketManager } from '../../utils/BlockMarketManager';

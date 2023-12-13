@@ -1,5 +1,5 @@
-import { AdvancedType } from '@truongan106/easy-email-core';
-import { Stack, TextStyle } from '@truongan106/easy-email-editor';
+import { AdvancedType } from '@momos/easy-email-core';
+import { Stack, TextStyle } from '@momos/easy-email-editor';
 import React from 'react';
 
 import { AccordionBlockItem } from './AccordionBlockItem';

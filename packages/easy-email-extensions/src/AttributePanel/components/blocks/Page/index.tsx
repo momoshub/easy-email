@@ -8,7 +8,7 @@ import {
   TextField,
 } from '@extensions/components/Form';
 import { AddFont } from '@extensions/components/Form/AddFont';
-import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
+import { Stack, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { pixelAdapter } from '../../adapter';
 import { FontFamily } from '../../attributes/FontFamily';

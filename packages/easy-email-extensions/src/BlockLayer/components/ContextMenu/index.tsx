@@ -1,12 +1,12 @@
 import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
-import { getIndexByIdx, getSiblingIdx } from '@truongan106/easy-email-core';
+import { getIndexByIdx, getSiblingIdx } from '@momos/easy-email-core';
 import {
   IconFont,
   TextStyle,
   scrollBlockEleIntoView,
   useBlock,
   useEditorProps,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import React, { useRef } from 'react';
 import { IBlockDataWithId } from '../../../BlockLayer';
 import styles from './index.module.scss';

@@ -9,7 +9,7 @@ import {
   getEditorRoot,
   getShadowRoot,
   useEditorProps,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import { debounce } from 'lodash';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Field, FieldInputProps } from 'react-final-form';

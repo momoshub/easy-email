@@ -1,5 +1,5 @@
 import { Modal } from '@arco-design/web-react';
-import { Stack, useBlock, useEditorProps } from '@truongan106/easy-email-editor';
+import { Stack, useBlock, useEditorProps } from '@momos/easy-email-editor';
 import React from 'react';
 import { Form } from 'react-final-form';
 import { v4 as uuidv4 } from 'uuid';

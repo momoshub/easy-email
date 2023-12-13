@@ -1,7 +1,7 @@
 import { useBlock } from '@/hooks/useBlock';
 import { useDataTransfer } from '@/hooks/useDataTransfer';
 import { useHoverIdx } from '@/hooks/useHoverIdx';
-import { BlockType, getChildIdx } from '@truongan106/easy-email-core';
+import { BlockType, getChildIdx } from '@momos/easy-email-core';
 import { isUndefined } from 'lodash';
 import React, { useCallback, useEffect, useRef } from 'react';
 

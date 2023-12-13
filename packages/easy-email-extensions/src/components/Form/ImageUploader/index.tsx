@@ -14,7 +14,7 @@ import { MergeTags } from '@extensions';
 import { Uploader, UploaderServer } from '@extensions/AttributePanel/utils/Uploader';
 import { classnames } from '@extensions/AttributePanel/utils/classnames';
 import { previewLoadImage } from '@extensions/AttributePanel/utils/previewLoadImage';
-import { IconFont, useEditorProps } from '@truongan106/easy-email-editor';
+import { IconFont, useEditorProps } from '@momos/easy-email-editor';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import styles from './index.module.scss';
 

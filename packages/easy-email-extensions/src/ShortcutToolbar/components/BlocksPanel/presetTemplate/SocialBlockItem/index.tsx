@@ -1,5 +1,5 @@
-import { AdvancedType } from '@truongan106/easy-email-core';
-import { Stack } from '@truongan106/easy-email-editor';
+import { AdvancedType } from '@momos/easy-email-core';
+import { Stack } from '@momos/easy-email-editor';
 import React from 'react';
 
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';

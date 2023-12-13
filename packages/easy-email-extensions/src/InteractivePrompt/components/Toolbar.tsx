@@ -2,13 +2,13 @@ import { Tooltip } from '@arco-design/web-react';
 import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
 import { classnames } from '@extensions/utils/classnames';
 import { getBlockTitle } from '@extensions/utils/getBlockTitle';
-import { BasicType, getParentIdx, getSiblingIdx } from '@truongan106/easy-email-core';
+import { BasicType, getParentIdx, getSiblingIdx } from '@momos/easy-email-core';
 import {
   isTextBlock,
   useBlock,
   useEditorProps,
   useFocusIdx,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import React from 'react';
 
 export function Toolbar() {

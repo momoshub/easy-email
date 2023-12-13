@@ -16,8 +16,8 @@ import {
   IConditionGroup,
   Operator,
   OperatorSymbol,
-} from '@truongan106/easy-email-core';
-import { useBlock, useFocusIdx } from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-core';
+import { useBlock, useFocusIdx } from '@momos/easy-email-editor';
 import { cloneDeep, get, upperFirst } from 'lodash';
 import React, { useCallback } from 'react';
 import { useField } from 'react-final-form';

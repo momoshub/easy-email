@@ -9,8 +9,8 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
-import { INavbar } from '@truongan106/easy-email-core';
-import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
+import { INavbar } from '@momos/easy-email-core';
+import { Stack, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { pixelAdapter } from '../../adapter';
 import {

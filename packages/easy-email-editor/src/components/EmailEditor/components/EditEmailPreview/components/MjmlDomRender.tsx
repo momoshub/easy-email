@@ -3,7 +3,7 @@ import { useEditorContext } from '@/hooks/useEditorContext';
 import { useEditorProps } from '@/hooks/useEditorProps';
 import { getEditorRoot, getShadowRoot } from '@/utils';
 import { HtmlStringToReactNodes } from '@/utils/HtmlStringToReactNodes';
-import { IPage, JsonToMjml, getPageIdx } from '@truongan106/easy-email-core';
+import { IPage, JsonToMjml, getPageIdx } from '@momos/easy-email-core';
 import { cloneDeep, isEqual } from 'lodash';
 import mjml from 'mjml-browser';
 import React, { useEffect, useMemo, useState } from 'react';

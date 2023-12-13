@@ -2,8 +2,8 @@ import { Collapse, Grid, Space, Typography } from '@arco-design/web-react';
 import { IconCaretRight, IconCaretUp } from '@arco-design/web-react/icon';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
-import { AdvancedType, BlockManager, IBlockData } from '@truongan106/easy-email-core';
-import { BlockAvatarWrapper, IconFont } from '@truongan106/easy-email-editor';
+import { AdvancedType, BlockManager, IBlockData } from '@momos/easy-email-core';
+import { BlockAvatarWrapper, IconFont } from '@momos/easy-email-editor';
 import React, { ReactNode, useMemo, useState } from 'react';
 import styles from './index.module.scss';
 

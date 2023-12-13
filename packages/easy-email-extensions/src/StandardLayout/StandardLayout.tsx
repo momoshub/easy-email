@@ -6,12 +6,8 @@ import {
   ExtensionProps,
   ExtensionProvider,
 } from '@extensions/components/Providers/ExtensionProvider';
-import { AdvancedType } from '@truongan106/easy-email-core';
-import {
-  useActiveTab,
-  useEditorProps,
-  useFocusIdx,
-} from '@truongan106/easy-email-editor';
+import { AdvancedType } from '@momos/easy-email-core';
+import { useActiveTab, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useEffect } from 'react';
 import { EditPanel } from '../EditPanel';
 import { InteractivePrompt } from '../InteractivePrompt';

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { Stack } from '@truongan106/easy-email-editor';
+import { Stack } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import { Padding } from './Padding';
 

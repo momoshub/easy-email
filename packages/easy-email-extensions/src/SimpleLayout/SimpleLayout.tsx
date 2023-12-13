@@ -2,7 +2,7 @@ import { Button, Card, ConfigProvider, Layout, Tabs } from '@arco-design/web-rea
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
 import { MergeTagBadgePrompt } from '@extensions/MergeTagBadgePrompt';
-import { useEditorProps } from '@truongan106/easy-email-editor';
+import { useEditorProps } from '@momos/easy-email-editor';
 import React, { useState } from 'react';
 import { AttributePanel } from '../AttributePanel';
 import { BlockLayer, BlockLayerProps } from '../BlockLayer';

@@ -1,11 +1,11 @@
 import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
-import { getParentIdx } from '@truongan106/easy-email-core';
+import { getParentIdx } from '@momos/easy-email-core';
 import {
   IconFont,
   useBlock,
   useEditorProps,
   useFocusIdx,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import React from 'react';
 import { ToolItem } from './ToolItem';
 

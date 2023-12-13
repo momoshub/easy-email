@@ -14,7 +14,7 @@ import React, { useState } from 'react';
 
 import { Button, Collapse, Grid, Space, Tooltip } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
-import { IconFont } from '@truongan106/easy-email-editor';
+import { IconFont } from '@momos/easy-email-editor';
 import { HtmlEditor } from '../../UI/HtmlEditor';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

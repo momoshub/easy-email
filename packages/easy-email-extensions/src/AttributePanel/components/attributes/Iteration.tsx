@@ -1,7 +1,7 @@
 import { Collapse, Grid, Switch } from '@arco-design/web-react';
 import { TextField } from '@extensions/components/Form';
-import { AdvancedBlock, AdvancedType } from '@truongan106/easy-email-core';
-import { useBlock, useFocusIdx } from '@truongan106/easy-email-editor';
+import { AdvancedBlock, AdvancedType } from '@momos/easy-email-core';
+import { useBlock, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useCallback } from 'react';
 
 export function Iteration() {

@@ -1,4 +1,4 @@
-import { getNodeTypeFromClassName } from '@truongan106/easy-email-core';
+import { getNodeTypeFromClassName } from '@momos/easy-email-core';
 import { camelCase } from 'lodash';
 import React from 'react';
 

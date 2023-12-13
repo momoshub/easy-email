@@ -1,4 +1,4 @@
-import { getBlockNodeByIdx } from '@truongan106/easy-email-editor';
+import { getBlockNodeByIdx } from '@momos/easy-email-editor';
 
 export function awaitForElement<T extends HTMLElement>(idx: string) {
   let promiseObj: { cancel: () => void; promise: Promise<T> } = {

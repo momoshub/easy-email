@@ -1,8 +1,8 @@
 import { Grid, PopoverProps, Space, Tooltip } from '@arco-design/web-react';
 import { SearchField, SelectField, SwitchField } from '@extensions/components/Form';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
-import { EMAIL_BLOCK_CLASS_NAME } from '@truongan106/easy-email-core';
-import { IconFont, TextStyle } from '@truongan106/easy-email-editor';
+import { EMAIL_BLOCK_CLASS_NAME } from '@momos/easy-email-core';
+import { IconFont, TextStyle } from '@momos/easy-email-editor';
 import React, { useCallback, useMemo } from 'react';
 import { Form } from 'react-final-form';
 import { ToolItem } from '../ToolItem';

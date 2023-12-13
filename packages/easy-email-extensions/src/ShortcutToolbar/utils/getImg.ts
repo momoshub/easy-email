@@ -1,4 +1,4 @@
-import { ImageManager } from '@truongan106/easy-email-core';
+import { ImageManager } from '@momos/easy-email-core';
 
 const defaultImagesMap = {
   IMAGE_08:

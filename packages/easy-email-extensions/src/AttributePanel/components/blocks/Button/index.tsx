@@ -5,7 +5,7 @@ import {
   Popover,
   Space,
 } from '@arco-design/web-react';
-import { IconFont, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { IconFont, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { useField } from 'react-final-form';
 import { TextField } from '../../../../components/Form';

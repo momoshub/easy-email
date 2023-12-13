@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import { Menu, Popover } from '@arco-design/web-react';
-import { IconFont } from '@truongan106/easy-email-editor';
+import { IconFont } from '@momos/easy-email-editor';
 import styleText from '../../styles/ToolsPopover.css?inline';
 import { ToolItem } from '../ToolItem';
 

@@ -20,8 +20,8 @@ import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { LineHeight } from '@extensions/AttributePanel/components/attributes/LineHeight';
 import { TextDecoration } from '@extensions/AttributePanel/components/attributes/TextDecoration';
-import { ISocial } from '@truongan106/easy-email-core';
-import { useBlock, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { ISocial } from '@momos/easy-email-core';
+import { useBlock, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

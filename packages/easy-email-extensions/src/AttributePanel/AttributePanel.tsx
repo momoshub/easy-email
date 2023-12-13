@@ -4,7 +4,7 @@ import {
   useBlock,
   useEditorContext,
   useFocusIdx,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { RichTextField } from '../components/Form/RichTextField';

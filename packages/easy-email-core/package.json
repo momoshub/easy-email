@@ -1,8 +1,8 @@
 {
-  "name": "@truongan106/easy-email-core",
+  "name": "@momos/easy-email-core",
   "license": "MIT",
   "description": "Email editor",
-  "version": "4.7.2",
+  "version": "4.7.3",
   "author": "m-Ryan",
   "repository": {
     "type": "git",

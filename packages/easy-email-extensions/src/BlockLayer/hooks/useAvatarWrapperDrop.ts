@@ -3,7 +3,7 @@ import {
   getIndexByIdx,
   getNodeIdxFromClassName,
   getParentIdx,
-} from '@truongan106/easy-email-core';
+} from '@momos/easy-email-core';
 import {
   getBlockNodeByChildEle,
   getDirectionPosition,
@@ -11,7 +11,7 @@ import {
   useEditorContext,
   useHoverIdx,
   useRefState,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import { debounce, get } from 'lodash';
 import { useCallback, useEffect, useState } from 'react';
 import { IBlockDataWithId } from '..';

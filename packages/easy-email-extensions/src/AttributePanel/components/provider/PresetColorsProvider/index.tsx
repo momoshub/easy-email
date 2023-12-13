@@ -1,4 +1,4 @@
-import { useRefState } from '@truongan106/easy-email-editor';
+import { useRefState } from '@momos/easy-email-editor';
 import { debounce } from 'lodash';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { useLocalStorage } from 'react-use';

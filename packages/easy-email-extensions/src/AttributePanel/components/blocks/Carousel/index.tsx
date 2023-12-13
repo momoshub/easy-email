@@ -11,8 +11,8 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
-import { ICarousel } from '@truongan106/easy-email-core';
-import { Stack, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { ICarousel } from '@momos/easy-email-core';
+import { Stack, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

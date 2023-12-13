@@ -1,4 +1,4 @@
-import { AdvancedType, BasicType } from '@truongan106/easy-email-core';
+import { AdvancedType, BasicType } from '@momos/easy-email-core';
 import { get } from 'lodash';
 
 const iconsMap = {

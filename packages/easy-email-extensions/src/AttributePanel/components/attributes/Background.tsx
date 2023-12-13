@@ -1,5 +1,5 @@
 import { Grid, Space } from '@arco-design/web-react';
-import { useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import { ImageUploaderField, SelectField, TextField } from '../../../components/Form';
 import { BackgroundColor } from './BackgroundColor';

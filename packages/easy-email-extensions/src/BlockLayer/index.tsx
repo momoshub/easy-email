@@ -11,7 +11,7 @@ import {
   getNodeIdxClassName,
   getPageIdx,
   getParentIdx,
-} from '@truongan106/easy-email-core';
+} from '@momos/easy-email-core';
 import {
   DATA_ATTRIBUTE_DROP_CONTAINER,
   IconFont,
@@ -22,7 +22,7 @@ import {
   useFocusIdx,
   useHoverIdx,
   useRefState,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import { cloneDeep, get, isEqual, isString } from 'lodash';
 import React, { useCallback, useMemo, useState } from 'react';
 import { BlockTree, BlockTreeProps } from './components/BlockTree';

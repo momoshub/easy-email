@@ -1,6 +1,6 @@
 import { getEditorRoot, getShadowRoot } from '@/utils';
 import { getBlockNodeByChildEle } from '@/utils/getBlockNodeByChildEle';
-import { getNodeIdxFromClassName } from '@truongan106/easy-email-core';
+import { getNodeIdxFromClassName } from '@momos/easy-email-core';
 import isHotkey from 'is-hotkey';
 import { useEffect } from 'react';
 import { useBlock } from './useBlock';

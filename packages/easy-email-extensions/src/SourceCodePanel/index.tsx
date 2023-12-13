@@ -7,13 +7,13 @@ import {
   MjmlToJson,
   getPageIdx,
   getParentByIdx,
-} from '@truongan106/easy-email-core';
+} from '@momos/easy-email-core';
 import {
   useBlock,
   useEditorContext,
   useEditorProps,
   useFocusIdx,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import { cloneDeep } from 'lodash';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 

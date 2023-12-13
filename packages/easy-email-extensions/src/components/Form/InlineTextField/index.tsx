@@ -2,7 +2,7 @@ import {
   ContentEditableType,
   DATA_CONTENT_EDITABLE_TYPE,
   getShadowRoot,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import React, { useEffect } from 'react';
 import { useField, useForm } from 'react-final-form';
 

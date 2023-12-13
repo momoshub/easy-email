@@ -1,6 +1,6 @@
 import { Button, Tooltip } from '@arco-design/web-react';
 import { TextAreaField } from '@extensions/components/Form';
-import { IconFont, useFocusIdx } from '@truongan106/easy-email-editor';
+import { IconFont, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useState } from 'react';
 import { HtmlEditor } from '../../UI/HtmlEditor';
 import { AttributesPanelWrapper } from '../../attributes';

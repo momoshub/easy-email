@@ -2,7 +2,7 @@ import React from 'react';
 import { Padding } from '../../attributes/Padding';
 
 import { Collapse, Grid, Space } from '@arco-design/web-react';
-import { useFocusIdx } from '@truongan106/easy-email-editor';
+import { useFocusIdx } from '@momos/easy-email-editor';
 import { TextAreaField } from '../../../../components/Form';
 import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
 import { BackgroundColor } from '../../attributes/BackgroundColor';

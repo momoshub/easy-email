@@ -1,4 +1,4 @@
-import { ActiveTabKeys, useActiveTab } from '@truongan106/easy-email-editor';
+import { ActiveTabKeys, useActiveTab } from '@momos/easy-email-editor';
 import React from 'react';
 import { FocusTooltip } from './components/FocusTooltip';
 import { HoverTooltip } from './components/HoverTooltip';

@@ -7,7 +7,7 @@ import {
   getShadowRoot,
   useEditorProps,
   useFocusBlockLayout,
-} from '@truongan106/easy-email-editor';
+} from '@momos/easy-email-editor';
 import React, { useCallback } from 'react';
 import { BasicTools } from '../BasicTools';
 import { Bold } from '../Bold';

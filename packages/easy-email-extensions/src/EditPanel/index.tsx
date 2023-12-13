@@ -2,7 +2,7 @@ import { Layout, Tabs } from '@arco-design/web-react';
 import { BlockLayer } from '@extensions/BlockLayer';
 import { FullHeightOverlayScrollbars } from '@extensions/components/FullHeightOverlayScrollbars';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
-import { useEditorProps } from '@truongan106/easy-email-editor';
+import { useEditorProps } from '@momos/easy-email-editor';
 import React, { ReactNode } from 'react';
 import { Blocks } from './Blocks';
 import { ConfigurationDrawer } from './ConfigurationDrawer';

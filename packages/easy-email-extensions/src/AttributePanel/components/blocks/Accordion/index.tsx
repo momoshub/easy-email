@@ -10,7 +10,7 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
-import { useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

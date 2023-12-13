@@ -1,6 +1,6 @@
 import { Tree, TreeSelect } from '@arco-design/web-react';
 import { getContextMergeTags } from '@extensions/utils/getContextMergeTags';
-import { useBlock, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
+import { useBlock, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import { get, isObject } from 'lodash';
 import React, { useCallback, useMemo, useState } from 'react';
 

@@ -1,4 +1,4 @@
-import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
+import { Stack, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import { RadioGroupField } from '../../../components/Form';
 

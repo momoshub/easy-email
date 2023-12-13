@@ -3,7 +3,7 @@ import { Background } from '@extensions/AttributePanel/components/attributes//Ba
 import { Padding } from '@extensions/AttributePanel/components/attributes//Padding';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { TextField } from '@extensions/components/Form';
-import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
+import { Stack, useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

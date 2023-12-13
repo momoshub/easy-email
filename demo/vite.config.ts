@@ -30,13 +30,11 @@ export default defineConfig({
       'easy-email-extensions': path.resolve(
         '../packages/easy-email-extensions/src/index.tsx',
       ),
-      '@truongan106/easy-email-core': path.resolve(
-        '../packages/easy-email-core/src/index.tsx',
-      ),
-      '@truongan106/easy-email-editor': path.resolve(
+      '@momos/easy-email-core': path.resolve('../packages/easy-email-core/src/index.tsx'),
+      '@momos/easy-email-editor': path.resolve(
         '../packages/easy-email-editor/src/index.tsx',
       ),
-      '@truongan106/easy-email-extensions': path.resolve(
+      '@momos/easy-email-extensions': path.resolve(
         '../packages/easy-email-extensions/src/index.tsx',
       ),
 
