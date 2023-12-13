@@ -1,4 +1,7 @@
-import React from 'react';
+import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { IconLink } from '@arco-design/web-react/icon';
+import { Align } from '@extensions/AttributePanel/components/attributes/Align';
+import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import {
   ColorPickerField,
   EditTabField,
@@ -8,12 +11,9 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
-import { IconLink } from '@arco-design/web-react/icon';
-import { Collapse, Grid, Space } from '@arco-design/web-react';
-import { Stack, useEditorProps, useFocusIdx } from 'easy-email-editor';
-import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
-import { Align } from '@extensions/AttributePanel/components/attributes/Align';
-import { ICarousel } from 'easy-email-core';
+import { ICarousel } from '@momos/easy-email-core';
+import { Stack, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
+import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

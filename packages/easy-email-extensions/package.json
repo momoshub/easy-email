@@ -1,12 +1,12 @@
 {
-  "name": "easy-email-extensions",
+  "name": "@momos/easy-email-extensions",
   "license": "MIT",
   "description": "Email editor",
-  "version": "4.8.0",
+  "version": "4.8.4",
   "author": "m-Ryan",
   "repository": {
     "type": "git",
-    "url": "git@github.com:m-Ryan/easy-email.git"
+    "url": "https://github.com/momoshub/easy-email"
   },
   "keywords": [
     "email editor core"
@@ -20,7 +20,8 @@
     "dev": "vite",
     "typings": "tsc --declaration --emitDeclarationOnly --project tsconfig.lib.json && tsc-alias -p tsconfig.alias.json",
     "build": "rimraf lib && npm run typings   && vite build --config vite.config.ts",
-    "format": "eslint --fix  --ext .tsx,.ts,.tsx src/"
+    "format": "eslint --fix  --ext .tsx,.ts,.tsx src/",
+    "pub": "npm version patch -m 'bump extensions to version %s' && npm publish"
   },
   "husky": {
     "hooks": {
@@ -82,11 +83,14 @@
     "react-use": "^17.3.1"
   },
   "peerDependencies": {
-    "easy-email-core": "^4.3.6",
-    "easy-email-editor": "^4.3.6",
+    "@momos/easy-email-core": "^4.3.6",
+    "@momos/easy-email-editor": "^4.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-final-form": "^6.5.7"
   },
-  "gitHead": "bb5757eb3146f55c31d4354f1480939c3af8efe1"
+  "gitHead": "bb5757eb3146f55c31d4354f1480939c3af8efe1",
+  "publishConfig": {
+    "access": "public"
+  }
 }

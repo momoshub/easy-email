@@ -1,5 +1,5 @@
+import { useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
-import { useFocusIdx } from 'easy-email-editor';
 import { TextField } from '../../../components/Form';
 
 export function BorderWidth() {

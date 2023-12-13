@@ -1,7 +1,7 @@
+import { Stack, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
-import { TextField } from '../../../components/Form';
-import { useFocusIdx, Stack } from 'easy-email-editor';
 import { UseFieldConfig } from 'react-final-form';
+import { TextField } from '../../../components/Form';
 
 export function Height({
   inline,

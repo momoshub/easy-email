@@ -1,17 +1,21 @@
-import React from 'react';
-import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
-import { ColorPickerField, ImageUploaderField, TextField } from '@extensions/components/Form';
-import { Width } from '@extensions/AttributePanel/components/attributes/Width';
+import { Align } from '@extensions/AttributePanel/components/attributes/Align';
 import { Height } from '@extensions/AttributePanel/components/attributes/Height';
 import { Link } from '@extensions/AttributePanel/components/attributes/Link';
-import { Align } from '@extensions/AttributePanel/components/attributes/Align';
+import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
+import { Width } from '@extensions/AttributePanel/components/attributes/Width';
+import {
+  ColorPickerField,
+  ImageUploaderField,
+  TextField,
+} from '@extensions/components/Form';
+import React from 'react';
 
-import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { Border } from '@extensions/AttributePanel/components/attributes/Border';
-import { Stack, useEditorProps, useFocusIdx } from 'easy-email-editor';
-import { CollapseWrapper } from '../../attributes/CollapseWrapper';
+import { Stack, useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
 import { imageHeightAdapter, pixelAdapter } from '../../adapter';
+import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 
 export function Image() {
   const { focusIdx } = useFocusIdx();
@@ -32,7 +36,9 @@ export function Image() {
               label={t('src')}
               labelHidden
               name={`${focusIdx}.attributes.src`}
-              helpText={t('The image suffix should be .jpg, jpeg, png, gif, etc. Otherwise, the picture may not be displayed normally.')}
+              helpText={t(
+                'The image suffix should be .jpg, jpeg, png, gif, etc. Otherwise, the picture may not be displayed normally.',
+              )}
               uploadHandler={onUploadImage}
             />
             <ColorPickerField

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Stack } from 'easy-email-editor';
-import { AdvancedType, IButton, RecursivePartial } from 'easy-email-core';
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';
-import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
 import { Picture } from '@extensions/ShortcutToolbar/components/Picture';
+import { getImg } from '@extensions/ShortcutToolbar/utils/getImg';
+import { AdvancedType, IButton, RecursivePartial } from '@momos/easy-email-core';
+import { Stack } from '@momos/easy-email-editor';
+import React from 'react';
 
 const buttonList = [
   {
@@ -98,7 +98,10 @@ export function ButtonBlockItem() {
       <Stack vertical>
         {buttonList.map((item, index) => {
           return (
-            <Stack key={index} alignment='center'>
+            <Stack
+              key={index}
+              alignment='center'
+            >
               <Stack.Item fill>
                 <BlockMaskWrapper
                   type={AdvancedType.BUTTON}

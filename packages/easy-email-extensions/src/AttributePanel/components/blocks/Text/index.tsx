@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import { Align } from '@extensions/AttributePanel/components/attributes/Align';
+import { Color } from '@extensions/AttributePanel/components/attributes/Color';
+import { ContainerBackgroundColor } from '@extensions/AttributePanel/components/attributes/ContainerBackgroundColor';
+import { FontFamily } from '@extensions/AttributePanel/components/attributes/FontFamily';
+import { FontSize } from '@extensions/AttributePanel/components/attributes/FontSize';
+import { FontStyle } from '@extensions/AttributePanel/components/attributes/FontStyle';
+import { FontWeight } from '@extensions/AttributePanel/components/attributes/FontWeight';
+import { Height } from '@extensions/AttributePanel/components/attributes/Height';
+import { LetterSpacing } from '@extensions/AttributePanel/components/attributes/LetterSpacing';
+import { LineHeight } from '@extensions/AttributePanel/components/attributes/LineHeight';
 import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
 import { TextDecoration } from '@extensions/AttributePanel/components/attributes/TextDecoration';
-import { FontWeight } from '@extensions/AttributePanel/components/attributes/FontWeight';
-import { FontStyle } from '@extensions/AttributePanel/components/attributes/FontStyle';
-import { FontFamily } from '@extensions/AttributePanel/components/attributes/FontFamily';
-import { Height } from '@extensions/AttributePanel/components/attributes/Height';
-import { ContainerBackgroundColor } from '@extensions/AttributePanel/components/attributes/ContainerBackgroundColor';
-import { FontSize } from '@extensions/AttributePanel/components/attributes/FontSize';
-import { Color } from '@extensions/AttributePanel/components/attributes/Color';
-import { Align } from '@extensions/AttributePanel/components/attributes/Align';
-import { LineHeight } from '@extensions/AttributePanel/components/attributes/LineHeight';
-import { LetterSpacing } from '@extensions/AttributePanel/components/attributes/LetterSpacing';
+import React, { useState } from 'react';
 
+import { Button, Collapse, Grid, Space, Tooltip } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
-import { Collapse, Grid, Space, Tooltip, Button } from '@arco-design/web-react';
-import { IconFont } from 'easy-email-editor';
+import { IconFont } from '@momos/easy-email-editor';
 import { HtmlEditor } from '../../UI/HtmlEditor';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
@@ -24,14 +24,14 @@ export function Text() {
 
   return (
     <AttributesPanelWrapper
-      extra={(
+      extra={
         <Tooltip content={t('Html mode')}>
           <Button
             onClick={() => setVisible(true)}
             icon={<IconFont iconName='icon-html' />}
           />
         </Tooltip>
-      )}
+      }
     >
       <CollapseWrapper defaultActiveKey={['0', '1', '2']}>
         <Collapse.Item

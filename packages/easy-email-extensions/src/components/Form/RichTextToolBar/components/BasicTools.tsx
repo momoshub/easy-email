@@ -1,6 +1,11 @@
-import { IconFont, useBlock, useEditorProps, useFocusIdx } from 'easy-email-editor';
 import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
-import { getParentIdx } from 'easy-email-core';
+import { getParentIdx } from '@momos/easy-email-core';
+import {
+  IconFont,
+  useBlock,
+  useEditorProps,
+  useFocusIdx,
+} from '@momos/easy-email-editor';
 import React from 'react';
 import { ToolItem } from './ToolItem';
 
@@ -17,7 +22,7 @@ export function BasicTools() {
     setModalVisible(true);
   };
 
-  const handleCopy: React.MouseEventHandler<any> = (ev) => {
+  const handleCopy: React.MouseEventHandler<any> = ev => {
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
     }
@@ -40,7 +45,16 @@ export function BasicTools() {
 
   return (
     <div style={{ marginRight: 40 }}>
-      <span style={{ position: 'relative', marginRight: 10, color: '#fff', fontFamily: '-apple-system, BlinkMacSystemFont, San Francisco, Segoe UI' }}>Text</span>
+      <span
+        style={{
+          position: 'relative',
+          marginRight: 10,
+          color: '#fff',
+          fontFamily: '-apple-system, BlinkMacSystemFont, San Francisco, Segoe UI',
+        }}
+      >
+        Text
+      </span>
       <ToolItem
         onClick={handleSelectParent}
         title={t('Select parent block')}
@@ -51,15 +65,13 @@ export function BasicTools() {
         title={t('Copy')}
         icon={<IconFont iconName='icon-copy' />}
       />
-      {
-        onAddCollection && (
-          <ToolItem
-            onClick={handleAddToCollection}
-            title={t('Add to collection')}
-            icon={<IconFont iconName='icon-collection' />}
-          />
-        )
-      }
+      {onAddCollection && (
+        <ToolItem
+          onClick={handleAddToCollection}
+          title={t('Add to collection')}
+          icon={<IconFont iconName='icon-collection' />}
+        />
+      )}
       <ToolItem
         onClick={handleDelete}
         title={t('Delete')}

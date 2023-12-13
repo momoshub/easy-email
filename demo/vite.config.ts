@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import path from 'path';
+import { defineConfig } from 'vite';
 import { injectHtml } from 'vite-plugin-html';
 
 export default defineConfig({
@@ -30,6 +30,14 @@ export default defineConfig({
       'easy-email-extensions': path.resolve(
         '../packages/easy-email-extensions/src/index.tsx',
       ),
+      '@momos/easy-email-core': path.resolve('../packages/easy-email-core/src/index.tsx'),
+      '@momos/easy-email-editor': path.resolve(
+        '../packages/easy-email-editor/src/index.tsx',
+      ),
+      '@momos/easy-email-extensions': path.resolve(
+        '../packages/easy-email-extensions/src/index.tsx',
+      ),
+
       '@arco-design/web-react/dist/css/arco.css': path.resolve(
         './node_modules/@arco-design/web-react/dist/css/arco.css',
       ),

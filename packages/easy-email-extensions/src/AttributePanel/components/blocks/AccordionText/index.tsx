@@ -1,16 +1,16 @@
+import { useFocusIdx } from '@momos/easy-email-editor';
 import React from 'react';
-import { useFocusIdx } from 'easy-email-editor';
 
-import { Padding } from '../../attributes/Padding';
+import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { TextAreaField } from '../../../../components/Form';
+import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
 import { BackgroundColor } from '../../attributes/BackgroundColor';
 import { Color } from '../../attributes/Color';
-import { TextAreaField } from '../../../../components/Form';
+import { FontFamily } from '../../attributes/FontFamily';
 import { FontSize } from '../../attributes/FontSize';
 import { FontWeight } from '../../attributes/FontWeight';
-import { FontFamily } from '../../attributes/FontFamily';
 import { LineHeight } from '../../attributes/LineHeight';
-import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
-import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { Padding } from '../../attributes/Padding';
 
 export function AccordionText() {
   const { focusIdx } = useFocusIdx();
@@ -18,7 +18,10 @@ export function AccordionText() {
   return (
     <AttributesPanelWrapper>
       <Collapse defaultActiveKey={['0', '1', '2']}>
-        <Collapse.Item name='0' header={t('Setting')}>
+        <Collapse.Item
+          name='0'
+          header={t('Setting')}
+        >
           <Space direction='vertical'>
             <TextAreaField
               label={t('Content')}
@@ -29,7 +32,10 @@ export function AccordionText() {
               <Grid.Col span={11}>
                 <Color />
               </Grid.Col>
-              <Grid.Col offset={1} span={11}>
+              <Grid.Col
+                offset={1}
+                span={11}
+              >
                 <FontSize />
               </Grid.Col>
             </Grid.Row>
@@ -37,7 +43,10 @@ export function AccordionText() {
               <Grid.Col span={11}>
                 <LineHeight />
               </Grid.Col>
-              <Grid.Col offset={1} span={11}>
+              <Grid.Col
+                offset={1}
+                span={11}
+              >
                 <FontWeight />
               </Grid.Col>
             </Grid.Row>
@@ -45,12 +54,18 @@ export function AccordionText() {
               <Grid.Col span={11}>
                 <FontFamily />
               </Grid.Col>
-              <Grid.Col offset={1} span={11}>
+              <Grid.Col
+                offset={1}
+                span={11}
+              >
                 <BackgroundColor />
               </Grid.Col>
             </Grid.Row>
 
-            <Padding title={t('Padding')} attributeName='padding' />
+            <Padding
+              title={t('Padding')}
+              attributeName='padding'
+            />
           </Space>
         </Collapse.Item>
       </Collapse>

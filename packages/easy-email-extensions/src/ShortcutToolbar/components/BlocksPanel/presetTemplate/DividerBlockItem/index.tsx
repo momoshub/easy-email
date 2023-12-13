@@ -1,7 +1,7 @@
-import React from 'react';
-import { Stack, TextStyle } from 'easy-email-editor';
-import { AdvancedType, IDivider, RecursivePartial } from 'easy-email-core';
 import { BlockMaskWrapper } from '@extensions/ShortcutToolbar/components/BlockMaskWrapper';
+import { AdvancedType, IDivider, RecursivePartial } from '@momos/easy-email-core';
+import { Stack, TextStyle } from '@momos/easy-email-editor';
+import React from 'react';
 
 const dividerList = [
   {
@@ -40,7 +40,6 @@ export function DividerBlockItem() {
             >
               <Stack alignment='center'>
                 <Stack.Item fill>
-
                   <div
                     style={{
                       backgroundColor: '#fff',
@@ -57,7 +56,6 @@ export function DividerBlockItem() {
                       }}
                     />
                   </div>
-
                 </Stack.Item>
                 <TextStyle>{item['border-style']}</TextStyle>
               </Stack>

@@ -1,10 +1,16 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
-import { InputWithUnitField } from '../../../components/Form';
-import { useFocusIdx, Stack, useBlock, TextStyle, IconFont } from 'easy-email-editor';
-import { createBlockDataByType } from 'easy-email-core';
-import { Form, useFormState } from 'react-final-form';
 import { Button, Grid, Space, Tooltip } from '@arco-design/web-react';
+import { createBlockDataByType } from '@momos/easy-email-core';
+import {
+  IconFont,
+  Stack,
+  TextStyle,
+  useBlock,
+  useFocusIdx,
+} from '@momos/easy-email-editor';
 import { get } from 'lodash';
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { Form, useFormState } from 'react-final-form';
+import { InputWithUnitField } from '../../../components/Form';
 import { pixelAdapter } from '../adapter';
 
 export interface PaddingProps {
@@ -95,12 +101,12 @@ export function Padding(props: PaddingProps = {}) {
                     <Button
                       onClick={onResetPadding}
                       size='mini'
-                      icon={(
+                      icon={
                         <IconFont
                           iconName='icon-remove'
                           size={12}
                         />
-                      )}
+                      }
                     />
                   </Tooltip>
                 )}

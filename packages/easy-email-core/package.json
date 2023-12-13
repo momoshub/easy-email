@@ -1,12 +1,12 @@
 {
-  "name": "easy-email-core",
+  "name": "@momos/easy-email-core",
   "license": "MIT",
   "description": "Email editor",
-  "version": "4.7.0",
+  "version": "4.7.4",
   "author": "m-Ryan",
   "repository": {
     "type": "git",
-    "url": "git@github.com:m-Ryan/easy-email.git"
+    "url": "https://github.com/momoshub/easy-email"
   },
   "keywords": [
     "email editor core"
@@ -23,7 +23,8 @@
     "build": "rimraf lib  && npm run typings && tsc-alias  && vite build --config vite.config.ts",
     "block": "ts-node -r tsconfig-paths/register scripts/generateBlockJSX.ts",
     "format": "eslint --fix  --ext .tsx,.ts,.tsx src/",
-    "test": "jest  --coverage"
+    "test": "jest  --coverage",
+    "pub": "npm version patch -m 'bump core to version %s' && npm publish"
   },
   "husky": {
     "hooks": {
@@ -82,5 +83,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "gitHead": "f6cf54160ffdba0d4d6b23483293dd9190d2d2c2"
+  "gitHead": "f6cf54160ffdba0d4d6b23483293dd9190d2d2c2",
+  "publishConfig": {
+    "access": "public"
+  }
 }

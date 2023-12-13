@@ -1,10 +1,15 @@
-import React from 'react';
-import { BasicType, getParentIdx, getSiblingIdx } from 'easy-email-core';
-import { useBlock, useFocusIdx, useEditorProps, isTextBlock } from 'easy-email-editor';
-import { classnames } from '@extensions/utils/classnames';
+import { Tooltip } from '@arco-design/web-react';
 import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
+import { classnames } from '@extensions/utils/classnames';
 import { getBlockTitle } from '@extensions/utils/getBlockTitle';
-import { Tooltip, Typography } from '@arco-design/web-react';
+import { BasicType, getParentIdx, getSiblingIdx } from '@momos/easy-email-core';
+import {
+  isTextBlock,
+  useBlock,
+  useEditorProps,
+  useFocusIdx,
+} from '@momos/easy-email-editor';
+import React from 'react';
 
 export function Toolbar() {
   const { moveBlock, copyBlock, removeBlock, focusBlock } = useBlock();

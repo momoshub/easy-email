@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
-import { InputWithUnitField } from '../../../components/Form';
-import { useFocusIdx, useBlock } from 'easy-email-editor';
-import { BasicType, getParentByIdx } from 'easy-email-core';
 import { InputWithUnitProps } from '@extensions/components/Form/InputWithUnit';
+import { BasicType, getParentByIdx } from '@momos/easy-email-core';
+import { useBlock, useFocusIdx } from '@momos/easy-email-editor';
+import React, { useCallback } from 'react';
 import { UseFieldConfig } from 'react-final-form';
+import { InputWithUnitField } from '../../../components/Form';
 
 export function Width({
   inline = false,

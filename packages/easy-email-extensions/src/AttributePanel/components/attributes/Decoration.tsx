@@ -1,6 +1,6 @@
+import { Stack, TextStyle, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import { NumberField, TextField } from '../../../components/Form';
-import { useFocusIdx, Stack, TextStyle } from 'easy-email-editor';
 
 export function Decoration() {
   const { focusIdx } = useFocusIdx();

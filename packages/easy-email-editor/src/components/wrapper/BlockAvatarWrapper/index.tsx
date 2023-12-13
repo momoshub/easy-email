@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import { BlockType, getChildIdx } from 'easy-email-core';
-import { useHoverIdx } from '@/hooks/useHoverIdx';
-import { useDataTransfer } from '@/hooks/useDataTransfer';
-import { isUndefined } from 'lodash';
 import { useBlock } from '@/hooks/useBlock';
+import { useDataTransfer } from '@/hooks/useDataTransfer';
+import { useHoverIdx } from '@/hooks/useHoverIdx';
+import { BlockType, getChildIdx } from '@momos/easy-email-core';
+import { isUndefined } from 'lodash';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 export type BlockAvatarWrapperProps = {
   type: BlockType | string;
@@ -13,9 +13,7 @@ export type BlockAvatarWrapperProps = {
   idx?: string;
 };
 
-export const BlockAvatarWrapper: React.FC<BlockAvatarWrapperProps> = (
-  props
-) => {
+export const BlockAvatarWrapper: React.FC<BlockAvatarWrapperProps> = props => {
   const { type, children, payload, action = 'add', idx } = props;
   const { addBlock, moveBlock, values } = useBlock();
   const { setIsDragging, setHoverIdx } = useHoverIdx();
@@ -40,7 +38,7 @@ export const BlockAvatarWrapper: React.FC<BlockAvatarWrapperProps> = (
 
       setIsDragging(true);
     },
-    [action, idx, payload, setDataTransfer, setIsDragging, type]
+    [action, idx, payload, setDataTransfer, setIsDragging, type],
   );
 
   const onDragEnd = useCallback(() => {
@@ -63,7 +61,7 @@ export const BlockAvatarWrapper: React.FC<BlockAvatarWrapperProps> = (
       ) {
         moveBlock(
           dataTransfer.sourceIdx,
-          getChildIdx(dataTransfer.parentIdx, dataTransfer.positionIndex)
+          getChildIdx(dataTransfer.parentIdx, dataTransfer.positionIndex),
         );
       }
     }

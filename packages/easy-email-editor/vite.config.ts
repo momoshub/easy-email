@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [],
@@ -7,6 +7,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       'easy-email-core': path.resolve('../easy-email-core'),
+      '@momos/easy-email-core': path.resolve('../easy-email-core'),
     },
   },
   define: {},
@@ -31,13 +32,14 @@ export default defineConfig({
         'mjml-browser',
         'react-final-form',
         'easy-email-core',
+        '@momos/easy-email-core',
       ],
       output: {},
     },
     outDir: 'lib',
   },
   optimizeDeps: {
-    include: ['easy-email-core'],
+    include: ['easy-email-core', '@momos/easy-email-core'],
   },
   css: {
     modules: {

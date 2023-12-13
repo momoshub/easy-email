@@ -18,13 +18,13 @@ $ yarn add easy-email-extensions
 
 ```js
 import React from 'react';
-import { BlockManager, BasicType, AdvancedType } from 'easy-email-core';
-import { EmailEditor, EmailEditorProvider } from 'easy-email-editor';
-import { ExtensionProps, StandardLayout } from 'easy-email-extensions';
+import { BlockManager, BasicType, AdvancedType } from '@momos/easy-email-core';
+import { EmailEditor, EmailEditorProvider } from '@momos/easy-email-editor';
+import { ExtensionProps, StandardLayout } from '@momos/easy-email-extensions';
 import { useWindowSize } from 'react-use';
 
-import 'easy-email-editor/lib/style.css';
-import 'easy-email-extensions/lib/style.css';
+import '@momos/easy-email-editor/lib/style.css';
+import '@momos/easy-email-extensions/lib/style.css';
 
 const categories: ExtensionProps['categories'] = [
   {
@@ -175,7 +175,7 @@ export default function App() {
   - You can add or overwrite popover's preset blocks
 
     ```tsx
-    import { BasicType } from 'easy-email-core';
+    import { BasicType } from '@momos/easy-email-core';
     import { BlockMarketManager, BlockMaskWrapper } from 'easy-email-extensions';
 
     BlockMarketManager.addCategories([

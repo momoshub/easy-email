@@ -1,25 +1,25 @@
+import { Button } from './Button';
+import { Column } from './Column';
+import { Divider } from './Divider';
+import { Group } from './Group';
+import { Image } from './Image';
 import { Page } from './Page';
 import { Section } from './Section';
-import { Column } from './Column';
-import { Text } from './Text';
-import { Image } from './Image';
-import { Group } from './Group';
-import { Button } from './Button';
-import { Divider } from './Divider';
-import { Wrapper } from './Wrapper';
 import { Spacer } from './Spacer';
+import { Text } from './Text';
+import { Wrapper } from './Wrapper';
 
-import { Raw } from './Raw';
+import { AdvancedType, BasicType } from '@momos/easy-email-core';
 import { Accordion } from './Accordion';
 import { AccordionElement } from './AccordionElement';
-import { AccordionTitle } from './AccordionTitle';
 import { AccordionText } from './AccordionText';
+import { AccordionTitle } from './AccordionTitle';
 import { Carousel } from './Carousel';
 import { Hero } from './Hero';
 import { Navbar } from './Navbar';
+import { Raw } from './Raw';
 import { Social } from './Social';
 import { Table } from './Table';
-import { BasicType, AdvancedType } from 'easy-email-core';
 
 export const blocks = {
   [BasicType.PAGE]: Page,

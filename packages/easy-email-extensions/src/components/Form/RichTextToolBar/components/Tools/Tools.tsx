@@ -1,28 +1,28 @@
-import React, { useCallback } from 'react';
-import { ToolItem } from '../ToolItem';
-import { Link, LinkParams } from '../Link';
+import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
+import { RICH_TEXT_TOOL_BAR } from '@extensions/constants';
 import {
   FIXED_CONTAINER_ID,
-  getShadowRoot,
   IconFont,
+  MergeTagBadge,
+  getShadowRoot,
   useEditorProps,
   useFocusBlockLayout,
-  MergeTagBadge,
-} from 'easy-email-editor';
+} from '@momos/easy-email-editor';
+import React, { useCallback } from 'react';
+import { BasicTools } from '../BasicTools';
+import { Bold } from '../Bold';
 import { FontFamily } from '../FontFamily';
+import { FontSize } from '../FontSize';
+import { Italic } from '../Italic';
+import { LinkParams } from '../Link';
 import { MergeTags } from '../MergeTags';
-import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
+import { StrikeThrough } from '../StrikeThrough';
+import { ThirdPartyLink } from '../ThirdPartyLink';
+import { ToolItem } from '../ToolItem';
+import { Underline } from '../Underline';
+import { Unlink } from '../Unlink';
 import { IconBgColor } from './IconBgColor';
 import { IconFontColor } from './IconFontColor';
-import { BasicTools } from '../BasicTools';
-import { Unlink } from '../Unlink';
-import { StrikeThrough } from '../StrikeThrough';
-import { Underline } from '../Underline';
-import { Italic } from '../Italic';
-import { Bold } from '../Bold';
-import { FontSize } from '../FontSize';
-import { RICH_TEXT_TOOL_BAR } from '@extensions/constants';
-import { ThirdPartyLink } from '../ThirdPartyLink';
 
 export interface ToolsProps {
   onChange: (content: string) => any;

@@ -1,13 +1,18 @@
-import React from 'react';
-import { BackgroundColor } from '@extensions/AttributePanel/components/attributes/BackgroundColor';
-import { ImageUploaderField, InputWithUnitField, RadioGroupField, TextField } from '@extensions/components/Form';
-import { Width } from '@extensions/AttributePanel/components/attributes/Width';
-import { Height } from '@extensions/AttributePanel/components/attributes/Height';
-import { VerticalAlign } from '@extensions/AttributePanel/components/attributes/VerticalAlign';
-import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
-import { useEditorProps, useFocusIdx } from 'easy-email-editor';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
+import { BackgroundColor } from '@extensions/AttributePanel/components/attributes/BackgroundColor';
+import { Height } from '@extensions/AttributePanel/components/attributes/Height';
+import { Padding } from '@extensions/AttributePanel/components/attributes/Padding';
+import { VerticalAlign } from '@extensions/AttributePanel/components/attributes/VerticalAlign';
+import { Width } from '@extensions/AttributePanel/components/attributes/Width';
+import {
+  ImageUploaderField,
+  InputWithUnitField,
+  RadioGroupField,
+  TextField,
+} from '@extensions/components/Form';
+import { useEditorProps, useFocusIdx } from '@momos/easy-email-editor';
+import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

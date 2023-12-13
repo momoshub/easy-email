@@ -3,18 +3,12 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "paths": {
-      "@extensions": [
-        "./src"
-      ],
-      "@extensions/*": [
-        "./src/*"
-      ],
-      "easy-email-core": [
-        "../easy-email-core"
-      ],
-      "easy-email-editor": [
-        "../easy-email-editor"
-      ]
+      "@extensions": ["./src"],
+      "@extensions/*": ["./src/*"],
+      "easy-email-core": ["../easy-email-core"],
+      "@momos/easy-email-core": ["../easy-email-core"],
+      "easy-email-editor": ["../easy-email-editor"],
+      "@momos/easy-email-editor": ["../easy-email-editor"]
     }
   }
 }

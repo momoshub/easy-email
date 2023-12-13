@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
-import { MergeTags as MergeTagsOptions } from '@extensions/AttributePanel';
 import { Popover } from '@arco-design/web-react';
+import { MergeTags as MergeTagsOptions } from '@extensions/AttributePanel';
+import { IconFont } from '@momos/easy-email-editor';
 import { ToolItem } from '../ToolItem';
-import { IconFont } from 'easy-email-editor';
 
 export interface MergeTagsProps {
   execCommand: (cmd: string, value: any) => void;
@@ -39,14 +39,14 @@ export function MergeTags(props: MergeTagsProps) {
           backgroundColor: 'var(--color-bg-5);',
         },
       }}
-      content={(
+      content={
         <>
           <MergeTagsOptions
             value=''
             onChange={onChange}
           />
         </>
-      )}
+      }
       getPopupContainer={props.getPopupContainer}
     >
       <ToolItem

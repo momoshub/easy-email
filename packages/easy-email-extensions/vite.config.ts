@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
 import path from 'path';
 import visualizer from 'rollup-plugin-visualizer';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [
@@ -15,7 +15,9 @@ export default defineConfig({
     alias: {
       '@extensions': path.resolve('./src'),
       'easy-email-core': path.resolve('../easy-email-core/lib'),
+      '@momos/easy-email-core': path.resolve('../easy-email-core/lib'),
       'easy-email-editor': path.resolve('../easy-email-editor/lib'),
+      '@momos/easy-email-editor': path.resolve('../easy-email-editor/lib'),
     },
   },
   define: {},
@@ -40,7 +42,9 @@ export default defineConfig({
         'mjml-browser',
         'react-final-form',
         'easy-email-core',
+        '@momos/easy-email-core',
         'easy-email-editor',
+        '@momos/easy-email-editor',
       ],
       output: {},
     },

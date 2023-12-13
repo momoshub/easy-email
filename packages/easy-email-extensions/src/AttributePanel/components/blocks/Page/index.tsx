@@ -1,4 +1,5 @@
-import React from 'react';
+import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import {
   ColorPickerField,
   InputWithUnitField,
@@ -7,13 +8,15 @@ import {
   TextField,
 } from '@extensions/components/Form';
 import { AddFont } from '@extensions/components/Form/AddFont';
-import { Collapse, Grid, Space } from '@arco-design/web-react';
-import { Stack, useFocusIdx } from 'easy-email-editor';
-import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
-import { FontFamily } from '../../attributes/FontFamily';
+import { Stack, useFocusIdx } from '@momos/easy-email-editor';
+import React from 'react';
 import { pixelAdapter } from '../../adapter';
+import { FontFamily } from '../../attributes/FontFamily';
 
-interface PageProps { hideSubTitle?: boolean; hideSubject?: boolean}
+interface PageProps {
+  hideSubTitle?: boolean;
+  hideSubject?: boolean;
+}
 export function Page({ hideSubTitle, hideSubject }: PageProps) {
   const { focusIdx } = useFocusIdx();
 

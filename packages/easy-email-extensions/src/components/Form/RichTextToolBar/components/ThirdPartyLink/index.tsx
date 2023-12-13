@@ -1,11 +1,11 @@
 import { Grid, PopoverProps, Space, Tooltip } from '@arco-design/web-react';
+import { SearchField, SelectField, SwitchField } from '@extensions/components/Form';
+import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
+import { EMAIL_BLOCK_CLASS_NAME } from '@momos/easy-email-core';
+import { IconFont, TextStyle } from '@momos/easy-email-editor';
 import React, { useCallback, useMemo } from 'react';
 import { Form } from 'react-final-form';
-import { IconFont, TextStyle } from 'easy-email-editor';
-import { SearchField, SelectField, SwitchField } from '@extensions/components/Form';
 import { ToolItem } from '../ToolItem';
-import { EMAIL_BLOCK_CLASS_NAME } from 'easy-email-core';
-import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 
 export interface LinkParams {
   link: string;
@@ -85,7 +85,7 @@ export function ThirdPartyLink(props: LinkProps) {
             trigger='click'
             color='#fff'
             position='tl'
-            content={(
+            content={
               <div style={{ color: '#333' }}>
                 {Boolean(thirdPartyLinks?.length && thirdPartyLinks?.length > 0) && (
                   <Grid.Col span={24}>
@@ -176,7 +176,7 @@ export function ThirdPartyLink(props: LinkProps) {
                   </button>
                 </Grid.Row>
               </div>
-            )}
+            }
           >
             <ToolItem
               isActive={Boolean(initialValues.link)}

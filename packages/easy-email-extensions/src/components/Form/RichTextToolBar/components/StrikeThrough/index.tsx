@@ -1,21 +1,21 @@
 import { PopoverProps, Tooltip } from '@arco-design/web-react';
-import React, { useCallback, useMemo } from 'react';
-import { IconFont } from 'easy-email-editor';
-import { ToolItem } from '../ToolItem';
-import { EMAIL_BLOCK_CLASS_NAME } from 'easy-email-core';
 import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
+import { EMAIL_BLOCK_CLASS_NAME } from '@momos/easy-email-core';
+import { IconFont } from '@momos/easy-email-editor';
+import React, { useCallback, useMemo } from 'react';
+import { ToolItem } from '../ToolItem';
 
 export interface LinkProps extends PopoverProps {
   currentRange: Range | null | undefined;
   onChange: () => void;
 }
 
-function getStrikeThroughNode(
-  node: Node | null | undefined,
-): Element | null {
+function getStrikeThroughNode(node: Node | null | undefined): Element | null {
   if (!node) return null;
-  if (node instanceof Element && node.classList.contains(EMAIL_BLOCK_CLASS_NAME)) return null;
-  if (node instanceof Element && node.tagName.toLocaleLowerCase() === 'strike') return node;
+  if (node instanceof Element && node.classList.contains(EMAIL_BLOCK_CLASS_NAME))
+    return null;
+  if (node instanceof Element && node.tagName.toLocaleLowerCase() === 'strike')
+    return node;
   return getStrikeThroughNode(node.parentNode);
 }
 
@@ -24,7 +24,6 @@ export function StrikeThrough(props: LinkProps) {
   const { setRangeByElement } = useSelectionRange();
   const node = useMemo(() => {
     return getStrikeThroughNode(props.currentRange?.commonAncestorContainer);
-
   }, [props.currentRange]);
 
   const onClick = useCallback(() => {
@@ -40,7 +39,12 @@ export function StrikeThrough(props: LinkProps) {
       position='tl'
       content={t('Strikethrough')}
     >
-      <ToolItem title={t('Strikethrough')} isActive={Boolean(node)} icon={<IconFont iconName='icon-strikethrough' />} onClick={onClick} />
+      <ToolItem
+        title={t('Strikethrough')}
+        isActive={Boolean(node)}
+        icon={<IconFont iconName='icon-strikethrough' />}
+        onClick={onClick}
+      />
     </Tooltip>
   );
 }
