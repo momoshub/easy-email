@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import styleImport from 'vite-plugin-style-import';
 import path from 'path';
+import { defineConfig } from 'vite';
 import { injectHtml } from 'vite-plugin-html';
+import styleImport from 'vite-plugin-style-import';
 
 export default defineConfig({
   resolve: {
@@ -13,6 +13,11 @@ export default defineConfig({
       'easy-email-core': path.resolve('../packages/easy-email-core'),
       'easy-email-editor': path.resolve('../packages/easy-email-editor'),
       'easy-email-extensions': path.resolve('../packages/easy-email-extensions'),
+      '@truongan106/easy-email-core': path.resolve('../packages/easy-email-core'),
+      '@truongan106/easy-email-editor': path.resolve('../packages/easy-email-editor'),
+      '@truongan106/easy-email-extensions': path.resolve(
+        '../packages/easy-email-extensions',
+      ),
     },
   },
   optimizeDeps: {},
