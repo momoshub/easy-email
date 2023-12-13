@@ -20,7 +20,8 @@
     "dev": "vite",
     "typings": "tsc --declaration --emitDeclarationOnly --project tsconfig.lib.json && tsc-alias -p tsconfig.alias.json",
     "build": "rimraf lib && npm run typings && vite build --config vite.config.ts",
-    "format": "eslint --fix  --ext .tsx,.ts,.tsx src/"
+    "format": "eslint --fix  --ext .tsx,.ts,.tsx src/",
+    "pub": "npm version patch -m 'bump editor to version %s' && npm publish"
   },
   "husky": {
     "hooks": {
