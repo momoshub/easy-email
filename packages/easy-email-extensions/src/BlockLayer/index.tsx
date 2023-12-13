@@ -1,3 +1,7 @@
+import { Space } from '@arco-design/web-react';
+import { classnames } from '@extensions/utils/classnames';
+import { getBlockTitle } from '@extensions/utils/getBlockTitle';
+import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
 import {
   BasicType,
   BlockManager,
@@ -7,7 +11,7 @@ import {
   getNodeIdxClassName,
   getPageIdx,
   getParentIdx,
-} from '@ant066/easy-email-core';
+} from '@truongan106/easy-email-core';
 import {
   DATA_ATTRIBUTE_DROP_CONTAINER,
   IconFont,
@@ -18,11 +22,7 @@ import {
   useFocusIdx,
   useHoverIdx,
   useRefState,
-} from '@ant066/easy-email-editor';
-import { Space } from '@arco-design/web-react';
-import { classnames } from '@extensions/utils/classnames';
-import { getBlockTitle } from '@extensions/utils/getBlockTitle';
-import { getIconNameByBlockType } from '@extensions/utils/getIconNameByBlockType';
+} from '@truongan106/easy-email-editor';
 import { cloneDeep, get, isEqual, isString } from 'lodash';
 import React, { useCallback, useMemo, useState } from 'react';
 import { BlockTree, BlockTreeProps } from './components/BlockTree';

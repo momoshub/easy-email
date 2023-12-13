@@ -5,7 +5,7 @@ import { useBlock } from '@/hooks/useBlock';
 import { getBlockNodeByChildEle } from '@/utils/getBlockNodeByChildEle';
 import { getDirectionPosition } from '@/utils/getDirectionPosition';
 import { getInsertPosition } from '@/utils/getInsertPosition';
-import { getNodeIdxFromClassName } from '@ant066/easy-email-core';
+import { getNodeIdxFromClassName } from '@truongan106/easy-email-core';
 import { useDataTransfer } from './useDataTransfer';
 import { useEditorProps } from './useEditorProps';
 import { useFocusIdx } from './useFocusIdx';

@@ -1,4 +1,4 @@
-import { AdvancedType, BasicType } from '@ant066/easy-email-core';
+import { AdvancedType, BasicType } from '@truongan106/easy-email-core';
 
 export function isButtonBlock(blockType: any) {
   return blockType === BasicType.BUTTON || blockType === AdvancedType.BUTTON;

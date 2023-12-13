@@ -1,6 +1,6 @@
-import { useFocusIdx } from '@ant066/easy-email-editor';
 import { Drawer } from '@arco-design/web-react';
 import { ConfigurationPanel } from '@extensions/ConfigurationPanel';
+import { useFocusIdx } from '@truongan106/easy-email-editor';
 import React, { useCallback, useMemo, useRef } from 'react';
 
 export function ConfigurationDrawer({

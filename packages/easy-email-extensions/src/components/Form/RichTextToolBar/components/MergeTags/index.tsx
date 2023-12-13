@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 
-import { IconFont } from '@ant066/easy-email-editor';
 import { Popover } from '@arco-design/web-react';
 import { MergeTags as MergeTagsOptions } from '@extensions/AttributePanel';
+import { IconFont } from '@truongan106/easy-email-editor';
 import { ToolItem } from '../ToolItem';
 
 export interface MergeTagsProps {

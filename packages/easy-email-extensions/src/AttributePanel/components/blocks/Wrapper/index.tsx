@@ -1,9 +1,9 @@
-import { Stack, useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid } from '@arco-design/web-react';
 import { Background } from '@extensions/AttributePanel/components/attributes//Background';
 import { Padding } from '@extensions/AttributePanel/components/attributes//Padding';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { TextField } from '@extensions/components/Form';
+import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

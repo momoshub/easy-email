@@ -1,4 +1,4 @@
-import { I18nManager, t } from '@ant066/easy-email-core';
+import { I18nManager, t } from '@truongan106/easy-email-core';
 import React, { useEffect, useMemo, useState } from 'react';
 
 export const LanguageProvider: React.FC<{ locale?: Record<string, string> }> = props => {

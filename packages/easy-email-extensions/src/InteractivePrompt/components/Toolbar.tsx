@@ -1,14 +1,14 @@
-import { BasicType, getParentIdx, getSiblingIdx } from '@ant066/easy-email-core';
+import { Tooltip } from '@arco-design/web-react';
+import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
+import { classnames } from '@extensions/utils/classnames';
+import { getBlockTitle } from '@extensions/utils/getBlockTitle';
+import { BasicType, getParentIdx, getSiblingIdx } from '@truongan106/easy-email-core';
 import {
   isTextBlock,
   useBlock,
   useEditorProps,
   useFocusIdx,
-} from '@ant066/easy-email-editor';
-import { Tooltip } from '@arco-design/web-react';
-import { useAddToCollection } from '@extensions/hooks/useAddToCollection';
-import { classnames } from '@extensions/utils/classnames';
-import { getBlockTitle } from '@extensions/utils/getBlockTitle';
+} from '@truongan106/easy-email-editor';
 import React from 'react';
 
 export function Toolbar() {

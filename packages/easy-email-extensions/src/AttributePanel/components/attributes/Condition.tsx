@@ -1,13 +1,4 @@
 import {
-  AdvancedBlock,
-  AdvancedType,
-  ICondition,
-  IConditionGroup,
-  Operator,
-  OperatorSymbol,
-} from '@ant066/easy-email-core';
-import { useBlock, useFocusIdx } from '@ant066/easy-email-editor';
-import {
   Button,
   Collapse,
   Grid,
@@ -18,6 +9,15 @@ import {
 } from '@arco-design/web-react';
 import { IconDelete, IconPlus } from '@arco-design/web-react/icon';
 import { SelectField, TextField } from '@extensions/components/Form';
+import {
+  AdvancedBlock,
+  AdvancedType,
+  ICondition,
+  IConditionGroup,
+  Operator,
+  OperatorSymbol,
+} from '@truongan106/easy-email-core';
+import { useBlock, useFocusIdx } from '@truongan106/easy-email-editor';
 import { cloneDeep, get, upperFirst } from 'lodash';
 import React, { useCallback } from 'react';
 import { useField } from 'react-final-form';

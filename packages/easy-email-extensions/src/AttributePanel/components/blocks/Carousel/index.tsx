@@ -1,5 +1,3 @@
-import { ICarousel } from '@ant066/easy-email-core';
-import { Stack, useEditorProps, useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { IconLink } from '@arco-design/web-react/icon';
 import { Align } from '@extensions/AttributePanel/components/attributes/Align';
@@ -13,6 +11,8 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
+import { ICarousel } from '@truongan106/easy-email-core';
+import { Stack, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

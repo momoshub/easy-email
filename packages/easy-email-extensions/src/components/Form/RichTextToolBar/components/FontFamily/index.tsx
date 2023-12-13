@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 
-import { IconFont } from '@ant066/easy-email-editor';
 import { Menu, Popover } from '@arco-design/web-react';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
+import { IconFont } from '@truongan106/easy-email-editor';
 import styleText from '../../styles/ToolsPopover.css?inline';
 import { ToolItem } from '../ToolItem';
 

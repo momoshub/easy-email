@@ -1,7 +1,7 @@
-import { useBlock, useFocusIdx } from '@ant066/easy-email-editor';
 import { Grid } from '@arco-design/web-react';
 import { IconLink } from '@arco-design/web-react/icon';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
+import { useBlock, useFocusIdx } from '@truongan106/easy-email-editor';
 import React, { useMemo } from 'react';
 import { SelectField, TextField } from '../../../components/Form';
 

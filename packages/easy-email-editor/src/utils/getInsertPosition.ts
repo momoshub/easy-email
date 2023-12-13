@@ -8,7 +8,7 @@ import {
   getParentByIdx,
   getParentIdx,
   getSameParent,
-} from '@ant066/easy-email-core';
+} from '@truongan106/easy-email-core';
 import { get } from 'lodash';
 import { DirectionPosition } from './getDirectionPosition';
 

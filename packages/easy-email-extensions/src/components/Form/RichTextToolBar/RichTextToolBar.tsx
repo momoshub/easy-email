@@ -2,7 +2,7 @@ import {
   getPluginElement,
   RICH_TEXT_BAR_ID,
   useEditorContext,
-} from '@ant066/easy-email-editor';
+} from '@truongan106/easy-email-editor';
 import React from 'react';
 import { createPortal } from 'react-dom';
 import { Tools } from './components/Tools';

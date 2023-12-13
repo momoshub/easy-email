@@ -1,4 +1,4 @@
-import { useEditorContext, useEditorProps } from '@ant066/easy-email-editor';
+import { useEditorContext, useEditorProps } from '@truongan106/easy-email-editor';
 import React, { useMemo } from 'react';
 
 export function useFontFamily() {

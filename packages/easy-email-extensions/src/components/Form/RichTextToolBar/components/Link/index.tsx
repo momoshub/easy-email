@@ -1,7 +1,7 @@
-import { EMAIL_BLOCK_CLASS_NAME } from '@ant066/easy-email-core';
-import { IconFont, Stack, TextStyle } from '@ant066/easy-email-editor';
 import { Grid, PopoverProps, Space, Tooltip } from '@arco-design/web-react';
 import { SearchField, SwitchField } from '@extensions/components/Form';
+import { EMAIL_BLOCK_CLASS_NAME } from '@truongan106/easy-email-core';
+import { IconFont, Stack, TextStyle } from '@truongan106/easy-email-editor';
 import React, { useCallback, useMemo } from 'react';
 import { Form } from 'react-final-form';
 import { ToolItem } from '../ToolItem';

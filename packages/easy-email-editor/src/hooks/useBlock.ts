@@ -8,7 +8,7 @@ import {
   getParentByIdx,
   getParentIdx,
   getValueByIdx,
-} from '@ant066/easy-email-core';
+} from '@truongan106/easy-email-core';
 import { cloneDeep, debounce, get } from 'lodash';
 import { useCallback, useContext } from 'react';
 

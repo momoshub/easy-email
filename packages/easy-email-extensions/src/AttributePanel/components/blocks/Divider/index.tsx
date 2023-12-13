@@ -7,9 +7,9 @@ import { Padding } from '@extensions/AttributePanel/components/attributes/Paddin
 import { Width } from '@extensions/AttributePanel/components/attributes/Width';
 import React from 'react';
 
-import { Stack } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
+import { Stack } from '@truongan106/easy-email-editor';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';
 

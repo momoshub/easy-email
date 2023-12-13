@@ -1,4 +1,3 @@
-import { Stack, useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import {
@@ -9,6 +8,7 @@ import {
   TextField,
 } from '@extensions/components/Form';
 import { AddFont } from '@extensions/components/Form/AddFont';
+import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { pixelAdapter } from '../../adapter';
 import { FontFamily } from '../../attributes/FontFamily';

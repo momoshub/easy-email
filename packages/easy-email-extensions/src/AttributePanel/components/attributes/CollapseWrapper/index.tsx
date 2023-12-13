@@ -1,6 +1,6 @@
-import { isAdvancedBlock } from '@ant066/easy-email-core';
-import { useBlock, useEditorProps } from '@ant066/easy-email-editor';
 import { Collapse, Space } from '@arco-design/web-react';
+import { isAdvancedBlock } from '@truongan106/easy-email-core';
+import { useBlock, useEditorProps } from '@truongan106/easy-email-editor';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Condition } from '../Condition';
 import { Iteration } from '../Iteration';

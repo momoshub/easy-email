@@ -18,7 +18,7 @@ $ yarn add easy-email-editor
 
 ```js
 import React from 'react';
-import { BlockManager } from '@ant066/easy-email-core';
+import { BlockManager } from '@truongan106/easy-email-core';
 import { EmailEditor, EmailEditorProvider } from 'easy-email-editor';
 import 'easy-email-editor/lib/style.css';
 

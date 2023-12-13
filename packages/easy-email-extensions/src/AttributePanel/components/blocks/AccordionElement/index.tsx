@@ -1,5 +1,5 @@
-import { useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Space } from '@arco-design/web-react';
+import { useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
 import { BackgroundColor } from '../../attributes/BackgroundColor';

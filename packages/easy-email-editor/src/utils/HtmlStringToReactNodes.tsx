@@ -5,12 +5,13 @@ import {
 } from '@/constants';
 import {
   BasicType,
+  MERGE_TAG_CLASS_NAME,
   getNodeIdxFromClassName,
   getNodeTypeFromClassName,
-  MERGE_TAG_CLASS_NAME,
-} from '@ant066/easy-email-core';
+} from '@truongan106/easy-email-core';
 import { camelCase } from 'lodash';
 import React from 'react';
+import { MergeTagBadge } from './MergeTagBadge';
 import {
   getContentEditableIdxFromClassName,
   getContentEditableTypeFromClassName,
@@ -19,7 +20,6 @@ import { getContentEditableClassName } from './getContentEditableClassName';
 import { isButtonBlock } from './isButtonBlock';
 import { isNavbarBlock } from './isNavbarBlock';
 import { isTextBlock } from './isTextBlock';
-import { MergeTagBadge } from './MergeTagBadge';
 
 const domParser = new DOMParser();
 

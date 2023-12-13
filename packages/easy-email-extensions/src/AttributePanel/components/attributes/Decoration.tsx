@@ -1,4 +1,4 @@
-import { Stack, TextStyle, useFocusIdx } from '@ant066/easy-email-editor';
+import { Stack, TextStyle, useFocusIdx } from '@truongan106/easy-email-editor';
 import React, { useMemo } from 'react';
 import { NumberField, TextField } from '../../../components/Form';
 

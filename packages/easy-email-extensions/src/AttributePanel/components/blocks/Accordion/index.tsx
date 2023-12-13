@@ -1,4 +1,3 @@
-import { useEditorProps, useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { AttributesPanelWrapper } from '@extensions/AttributePanel/components/attributes/AttributesPanelWrapper';
 import { BackgroundColor } from '@extensions/AttributePanel/components/attributes/BackgroundColor';
@@ -11,6 +10,7 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
+import { useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { ClassName } from '../../attributes/ClassName';
 import { CollapseWrapper } from '../../attributes/CollapseWrapper';

@@ -1,5 +1,3 @@
-import { AdvancedType } from '@ant066/easy-email-core';
-import { useActiveTab, useEditorProps, useFocusIdx } from '@ant066/easy-email-editor';
 import { Card, ConfigProvider, Layout } from '@arco-design/web-react';
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import { ConfigurationPanel } from '@extensions/ConfigurationPanel';
@@ -8,6 +6,12 @@ import {
   ExtensionProps,
   ExtensionProvider,
 } from '@extensions/components/Providers/ExtensionProvider';
+import { AdvancedType } from '@truongan106/easy-email-core';
+import {
+  useActiveTab,
+  useEditorProps,
+  useFocusIdx,
+} from '@truongan106/easy-email-editor';
 import React, { useEffect } from 'react';
 import { EditPanel } from '../EditPanel';
 import { InteractivePrompt } from '../InteractivePrompt';

@@ -1,5 +1,5 @@
-import { useFocusIdx } from '@ant066/easy-email-editor';
 import { Grid } from '@arco-design/web-react';
+import { useFocusIdx } from '@truongan106/easy-email-editor';
 import React, { useMemo } from 'react';
 import { InputWithUnitField, TextField } from '../../../components/Form';
 

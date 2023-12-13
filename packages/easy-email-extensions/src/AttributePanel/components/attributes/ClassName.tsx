@@ -1,4 +1,4 @@
-import { useFocusIdx } from '@ant066/easy-email-editor';
+import { useFocusIdx } from '@truongan106/easy-email-editor';
 import React, { useMemo } from 'react';
 import { TextField } from '../../../components/Form';
 

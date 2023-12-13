@@ -1,4 +1,3 @@
-import { IconFont, useEditorProps, useFocusIdx } from '@ant066/easy-email-editor';
 import {
   Button as ArcoButton,
   Collapse,
@@ -6,6 +5,7 @@ import {
   Popover,
   Space,
 } from '@arco-design/web-react';
+import { IconFont, useEditorProps, useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { useField } from 'react-final-form';
 import { TextField } from '../../../../components/Form';

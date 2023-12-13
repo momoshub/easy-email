@@ -1,13 +1,13 @@
-import { BasicType, IText } from '@ant066/easy-email-core';
+import { Button, Drawer } from '@arco-design/web-react';
+import { ShadowDom } from '@extensions/components/ShadowDom';
+import { BasicType, IText } from '@truongan106/easy-email-core';
 import {
   Stack,
   TextStyle,
   useBlock,
   useEditorContext,
   useFocusIdx,
-} from '@ant066/easy-email-editor';
-import { Button, Drawer } from '@arco-design/web-react';
-import { ShadowDom } from '@extensions/components/ShadowDom';
+} from '@truongan106/easy-email-editor';
 import React, { Suspense, useEffect, useMemo, useState } from 'react';
 
 const CodeMirrorEditorPromise = import('../../../components/Form/CodemirrorEditor');

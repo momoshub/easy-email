@@ -1,3 +1,5 @@
+import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
+import { RICH_TEXT_TOOL_BAR } from '@extensions/constants';
 import {
   FIXED_CONTAINER_ID,
   IconFont,
@@ -5,9 +7,7 @@ import {
   getShadowRoot,
   useEditorProps,
   useFocusBlockLayout,
-} from '@ant066/easy-email-editor';
-import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
-import { RICH_TEXT_TOOL_BAR } from '@extensions/constants';
+} from '@truongan106/easy-email-editor';
 import React, { useCallback } from 'react';
 import { BasicTools } from '../BasicTools';
 import { Bold } from '../Bold';

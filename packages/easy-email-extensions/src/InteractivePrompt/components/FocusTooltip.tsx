@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { BasicType } from '@ant066/easy-email-core';
+import { BasicType } from '@truongan106/easy-email-core';
 import {
   BlockAvatarWrapper,
   IconFont,
   useBlock,
   useFocusBlockLayout,
   useFocusIdx,
-} from '@ant066/easy-email-editor';
+} from '@truongan106/easy-email-editor';
 import { createPortal } from 'react-dom';
 import { Toolbar } from './Toolbar';
 

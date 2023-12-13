@@ -1,3 +1,5 @@
+import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
+import { classnames } from '@extensions/utils/classnames';
 import {
   IconFont,
   getBlockNodeByChildEle,
@@ -6,9 +8,7 @@ import {
   useEditorContext,
   useEditorProps,
   useRefState,
-} from '@ant066/easy-email-editor';
-import { useSelectionRange } from '@extensions/AttributePanel/hooks/useSelectionRange';
-import { classnames } from '@extensions/utils/classnames';
+} from '@truongan106/easy-email-editor';
 import { get } from 'lodash';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';

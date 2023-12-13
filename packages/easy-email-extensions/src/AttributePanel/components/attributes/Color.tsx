@@ -1,4 +1,4 @@
-import { useFocusIdx } from '@ant066/easy-email-editor';
+import { useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { ColorPickerField } from '../../../components/Form';
 

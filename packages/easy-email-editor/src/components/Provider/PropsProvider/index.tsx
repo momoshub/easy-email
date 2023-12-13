@@ -1,4 +1,4 @@
-import { IBlockData } from '@ant066/easy-email-core';
+import { IBlockData } from '@truongan106/easy-email-core';
 import React, { useMemo } from 'react';
 
 export interface CollectedBlock {

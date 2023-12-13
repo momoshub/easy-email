@@ -1,8 +1,8 @@
-import { Stack } from '@ant066/easy-email-editor';
 import {
   CheckboxGroupProps as ArcoCheckboxGroupProps,
   Checkbox,
 } from '@arco-design/web-react';
+import { Stack } from '@truongan106/easy-email-editor';
 import { merge } from 'lodash';
 import React from 'react';
 

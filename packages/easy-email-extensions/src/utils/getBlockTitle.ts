@@ -1,4 +1,4 @@
-import { BasicType, BlockManager, IBlockData } from '@ant066/easy-email-core';
+import { BasicType, BlockManager, IBlockData } from '@truongan106/easy-email-core';
 
 const tempEle = document.createElement('div');
 export function getBlockTitle(blockData: IBlockData, isFromContent = true): string {

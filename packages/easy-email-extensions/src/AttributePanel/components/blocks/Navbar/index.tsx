@@ -1,5 +1,3 @@
-import { INavbar } from '@ant066/easy-email-core';
-import { Stack, useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
 import { IconLink } from '@arco-design/web-react/icon';
 import { Align } from '@extensions/AttributePanel/components/attributes/Align';
@@ -11,6 +9,8 @@ import {
   SelectField,
   TextField,
 } from '@extensions/components/Form';
+import { INavbar } from '@truongan106/easy-email-core';
+import { Stack, useFocusIdx } from '@truongan106/easy-email-editor';
 import React from 'react';
 import { pixelAdapter } from '../../adapter';
 import {

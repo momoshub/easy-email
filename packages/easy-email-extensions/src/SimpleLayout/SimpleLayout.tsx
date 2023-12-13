@@ -1,8 +1,8 @@
-import { useEditorProps } from '@ant066/easy-email-editor';
 import { Button, Card, ConfigProvider, Layout, Tabs } from '@arco-design/web-react';
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
 import { MergeTagBadgePrompt } from '@extensions/MergeTagBadgePrompt';
+import { useEditorProps } from '@truongan106/easy-email-editor';
 import React, { useState } from 'react';
 import { AttributePanel } from '../AttributePanel';
 import { BlockLayer, BlockLayerProps } from '../BlockLayer';

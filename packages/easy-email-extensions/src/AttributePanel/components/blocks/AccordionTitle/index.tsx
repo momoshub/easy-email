@@ -1,8 +1,8 @@
 import React from 'react';
 import { Padding } from '../../attributes/Padding';
 
-import { useFocusIdx } from '@ant066/easy-email-editor';
 import { Collapse, Grid, Space } from '@arco-design/web-react';
+import { useFocusIdx } from '@truongan106/easy-email-editor';
 import { TextAreaField } from '../../../../components/Form';
 import { AttributesPanelWrapper } from '../../attributes/AttributesPanelWrapper';
 import { BackgroundColor } from '../../attributes/BackgroundColor';
