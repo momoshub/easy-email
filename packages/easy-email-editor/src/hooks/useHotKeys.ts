@@ -1,26 +1,25 @@
-import { useEffect } from 'react';
-import isHotkey from 'is-hotkey';
-import { useBlock } from './useBlock';
 import { getEditorRoot, getShadowRoot } from '@/utils';
-import { useFocusIdx } from './useFocusIdx';
-import { useEditorContext } from './useEditorContext';
-import { getNodeIdxFromClassName } from 'easy-email-core';
 import { getBlockNodeByChildEle } from '@/utils/getBlockNodeByChildEle';
+import { getNodeIdxFromClassName } from '@truongan106/easy-email-core';
+import isHotkey from 'is-hotkey';
+import { useEffect } from 'react';
+import { useBlock } from './useBlock';
+import { useEditorContext } from './useEditorContext';
+import { useFocusIdx } from './useFocusIdx';
 
 function isContentEditFocus() {
   const isShadowRootFocus = document.activeElement === getEditorRoot();
   if (isShadowRootFocus) {
     if (
-      getEditorRoot()?.shadowRoot?.activeElement?.getAttribute(
-        'contenteditable'
-      ) === 'true'
+      getEditorRoot()?.shadowRoot?.activeElement?.getAttribute('contenteditable') ===
+      'true'
     ) {
       return true;
     }
   } else {
     if (
       ['input', 'textarea'].includes(
-        document.activeElement?.tagName.toLocaleLowerCase() || ''
+        document.activeElement?.tagName.toLocaleLowerCase() || '',
       ) ||
       document.activeElement?.getAttribute('contenteditable') === 'true'
     ) {
