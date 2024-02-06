@@ -1,4 +1,4 @@
-[arco-theme="dark"] {
+[arco-theme='dark'] {
   .easy-email-editor-tabWrapper {
     background-color: var(--color-bg-3);
   }
@@ -25,5 +25,23 @@
     background-color: var(--color-secondary);
     color: var(--color-text-2);
     border: 1px solid transparent;
+  }
+}
+
+.fix-select-zindex {
+  div:last-child:not(.arco-select-view) {
+    z-index: 9999;
+    .arco-trigger {
+      z-index: 10000;
+    }
+  }
+}
+
+.fix-picker-zindex {
+  div:last-child:not(.arco-collapse-item-content, .arco-collapse-item-header) {
+    z-index: 9999;
+    .arco-trigger {
+      z-index: 10000;
+    }
   }
 }
