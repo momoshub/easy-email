@@ -37,6 +37,7 @@ export function ThirdPartyLink() {
               ...(thirdPartyLinks || []),
               { label: 'Custom URL', value: 'custom' },
             ]}
+            className='fix-select-zindex'
           />
         )}
 
@@ -45,12 +46,14 @@ export function ThirdPartyLink() {
             prefix={<IconLink />}
             label={t('Link')}
             name={`${focusIdx}.attributes.href`}
+            className='fix-select-zindex'
           />
         ) : (
           <SelectField
             label={t('Link')}
             name={`${focusIdx}.attributes.href`}
             options={links}
+            className='fix-select-zindex'
           />
         )}
         <SelectField
@@ -66,6 +69,10 @@ export function ThirdPartyLink() {
               label: t('Open in New Tab'),
             },
           ]}
+          style={{
+            color: 'red',
+          }}
+          className='fix-select-zindex'
         />
       </Grid.Row>
     );

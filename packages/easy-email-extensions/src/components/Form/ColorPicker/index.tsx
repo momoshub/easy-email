@@ -1,9 +1,9 @@
 import { Input, Popover, PopoverProps } from '@arco-design/web-react';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 
+import { PresetColorsContext } from '@extensions/AttributePanel/components/provider/PresetColorsProvider';
 import { getImg } from '@extensions/AttributePanel/utils/getImg';
 import Color from 'color';
-import { PresetColorsContext } from '@extensions/AttributePanel/components/provider/PresetColorsProvider';
 import { ColorPickerContent } from './ColorPickerContent';
 
 export interface ColorPickerProps extends PopoverProps {
@@ -18,6 +18,7 @@ export interface ColorPickerProps extends PopoverProps {
 const getCollapseItemEle = (node: HTMLElement | null): HTMLElement => {
   if (!node) return document.body;
   if (node.classList.contains('arco-collapse-item')) {
+    node.classList.add('fix-picker-zindex');
     return node;
   }
   return getCollapseItemEle(node.parentElement);
@@ -63,12 +64,12 @@ export function ColorPicker(props: ColorPickerProps) {
         title={props.label}
         trigger='click'
         className='color-picker-popup'
-        content={(
+        content={
           <ColorPickerContent
             value={adapterColor}
             onChange={onInputChange}
           />
-        )}
+        }
         getPopupContainer={getPopupContainer}
         {...props}
       >
