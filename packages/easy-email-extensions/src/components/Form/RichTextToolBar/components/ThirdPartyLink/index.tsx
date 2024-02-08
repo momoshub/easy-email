@@ -1,5 +1,5 @@
 import { Grid, PopoverProps, Space, Tooltip } from '@arco-design/web-react';
-import { SearchField, SelectField, SwitchField } from '@extensions/components/Form';
+import { SelectField, SwitchField, TextField } from '@extensions/components/Form';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 import { EMAIL_BLOCK_CLASS_NAME } from '@momos/easy-email-core';
 import { IconFont, TextStyle } from '@momos/easy-email-editor';
@@ -112,11 +112,10 @@ export function ThirdPartyLink(props: LinkProps) {
                 ) : (
                   <div style={{ marginTop: '0.5rem' }}>
                     <div>Link</div>
-                    <SearchField
+                    <TextField
                       name='link'
                       label={'URL'}
                       labelHidden
-                      searchButton={t('Apply')}
                       placeholder={t('https://www.example.com')}
                     />
                   </div>

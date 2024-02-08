@@ -1,58 +1,57 @@
 /* eslint-disable react/jsx-wrap-multilines */
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import template from '@demo/store/template';
+import { Button, Message, PageHeader, Select } from '@arco-design/web-react';
+import { IconMoonFill, IconSunFill } from '@arco-design/web-react/icon';
+import { Loading } from '@demo/components/loading';
 import { useAppSelector } from '@demo/hooks/useAppSelector';
 import { useLoading } from '@demo/hooks/useLoading';
-import { Button, Message, PageHeader, Select } from '@arco-design/web-react';
 import { useQuery } from '@demo/hooks/useQuery';
-import { useHistory } from 'react-router-dom';
-import { cloneDeep, set, isEqual } from 'lodash';
-import { Loading } from '@demo/components/loading';
-import mjml from 'mjml-browser';
-import { copy } from '@demo/utils/clipboard';
-import { useEmailModal } from './components/useEmailModal';
 import services from '@demo/services';
-import { IconMoonFill, IconSunFill } from '@arco-design/web-react/icon';
-import { Liquid } from 'liquidjs';
+import template from '@demo/store/template';
+import { copy } from '@demo/utils/clipboard';
 import {
-  ActiveTabKeys,
   BlockAvatarWrapper,
   EmailEditor,
   EmailEditorProvider,
   EmailEditorProviderProps,
   IEmailTemplate,
 } from 'easy-email-editor';
+import { Liquid } from 'liquidjs';
+import { cloneDeep, isEqual, set } from 'lodash';
+import mjml from 'mjml-browser';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useEmailModal } from './components/useEmailModal';
 
 import { Stack } from '@demo/components/Stack';
 import { pushEvent } from '@demo/utils/pushEvent';
-import { FormApi } from 'final-form';
 import { UserStorage } from '@demo/utils/user-storage';
+import { FormApi } from 'final-form';
 
-import { useCollection } from './components/useCollection';
+import { AutoSaveAndRestoreEmail } from '@demo/components/AutoSaveAndRestoreEmail';
 import { AdvancedType, BasicType, IBlockData, JsonToMjml } from 'easy-email-core';
 import {
   BlockMarketManager,
   ExtensionProps,
   StandardLayout,
 } from 'easy-email-extensions';
-import { AutoSaveAndRestoreEmail } from '@demo/components/AutoSaveAndRestoreEmail';
+import { useCollection } from './components/useCollection';
 
 // Register external blocks
 import './components/CustomBlocks';
 
+import greenTheme from '@arco-themes/react-easy-email-theme-green/css/arco.css?inline';
+import purpleTheme from '@arco-themes/react-easy-email-theme-purple/css/arco.css?inline';
+import blueTheme from '@arco-themes/react-easy-email-theme/css/arco.css?inline';
 import 'easy-email-editor/lib/style.css';
 import 'easy-email-extensions/lib/style.css';
-import blueTheme from '@arco-themes/react-easy-email-theme/css/arco.css?inline';
-import purpleTheme from '@arco-themes/react-easy-email-theme-purple/css/arco.css?inline';
-import greenTheme from '@arco-themes/react-easy-email-theme-green/css/arco.css?inline';
-import { testMergeTags } from './testMergeTags';
 import { useMergeTagsModal } from './components/useMergeTagsModal';
+import { testMergeTags } from './testMergeTags';
 
-import { useWindowSize } from 'react-use';
-import { CustomBlocksType } from './components/CustomBlocks/constants';
 import localesData from 'easy-email-localization/locales/locales.json';
+import { useWindowSize } from 'react-use';
 import { ThirdPartyLink } from '../../../../packages/easy-email-extensions/src/AttributePanel/components/attributes/ThirdPartyLink';
+import { CustomBlocksType } from './components/CustomBlocks/constants';
 
 console.log(localesData);
 
@@ -169,14 +168,6 @@ const fontList = [
   'Georgia',
   'Lato',
   'Montserrat',
-  '黑体',
-  '仿宋',
-  '楷体',
-  '标楷体',
-  '华文仿宋',
-  '华文楷体',
-  '宋体',
-  '微软雅黑',
 ].map(item => ({ value: item, label: item }));
 
 export default function Editor() {
@@ -387,7 +378,6 @@ export default function Editor() {
         // onAddCollection={addCollection}
         // onRemoveCollection={({ id }) => removeCollection(id)}
         onUploadImage={onUploadImage}
-        fontList={fontList}
         onSubmit={onSubmit}
         onChangeMergeTag={onChangeMergeTag}
         autoComplete
