@@ -29,7 +29,7 @@ export function useFontFamily() {
     () =>
       GOOGLE_FONTS?.map(font => ({
         value: font.value,
-        label: <span style={{ fontFamily: font.value }}>{font.label}</span>,
+        label: <div style={{ fontFamily: font.value }}>{font.label}</div>,
         url: font.url,
       })),
     [],

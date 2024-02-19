@@ -12,7 +12,7 @@ export interface FontFamilyProps {
 }
 
 export function FontFamily(props: FontFamilyProps) {
-  const { fontList } = useFontFamily();
+  const { safeFonts } = useFontFamily();
   const { execCommand } = props;
   const [visible, setVisible] = React.useState(false);
 
@@ -52,7 +52,7 @@ export function FontFamily(props: FontFamilyProps) {
               selectedKeys={[]}
               style={{ border: 'none', padding: 0 }}
             >
-              {fontList.map(item => (
+              {safeFonts.map(item => (
                 <Menu.Item
                   style={{ lineHeight: '30px', height: 30 }}
                   key={item.value}

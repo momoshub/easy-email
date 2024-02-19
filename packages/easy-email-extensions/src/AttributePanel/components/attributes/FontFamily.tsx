@@ -1,3 +1,4 @@
+import { Tooltip } from '@arco-design/web-react';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
 import { useBlock, useEditorContext, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
@@ -17,8 +18,6 @@ export function FontFamily({ name }: { name?: string }) {
   const { pageData } = useEditorContext();
   const { focusBlock } = useBlock();
 
-  console.log('addFonts', addFonts);
-
   const { mainFont, fallbackFont = 'Helvetica' } = useMemo(
     () => getFontFamily(focusBlock),
     [focusBlock],
@@ -29,15 +28,16 @@ export function FontFamily({ name }: { name?: string }) {
     [mainFont],
   );
 
-  const onChangeAdapter = (mainFont: string) => {
-    const isExisted = pageData?.data?.value?.fonts?.find(font => font.name === mainFont);
+  const onChangeAdapter = (value: string = mainFont) => {
+    const newFont = value === '1' || value === '2' ? mainFont : value;
+    const isExisted = pageData?.data?.value?.fonts?.find(font => font.name === newFont);
 
     if (!isExisted) {
-      const url = googleFonts?.find(font => font.value === mainFont)?.url;
-      if (url) pageData?.data?.value?.fonts?.push({ name: mainFont, href: url, url });
+      const url = googleFonts?.find(font => font.value === newFont)?.url;
+      if (url) pageData?.data?.value?.fonts?.push({ name: newFont, href: url, url });
     }
 
-    return `${mainFont}, ${fallbackFont}`;
+    return `${newFont}, ${fallbackFont}`;
   };
 
   const onChangeFallbackAdapter = (fallbackFont: string) => {
@@ -59,11 +59,53 @@ export function FontFamily({ name }: { name?: string }) {
           style={{ minWidth: 100, flex: 1 }}
           showSearch
           label={t('Font family')}
+          dropdownRender={menu => <div style={{ paddingLeft: 20 }}>{menu}</div>}
+          options={[
+            {
+              label: (
+                <div className='flex gap-2 algin-center ml-minus-10'>
+                  <div className='text-red pointer-events-none font-bold'>
+                    Websafe Fonts
+                  </div>
+                  <Tooltip
+                    content='These fonts are accepted by all major email clients.
+              It is recommended that you use a websafe font in your emails.'
+                  >
+                    <div className='help-circle' />
+                  </Tooltip>
+                </div>
+              ),
+              value: '1',
+            },
+            ...safeFonts,
+            {
+              label: (
+                <div className='flex gap-2 algin-center ml-minus-10'>
+                  <span className='text-red pointer-events-none font-bold'>
+                    Custom Fonts
+                  </span>
+                  <Tooltip
+                    content='Custom Fonts may not be accepted by some email clients.
+                  You will be required to specify a fallback websafe font to be shown instead when this happens.'
+                  >
+                    <div className='help-circle' />
+                  </Tooltip>
+                </div>
+              ),
+              value: '2',
+            },
+            ...addFonts,
+            ...googleFonts,
+          ]}
           name={name || `${focusIdx}.attributes.font-family`}
-          options={[...safeFonts, ...googleFonts]}
           onChangeAdapter={onChangeAdapter}
           onSetCurrentValue={onSetCurrentValue}
-        />
+          triggerProps={{
+            autoAlignPopupWidth: false,
+            autoAlignPopupMinWidth: true,
+            position: 'bl',
+          }}
+        ></SelectField>
 
         {isShowFallback && (
           <SelectField
