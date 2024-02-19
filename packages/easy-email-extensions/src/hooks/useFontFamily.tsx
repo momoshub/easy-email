@@ -2,7 +2,7 @@ import { useEditorContext, useEditorProps } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import GOOGLE_FONTS from './fonts.json';
 
-const safeFonts = [
+const SAFE_FONTS = [
   { value: 'Arial', label: 'Arial' },
   { value: 'Courier New', label: 'Courier New' },
   { value: 'Georgia', label: 'Georgia' },
@@ -13,42 +13,54 @@ const safeFonts = [
 ];
 
 export function useFontFamily() {
-  const { fontList: defaultFontList = safeFonts } = useEditorProps();
+  const { fontList: defaultFontList = SAFE_FONTS } = useEditorProps();
   const { pageData } = useEditorContext();
 
-  const addFonts = pageData.data.value.fonts;
+  const safeFonts = useMemo(
+    () =>
+      defaultFontList?.map(font => ({
+        value: font.value,
+        label: <span style={{ fontFamily: font.value }}>{font.label}</span>,
+      })),
+    [],
+  );
 
-  const fontList = useMemo(() => {
+  const googleFonts = useMemo(
+    () =>
+      GOOGLE_FONTS?.map(font => ({
+        value: font.value,
+        label: <span style={{ fontFamily: font.value }}>{font.label}</span>,
+        url: font.url,
+      })),
+    [],
+  );
+
+  const addFonts = useMemo(() => {
     const fonts: Array<{
       url?: string;
       value: string;
       label: React.ReactNode;
     }> = [];
-    if (defaultFontList) {
-      fonts.push(...defaultFontList);
-    }
-    if (addFonts) {
-      const options = addFonts.map(item => ({
-        value: item.name,
-        label: item.name,
-        url: item.href,
-      }));
+    if (pageData?.data?.value?.fonts) {
+      const options = pageData.data.value.fonts
+        .filter(font => !font?.url)
+        .map(font => {
+          return {
+            value: font.name,
+            label: <span style={{ fontFamily: font?.name }}>{font?.name}</span>,
+            url: font.href,
+          };
+        });
+
       fonts.unshift(...options);
     }
 
-    fonts.push(...GOOGLE_FONTS);
-
-    return fonts.map(item => {
-      return {
-        value: item.value,
-        label: <span style={{ fontFamily: item.value }}>{item.label}</span>,
-        url: item.url,
-      };
-    });
-  }, [addFonts, defaultFontList]);
+    return fonts;
+  }, [pageData.data.value.fonts]);
 
   return {
-    fontList,
-    defaultFontList,
+    safeFonts,
+    googleFonts,
+    addFonts,
   };
 }

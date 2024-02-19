@@ -13,25 +13,28 @@ const getFontFamily = (block: any) => {
 
 export function FontFamily({ name }: { name?: string }) {
   const { focusIdx } = useFocusIdx();
-  const { fontList, defaultFontList } = useFontFamily();
+  const { addFonts, safeFonts, googleFonts } = useFontFamily();
   const { pageData } = useEditorContext();
   const { focusBlock } = useBlock();
+
+  console.log('addFonts', addFonts);
 
   const { mainFont, fallbackFont = 'Helvetica' } = useMemo(
     () => getFontFamily(focusBlock),
     [focusBlock],
   );
 
-  const fontFamily = useMemo(() => {
-    return fontList?.find(f => f.value == mainFont);
-  }, [, fontList, mainFont]);
+  const isShowFallback = useMemo(
+    () => !safeFonts?.find(f => f.value == mainFont),
+    [mainFont],
+  );
 
   const onChangeAdapter = (mainFont: string) => {
     const isExisted = pageData?.data?.value?.fonts?.find(font => font.name === mainFont);
-    const url = fontList?.find(font => font.value === mainFont)?.url;
 
-    if (!isExisted && url) {
-      pageData?.data?.value?.fonts?.push({ name: mainFont, href: url });
+    if (!isExisted) {
+      const url = googleFonts?.find(font => font.value === mainFont)?.url;
+      if (url) pageData?.data?.value?.fonts?.push({ name: mainFont, href: url, url });
     }
 
     return `${mainFont}, ${fallbackFont}`;
@@ -57,17 +60,17 @@ export function FontFamily({ name }: { name?: string }) {
           showSearch
           label={t('Font family')}
           name={name || `${focusIdx}.attributes.font-family`}
-          options={fontList}
+          options={[...safeFonts, ...googleFonts]}
           onChangeAdapter={onChangeAdapter}
           onSetCurrentValue={onSetCurrentValue}
         />
 
-        {fontFamily?.url && (
+        {isShowFallback && (
           <SelectField
             style={{ minWidth: 100, flex: 1 }}
             label={t('Fallback font')}
             name={name || `${focusIdx}.attributes.font-family`}
-            options={defaultFontList}
+            options={safeFonts}
             onSetCurrentValue={onSetCurrentFallbackValue}
             onChangeAdapter={onChangeFallbackAdapter}
           />
@@ -76,10 +79,11 @@ export function FontFamily({ name }: { name?: string }) {
     );
   }, [
     focusIdx,
-    fontList,
+    googleFonts,
+    safeFonts,
     name,
     onSetCurrentFallbackValue,
     onSetCurrentValue,
-    fontFamily?.url,
+    isShowFallback,
   ]);
 }

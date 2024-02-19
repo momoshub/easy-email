@@ -18,7 +18,7 @@ export type IPage = IBlockData<
   {
     breakpoint?: string;
     headAttributes: string;
-    fonts?: { name: string; href: string }[];
+    fonts?: { name: string; href: string; url?: string }[];
     headStyles?: {
       content?: string;
       inline?: 'inline';
