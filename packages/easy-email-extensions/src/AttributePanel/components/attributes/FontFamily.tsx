@@ -1,4 +1,5 @@
 import { Tooltip } from '@arco-design/web-react';
+import InfoIcon from '@extensions/assets/svg/info.svg';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
 import { useBlock, useEditorContext, useFocusIdx } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
@@ -71,7 +72,7 @@ export function FontFamily({ name }: { name?: string }) {
                     content='These fonts are accepted by all major email clients.
               It is recommended that you use a websafe font in your emails.'
                   >
-                    <div className='help-circle' />
+                    <img src={InfoIcon} />
                   </Tooltip>
                 </div>
               ),
@@ -88,7 +89,7 @@ export function FontFamily({ name }: { name?: string }) {
                     content='Custom Fonts may not be accepted by some email clients.
                   You will be required to specify a fallback websafe font to be shown instead when this happens.'
                   >
-                    <div className='help-circle' />
+                    <img src={InfoIcon} />
                   </Tooltip>
                 </div>
               ),
