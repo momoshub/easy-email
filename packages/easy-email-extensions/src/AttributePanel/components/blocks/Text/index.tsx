@@ -35,31 +35,6 @@ export function Text() {
     >
       <CollapseWrapper defaultActiveKey={['0', '1', '2']}>
         <Collapse.Item
-          name='0'
-          header={t('Dimension')}
-        >
-          <Space direction='vertical'>
-            <Height />
-            <Padding showResetAll />
-          </Space>
-        </Collapse.Item>
-        <Collapse.Item
-          name='1'
-          header={t('Color')}
-        >
-          <Grid.Row>
-            <Grid.Col span={11}>
-              <Color />
-            </Grid.Col>
-            <Grid.Col
-              offset={1}
-              span={11}
-            >
-              <ContainerBackgroundColor title={t('Background color')} />
-            </Grid.Col>
-          </Grid.Row>
-        </Collapse.Item>
-        <Collapse.Item
           name='2'
           header={t('Typography')}
         >
@@ -113,6 +88,33 @@ export function Text() {
             </Grid.Row>
           </Space>
         </Collapse.Item>
+
+        <Collapse.Item
+          name='0'
+          header={t('Dimension')}
+        >
+          <Space direction='vertical'>
+            <Height />
+            <Padding showResetAll />
+          </Space>
+        </Collapse.Item>
+        <Collapse.Item
+          name='1'
+          header={t('Color')}
+        >
+          <Grid.Row>
+            <Grid.Col span={11}>
+              <Color />
+            </Grid.Col>
+            <Grid.Col
+              offset={1}
+              span={11}
+            >
+              <ContainerBackgroundColor title={t('Background color')} />
+            </Grid.Col>
+          </Grid.Row>
+        </Collapse.Item>
+
         <Collapse.Item
           name='4'
           header={t('Extra')}

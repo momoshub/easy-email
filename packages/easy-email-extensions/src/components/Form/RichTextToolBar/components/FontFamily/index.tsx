@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
-import { Menu, Popover } from '@arco-design/web-react';
+import { Popover } from '@arco-design/web-react';
+import { FontFamily as MainFontFamily } from '@extensions/AttributePanel/components/attributes/FontFamily';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
 import { IconFont } from '@momos/easy-email-editor';
-import styleText from '../../styles/ToolsPopover.css?inline';
 import { ToolItem } from '../ToolItem';
 
 export interface FontFamilyProps {
@@ -38,7 +38,8 @@ export function FontFamily(props: FontFamilyProps) {
       onVisibleChange={onVisibleChange}
       content={
         <>
-          <style>{styleText}</style>
+          <MainFontFamily />
+          {/* <style>{styleText}</style>
           <div
             style={{
               maxWidth: 150,
@@ -61,7 +62,7 @@ export function FontFamily(props: FontFamilyProps) {
                 </Menu.Item>
               ))}
             </Menu>
-          </div>
+          </div> */}
         </>
       }
       getPopupContainer={props.getPopupContainer}
