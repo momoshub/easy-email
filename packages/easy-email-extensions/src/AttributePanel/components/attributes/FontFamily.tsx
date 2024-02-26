@@ -25,7 +25,7 @@ export function FontFamily({ name }: { name?: string }) {
   );
 
   const isShowFallback = useMemo(
-    () => !safeFonts?.find(f => f.value == mainFont),
+    () => mainFont && !safeFonts?.find(f => f.value == mainFont),
     [mainFont],
   );
 
@@ -106,6 +106,7 @@ export function FontFamily({ name }: { name?: string }) {
             autoAlignPopupMinWidth: true,
             position: 'bl',
           }}
+          getPopupContainer={node => node}
         ></SelectField>
 
         {isShowFallback && (
@@ -116,6 +117,7 @@ export function FontFamily({ name }: { name?: string }) {
             options={safeFonts}
             onSetCurrentValue={onSetCurrentFallbackValue}
             onChangeAdapter={onChangeFallbackAdapter}
+            getPopupContainer={node => node}
           />
         )}
       </>

@@ -12,17 +12,7 @@ export interface FontFamilyProps {
 }
 
 export function FontFamily(props: FontFamilyProps) {
-  const { safeFonts } = useFontFamily();
-  const { execCommand } = props;
   const [visible, setVisible] = React.useState(false);
-
-  const onChange = useCallback(
-    (val: string) => {
-      execCommand('fontName', val);
-      setVisible(false);
-    },
-    [execCommand],
-  );
 
   const onVisibleChange = useCallback((v: boolean) => {
     setVisible(v);
@@ -37,7 +27,7 @@ export function FontFamily(props: FontFamilyProps) {
       popupVisible={visible}
       onVisibleChange={onVisibleChange}
       content={
-        <>
+        <div style={{ width: 280 }}>
           <MainFontFamily />
           {/* <style>{styleText}</style>
           <div
@@ -63,7 +53,7 @@ export function FontFamily(props: FontFamilyProps) {
               ))}
             </Menu>
           </div> */}
-        </>
+        </div>
       }
       getPopupContainer={props.getPopupContainer}
     >
