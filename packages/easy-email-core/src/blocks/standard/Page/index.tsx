@@ -1,14 +1,14 @@
-import React from 'react';
-import { IBlockData } from '@core/typings';
 import { BasicType } from '@core/constants';
+import { IBlockData } from '@core/typings';
 import { createBlock } from '@core/utils/createBlock';
-import { Wrapper } from '../Wrapper';
 import { merge } from 'lodash';
+import React from 'react';
+import { Wrapper } from '../Wrapper';
 
-import { generaMjmlMetaData } from '@core/utils/generaMjmlMetaData';
 import { BlockRenderer } from '@core/components/BlockRenderer';
 import { getAdapterAttributesString, getChildIdx, getPageIdx } from '@core/utils';
 import { t } from '@core/utils/I18nManager';
+import { generaMjmlMetaData } from '@core/utils/generaMjmlMetaData';
 
 export type IPage = IBlockData<
   {
@@ -18,7 +18,7 @@ export type IPage = IBlockData<
   {
     breakpoint?: string;
     headAttributes: string;
-    fonts?: { name: string; href: string }[];
+    fonts?: { name: string; href: string; url?: string }[];
     headStyles?: {
       content?: string;
       inline?: 'inline';
@@ -56,8 +56,7 @@ export const Page = createBlock<IPage>({
           headStyles: [],
           fonts: [],
           responsive: true,
-          'font-family':
-            '-apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Cantarell\', \'Fira Sans\', \'Droid Sans\',\'Helvetica Neue\', sans-serif',
+          'font-family': 'Arial, Helvetica, sans-serif',
           'text-color': '#000000',
         },
       },

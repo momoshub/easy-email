@@ -20,6 +20,7 @@ export interface EnhancerProps {
   helpText?: React.ReactNode;
   debounceTime?: number;
   labelHidden?: boolean;
+  onSetCurrentValue?: (value: any) => any;
 }
 
 const parse = (v: any) => v;
@@ -33,6 +34,7 @@ export default function enhancer<P extends { onChange?: (...rest: any) => any }>
       name,
       validate,
       onChangeAdapter,
+      onSetCurrentValue,
       changeOnBlur,
       inline,
       equalSpacing,
@@ -142,7 +144,7 @@ export default function enhancer<P extends { onChange?: (...rest: any) => any }>
                   debounceCallbackChange(newVal);
                 }
               },
-              [debounceCallbackChange],
+              [debounceCallbackChange, onChangeAdapter],
             );
 
             const onFieldBlur = useCallback(() => {
@@ -153,8 +155,8 @@ export default function enhancer<P extends { onChange?: (...rest: any) => any }>
             }, [onBlur, onChange]);
 
             useEffect(() => {
-              setCurrentValue(value);
-            }, [value]);
+              setCurrentValue(onSetCurrentValue ? onSetCurrentValue(value) : value);
+            }, [value, onSetCurrentValue]);
 
             return (
               <Form.Item

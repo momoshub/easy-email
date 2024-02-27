@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
-import { Menu, Popover } from '@arco-design/web-react';
+import { Popover } from '@arco-design/web-react';
+import { FontFamily as MainFontFamily } from '@extensions/AttributePanel/components/attributes/FontFamily';
 import { useFontFamily } from '@extensions/hooks/useFontFamily';
 import { IconFont } from '@momos/easy-email-editor';
-import styleText from '../../styles/ToolsPopover.css?inline';
 import { ToolItem } from '../ToolItem';
 
 export interface FontFamilyProps {
@@ -12,17 +12,7 @@ export interface FontFamilyProps {
 }
 
 export function FontFamily(props: FontFamilyProps) {
-  const { fontList } = useFontFamily();
-  const { execCommand } = props;
   const [visible, setVisible] = React.useState(false);
-
-  const onChange = useCallback(
-    (val: string) => {
-      execCommand('fontName', val);
-      setVisible(false);
-    },
-    [execCommand],
-  );
 
   const onVisibleChange = useCallback((v: boolean) => {
     setVisible(v);
@@ -37,8 +27,9 @@ export function FontFamily(props: FontFamilyProps) {
       popupVisible={visible}
       onVisibleChange={onVisibleChange}
       content={
-        <>
-          <style>{styleText}</style>
+        <div style={{ width: 280 }}>
+          <MainFontFamily />
+          {/* <style>{styleText}</style>
           <div
             style={{
               maxWidth: 150,
@@ -52,7 +43,7 @@ export function FontFamily(props: FontFamilyProps) {
               selectedKeys={[]}
               style={{ border: 'none', padding: 0 }}
             >
-              {fontList.map(item => (
+              {safeFonts.map(item => (
                 <Menu.Item
                   style={{ lineHeight: '30px', height: 30 }}
                   key={item.value}
@@ -61,8 +52,8 @@ export function FontFamily(props: FontFamilyProps) {
                 </Menu.Item>
               ))}
             </Menu>
-          </div>
-        </>
+          </div> */}
+        </div>
       }
       getPopupContainer={props.getPopupContainer}
     >
