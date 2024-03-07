@@ -29,7 +29,13 @@ export function useFontFamily() {
     () =>
       GOOGLE_FONTS?.map(font => ({
         value: font.value,
-        label: <div style={{ fontFamily: font.value }}>{font.label}</div>,
+        label: (
+          <img
+            src={`https://stg-sg-notification-email-static-objects-bucket.s3.ap-southeast-1.amazonaws.com/font_images/${font.label}.png`}
+            height={20}
+            className='w-full'
+          />
+        ),
         url: font.url,
       })),
     [],
