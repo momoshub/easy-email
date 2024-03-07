@@ -64,7 +64,7 @@ export function FontFamily({ name }: { name?: string }) {
           options={[
             {
               label: (
-                <div className='flex gap-2 algin-center ml-minus-10'>
+                <div className='flex gap-2 align-center ml-minus-10'>
                   <div className='text-red pointer-events-none font-bold'>
                     Websafe Fonts
                   </div>
@@ -81,7 +81,7 @@ export function FontFamily({ name }: { name?: string }) {
             ...safeFonts,
             {
               label: (
-                <div className='flex gap-2 algin-center ml-minus-10'>
+                <div className='flex gap-2 align-center ml-minus-10'>
                   <span className='text-red pointer-events-none font-bold'>
                     Custom Fonts
                   </span>
