@@ -62,7 +62,6 @@ const defaultCategories: ExtensionProps['categories'] = [
     blocks: [
       {
         type: AdvancedType.TEXT,
-        icon: <div>Text Icon</div>,
       },
       {
         type: AdvancedType.IMAGE,
@@ -224,6 +223,23 @@ export default function Editor() {
       dispatch(template.actions.set(null));
     };
   }, [dispatch, id, userId]);
+
+  //Remove rich text from clipboard when copy text
+  useEffect(() => {
+    const handlePaste = e => {
+      const editorEl = document.getElementById('VisualEditorEditMode');
+      if (!editorEl || !editorEl.contains(e.target)) return;
+
+      e.preventDefault();
+      const plainText = e.clipboardData.getData('text/plain');
+      document.execCommand('insertText', false, plainText);
+    };
+
+    window.addEventListener('paste', handlePaste);
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+    };
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -443,29 +459,6 @@ export default function Editor() {
                     >
                       Save
                     </Button>
-                    <a
-                      href='https://www.buymeacoffee.com/easyemail?utm_source=webside&utm_medium=button&utm_content=donate'
-                      target='_blank'
-                      onClick={ev => {
-                        ev.preventDefault();
-                        pushEvent({ event: 'Donate' });
-                        window.open(
-                          'https://www.buymeacoffee.com/easyemail?utm_source=webside&utm_medium=button&utm_content=donate',
-                          '_blank',
-                        );
-                      }}
-                    >
-                      <img
-                        style={{
-                          marginTop: -16,
-                          position: 'relative',
-                          top: 11,
-                          height: 32,
-                        }}
-                        src='https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png'
-                        alt='Buy Me A Coffee'
-                      />
-                    </a>
                   </Stack>
                 }
               />
@@ -512,7 +505,7 @@ export default function Editor() {
                   ] as ThirdPartyLink[]
                 }
               >
-                <EmailEditor extraTop={<div style={{ height: 100 }}>extraTop</div>} />
+                <EmailEditor extraTop={<div style={{ height: 10 }}>extraTop</div>} />
               </StandardLayout>
               <AutoSaveAndRestoreEmail />
             </>
