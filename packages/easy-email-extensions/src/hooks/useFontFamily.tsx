@@ -1,6 +1,7 @@
 import { useEditorContext, useEditorProps } from '@momos/easy-email-editor';
 import React, { useMemo } from 'react';
 import GOOGLE_FONTS from './fonts.json';
+import FontImage from '@extensions/components/FontImage';
 
 const SAFE_FONTS = [
   { value: 'Arial', label: 'Arial' },
@@ -29,8 +30,9 @@ export function useFontFamily() {
     () =>
       GOOGLE_FONTS?.map(font => ({
         value: font.value,
-        label: <div style={{ fontFamily: font.value }}>{font.label}</div>,
+        label: <FontImage fontName={font.label} />,
         url: font.url,
+        className: 'py-2',
       })),
     [],
   );

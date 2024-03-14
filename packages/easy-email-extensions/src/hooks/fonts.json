@@ -3934,46 +3934,7 @@
     "label": "Mate SC",
     "url": "https://fonts.googleapis.com/css?family=Mate+SC"
   },
-  {
-    "value": "Material Icons",
-    "label": "Material Icons",
-    "url": "https://fonts.googleapis.com/css?family=Material+Icons"
-  },
-  {
-    "value": "Material Icons Outlined",
-    "label": "Material Icons Outlined",
-    "url": "https://fonts.googleapis.com/css?family=Material+Icons+Outlined"
-  },
-  {
-    "value": "Material Icons Round",
-    "label": "Material Icons Round",
-    "url": "https://fonts.googleapis.com/css?family=Material+Icons+Round"
-  },
-  {
-    "value": "Material Icons Sharp",
-    "label": "Material Icons Sharp",
-    "url": "https://fonts.googleapis.com/css?family=Material+Icons+Sharp"
-  },
-  {
-    "value": "Material Icons Two Tone",
-    "label": "Material Icons Two Tone",
-    "url": "https://fonts.googleapis.com/css?family=Material+Icons+Two+Tone"
-  },
-  {
-    "value": "Material Symbols Outlined",
-    "label": "Material Symbols Outlined",
-    "url": "https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
-  },
-  {
-    "value": "Material Symbols Rounded",
-    "label": "Material Symbols Rounded",
-    "url": "https://fonts.googleapis.com/css?family=Material+Symbols+Rounded"
-  },
-  {
-    "value": "Material Symbols Sharp",
-    "label": "Material Symbols Sharp",
-    "url": "https://fonts.googleapis.com/css?family=Material+Symbols+Sharp"
-  },
+
   {
     "value": "Maven Pro",
     "label": "Maven Pro",
