@@ -505,7 +505,10 @@ export default function Editor() {
                   ] as ThirdPartyLink[]
                 }
               >
-                <EmailEditor extraTop={<div style={{ height: 10 }}>extraTop</div>} />
+                <EmailEditor
+                  extraTop={<div style={{ height: 10 }}>extraTop</div>}
+                  toolPanel={{ prefix: <Button>Send Test Email</Button> }}
+                />
               </StandardLayout>
               <AutoSaveAndRestoreEmail />
             </>

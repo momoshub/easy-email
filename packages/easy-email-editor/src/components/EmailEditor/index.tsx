@@ -1,27 +1,31 @@
-import React, { useMemo, useCallback, useContext } from 'react';
-import { Stack } from '../UI/Stack';
-import { ToolsPanel } from './components/ToolsPanel';
-import { createPortal } from 'react-dom';
+import '@/assets/font/iconfont.css';
+import { TabPane, Tabs } from '@/components/UI/Tabs';
 import { EASY_EMAIL_EDITOR_ID, FIXED_CONTAINER_ID } from '@/constants';
 import { useActiveTab } from '@/hooks/useActiveTab';
-import { ActiveTabKeys, BlocksContext } from '../Provider/BlocksProvider';
-import { DesktopEmailPreview } from './components/DesktopEmailPreview';
-import { MobileEmailPreview } from './components/MobileEmailPreview';
-import { EditEmailPreview } from './components/EditEmailPreview';
-import { IconFont } from '../IconFont';
-import { TabPane, Tabs } from '@/components/UI/Tabs';
 import { useEditorProps } from '@/hooks/useEditorProps';
-import './index.scss';
-import '@/assets/font/iconfont.css';
 import { EventManager, EventType } from '@/utils/EventManager';
+import React, { useCallback, useContext, useMemo } from 'react';
+import { createPortal } from 'react-dom';
+import { IconFont } from '../IconFont';
+import { ActiveTabKeys, BlocksContext } from '../Provider/BlocksProvider';
+import { Stack } from '../UI/Stack';
+import { DesktopEmailPreview } from './components/DesktopEmailPreview';
+import { EditEmailPreview } from './components/EditEmailPreview';
+import { MobileEmailPreview } from './components/MobileEmailPreview';
+import { ToolsPanel } from './components/ToolsPanel';
+import './index.scss';
 
 (window as any).global = window; // react-codemirror
 
 type EmailEditorProps = {
   extraTop?: React.ReactNode;
+  toolPanel?: {
+    prefix?: React.ReactNode;
+    postfix?: React.ReactNode;
+  };
 };
 
-export const EmailEditor = ({ extraTop }: EmailEditorProps) => {
+export const EmailEditor = ({ extraTop, toolPanel }: EmailEditorProps) => {
   const { height: containerHeight } = useEditorProps();
   const { setActiveTab, activeTab } = useActiveTab();
   const { isPreview } = useContext(BlocksContext);
@@ -59,16 +63,23 @@ export const EmailEditor = ({ extraTop }: EmailEditorProps) => {
           onBeforeChange={onBeforeChangeTab}
           onChange={onChangeTab}
           style={{ height: '100%', width: '100%' }}
-          tabBarExtraContent={isPreview ? null : <ToolsPanel />}
+          tabBarExtraContent={
+            isPreview ? null : (
+              <ToolsPanel
+                prefix={toolPanel?.prefix}
+                postfix={toolPanel?.postfix}
+              />
+            )
+          }
         >
           {!isPreview && (
             <TabPane
               style={{ height: 'calc(100% - 50px)' }}
-              tab={(
+              tab={
                 <Stack spacing='tight'>
                   <IconFont iconName='icon-editor' />
                 </Stack>
-              )}
+              }
               key={ActiveTabKeys.EDIT}
             >
               {extraTop}
@@ -77,22 +88,22 @@ export const EmailEditor = ({ extraTop }: EmailEditorProps) => {
           )}
           <TabPane
             style={{ height: 'calc(100% - 50px)' }}
-            tab={(
+            tab={
               <Stack spacing='tight'>
                 <IconFont iconName='icon-desktop' />
               </Stack>
-            )}
+            }
             key={ActiveTabKeys.PC}
           >
             <DesktopEmailPreview />
           </TabPane>
           <TabPane
             style={{ height: 'calc(100% - 50px)' }}
-            tab={(
+            tab={
               <Stack spacing='tight'>
                 <IconFont iconName='icon-mobile' />
               </Stack>
-            )}
+            }
             key={ActiveTabKeys.MOBILE}
           >
             <MobileEmailPreview />
