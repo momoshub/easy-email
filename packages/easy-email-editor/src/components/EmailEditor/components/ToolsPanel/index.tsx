@@ -1,15 +1,26 @@
-import { Stack } from '@/components/UI/Stack';
-import React from 'react';
-import { useBlock } from '@/hooks/useBlock';
 import { IconFont } from '@/components/IconFont';
 import { Button } from '@/components/UI/Button';
+import { Stack } from '@/components/UI/Stack';
+import { useBlock } from '@/hooks/useBlock';
+import React from 'react';
 
-export function ToolsPanel() {
+export function ToolsPanel({
+  prefix,
+  postfix,
+}: {
+  prefix?: React.ReactNode;
+  postfix?: React.ReactNode;
+}) {
   const { redo, undo, redoable, undoable } = useBlock();
 
   return (
     <Stack>
-      <Button title={t('undo')} disabled={!undoable} onClick={undo}>
+      {prefix}
+      <Button
+        title={t('undo')}
+        disabled={!undoable}
+        onClick={undo}
+      >
         <IconFont
           iconName='icon-undo'
           style={{
@@ -19,7 +30,11 @@ export function ToolsPanel() {
         />
       </Button>
 
-      <Button title={t('redo')} disabled={!redoable} onClick={redo}>
+      <Button
+        title={t('redo')}
+        disabled={!redoable}
+        onClick={redo}
+      >
         <IconFont
           iconName='icon-redo'
           style={{
@@ -29,6 +44,7 @@ export function ToolsPanel() {
         />
       </Button>
       <Stack.Item />
+      {postfix}
     </Stack>
   );
 }
