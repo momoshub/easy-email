@@ -11,6 +11,7 @@ export interface ExtensionProps extends BlockLayerProps {
         key?: string;
         blocks: Array<{
           type: string;
+          additionalConfig?: ReactNode;
           payload?: any;
           title?: string | undefined;
           onClick?: (data: any) => void;

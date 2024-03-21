@@ -52,6 +52,7 @@ import localesData from 'easy-email-localization/locales/locales.json';
 import { useWindowSize } from 'react-use';
 import { ThirdPartyLink } from '../../../../packages/easy-email-extensions/src/AttributePanel/components/attributes/ThirdPartyLink';
 import { CustomBlocksType } from './components/CustomBlocks/constants';
+import CustomConfig from './components/CustomConfig';
 
 console.log(localesData);
 
@@ -66,6 +67,7 @@ const defaultCategories: ExtensionProps['categories'] = [
       {
         type: AdvancedType.IMAGE,
         payload: { attributes: { padding: '0px 0px 0px 0px' } },
+        additionalConfig: <CustomConfig />,
       },
       {
         type: AdvancedType.BUTTON,
@@ -81,6 +83,7 @@ const defaultCategories: ExtensionProps['categories'] = [
       },
       {
         type: AdvancedType.HERO,
+        additionalConfig: <CustomConfig />,
       },
       {
         type: AdvancedType.WRAPPER,
