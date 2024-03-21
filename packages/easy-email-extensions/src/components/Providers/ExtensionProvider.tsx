@@ -1,7 +1,7 @@
 import { BlockLayerProps } from '@extensions/BlockLayer';
 import { ExtraTab } from '@extensions/EditPanel';
 import { isEqual, omit } from 'lodash';
-import React, { ReactNode, useContext, useMemo, useRef } from 'react';
+import React, { ReactElement, ReactNode, useContext, useMemo, useRef } from 'react';
 
 export interface ExtensionProps extends BlockLayerProps {
   categories: Array<
@@ -11,7 +11,8 @@ export interface ExtensionProps extends BlockLayerProps {
         key?: string;
         blocks: Array<{
           type: string;
-          additionalConfig?: ReactNode;
+          additionalConfig?: () => ReactElement;
+          customConfig?: () => ReactElement;
           payload?: any;
           title?: string | undefined;
           onClick?: (data: any) => void;

@@ -2,7 +2,7 @@ import { IconEye, IconEyeInvisible } from '@arco-design/web-react/icon';
 import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 import { BasicType, BlockManager } from '@momos/easy-email-core';
 import { Stack, TextStyle, useBlock } from '@momos/easy-email-editor';
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 
 export interface AttributesPanelWrapper {
   style?: React.CSSProperties;
@@ -13,11 +13,13 @@ export const AttributesPanelWrapper: React.FC<AttributesPanelWrapper> = props =>
   const block = focusBlock && BlockManager.getBlockByType(focusBlock.type);
   const { categories } = useExtensionProps();
 
-  const additionalConfig = categories?.reduce((pre: any, cur: any) => {
-    const block = cur?.blocks?.find((b: any) => b?.type === focusBlock?.type);
-    if (block) return block?.additionalConfig;
-    return pre;
-  }, null);
+  const AdditionalConfig = useMemo(() => {
+    return categories?.reduce((pre: any, cur: any) => {
+      const block = cur?.blocks?.find((b: any) => b?.type === focusBlock?.type);
+      if (block) return block?.additionalConfig;
+      return pre;
+    }, null);
+  }, [categories, focusBlock?.type]);
 
   const onChangeHidden = useCallback(
     (val: string | boolean) => {
@@ -65,7 +67,7 @@ export const AttributesPanelWrapper: React.FC<AttributesPanelWrapper> = props =>
       </div>
 
       <div style={{ padding: '0px', ...props.style }}>
-        {additionalConfig}
+        {AdditionalConfig && <AdditionalConfig />}
         {props.children}
       </div>
     </div>

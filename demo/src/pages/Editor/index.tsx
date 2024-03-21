@@ -67,7 +67,7 @@ const defaultCategories: ExtensionProps['categories'] = [
       {
         type: AdvancedType.IMAGE,
         payload: { attributes: { padding: '0px 0px 0px 0px' } },
-        additionalConfig: <CustomConfig />,
+        customConfig: () => <CustomConfig />,
       },
       {
         type: AdvancedType.BUTTON,
@@ -83,7 +83,7 @@ const defaultCategories: ExtensionProps['categories'] = [
       },
       {
         type: AdvancedType.HERO,
-        additionalConfig: <CustomConfig />,
+        additionalConfig: () => <CustomConfig />,
       },
       {
         type: AdvancedType.WRAPPER,
