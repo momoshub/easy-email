@@ -5,22 +5,34 @@ import {
   useEditorContext,
   useFocusIdx,
 } from '@momos/easy-email-editor';
-import React from 'react';
+import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import { RichTextField } from '../components/Form/RichTextField';
 import { PresetColorsProvider } from './components/provider/PresetColorsProvider';
 import { SelectionRangeProvider } from './components/provider/SelectionRangeProvider';
 import { BlockAttributeConfigurationManager } from './utils/BlockAttributeConfigurationManager';
+import { useExtensionProps } from '@extensions/components/Providers/ExtensionProvider';
 
 export interface AttributePanelProps {}
 
 export function AttributePanel() {
   const { values, focusBlock } = useBlock();
   const { initialized } = useEditorContext();
+  const { categories } = useExtensionProps();
+
+  const customConfig = useMemo(() => {
+    return categories?.reduce((pre: any, cur: any) => {
+      const block = cur?.blocks?.find((b: any) => b?.type === focusBlock?.type);
+      if (block) return block?.customConfig;
+      return pre;
+    }, null);
+  }, [focusBlock?.type, categories]);
 
   const { focusIdx } = useFocusIdx();
 
-  const Com = focusBlock && BlockAttributeConfigurationManager.get(focusBlock.type);
+  const Com = customConfig
+    ? customConfig
+    : focusBlock && BlockAttributeConfigurationManager.get(focusBlock.type);
 
   const shadowRoot = getShadowRoot();
 
