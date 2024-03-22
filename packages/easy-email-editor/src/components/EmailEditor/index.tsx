@@ -64,12 +64,11 @@ export const EmailEditor = ({ extraTop, toolPanel }: EmailEditorProps) => {
           onChange={onChangeTab}
           style={{ height: '100%', width: '100%' }}
           tabBarExtraContent={
-            isPreview ? null : (
-              <ToolsPanel
-                prefix={toolPanel?.prefix}
-                postfix={toolPanel?.postfix}
-              />
-            )
+            <div className='tool-panel'>
+              {toolPanel?.prefix}
+              {isPreview ? null : <ToolsPanel />}
+              {toolPanel?.postfix}
+            </div>
           }
         >
           {!isPreview && (
