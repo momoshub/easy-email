@@ -120,6 +120,8 @@ export const EmailEditor = ({ extraTop, toolPanel }: EmailEditorProps) => {
       onChangeTab,
       extraTop,
       isPreview,
+      toolPanel?.prefix,
+      toolPanel?.postfix,
     ],
   );
 };
