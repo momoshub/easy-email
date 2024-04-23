@@ -104,7 +104,7 @@ const defaultImagesMap = {
   IMAGE_58:
     'https://easy-email-m-ryan.vercel.app/images/858ea699-cf65-469d-bd9e-70adea729bb4-c4e7a711-27b6-4865-9b32-516c41cebddf.png',
   IMAGE_59:
-    'https://easy-email-m-ryan.vercel.app/images/06ca521d-9728-4de6-a709-1b75a828bfc3-2a9b1224-3d71-43b8-b52f-e7cdcdc9107b.png',
+    'https://stg-sg-notification-email-static-objects-bucket.s3.ap-southeast-1.amazonaws.com/images/placeholder.png',
   IMAGE_60:
     'https://easy-email-m-ryan.vercel.app/images/199eacfa-daf8-4dd1-a356-225a265a88a4-e8432435-a2bb-4ec2-a3e9-ee1757d8b44b.png',
   IMAGE_61:
