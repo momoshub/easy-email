@@ -51,6 +51,7 @@ export function ThirdPartyLink(props: LinkProps) {
       link = linkNode.getAttribute('href') || '';
       blank = linkNode.getAttribute('target') === '_blank';
       underline = linkNode.style.textDecoration === 'underline';
+      linkType = linkNode.getAttribute('data-link-type') || 'custom';
     }
     return {
       link,
@@ -63,6 +64,13 @@ export function ThirdPartyLink(props: LinkProps) {
 
   const onSubmit = useCallback(
     (values: LinkParams) => {
+      if (values?.linkNode) {
+        values.linkNode.setAttribute('data-link-type', values.linkType || 'custom');
+        values.linkNode.setAttribute(
+          'target',
+          values.blank === '_blank' ? '_blank' : '_self',
+        );
+      }
       props.onChange(values);
     },
     [props],
@@ -75,9 +83,17 @@ export function ThirdPartyLink(props: LinkProps) {
       initialValues={initialValues}
       onSubmit={onSubmit}
     >
-      {({ handleSubmit, values }: any) => {
+      {({ handleSubmit, values, form }: any) => {
         const options =
           thirdPartyLinks?.find(({ value }) => value === values.linkType)?.options || [];
+
+        const onLinkTypeChange = (linkType: string) => {
+          const options =
+            thirdPartyLinks?.find(({ value }) => value === linkType)?.options || [];
+          const defaultValue = options?.[0]?.value || (linkType === 'custom' ? '#' : '');
+          form.change('link', defaultValue);
+          return linkType;
+        };
 
         return (
           <Tooltip
@@ -92,7 +108,7 @@ export function ThirdPartyLink(props: LinkProps) {
                     <SelectField
                       label={t('Link Type')}
                       name='linkType'
-                      defaultValue='custom'
+                      onChangeAdapter={onLinkTypeChange}
                       options={[
                         ...(thirdPartyLinks || []),
                         { label: 'Custom URL', value: 'custom' },
@@ -107,6 +123,7 @@ export function ThirdPartyLink(props: LinkProps) {
                     label={t('Link')}
                     name='link'
                     options={options}
+                    disabled={options?.length < 2}
                     getPopupContainer={node => node}
                   />
                 ) : (
