@@ -21,9 +21,8 @@ export function ThirdPartyLink() {
     input: { onChange: resetHref },
   } = useField(`${focusIdx}.attributes.href`);
 
-  const links = useMemo(
-    () =>
-      thirdPartyLinks?.find(({ value }) => value === attributes.linkType)?.options || [],
+  const linkObject = useMemo(
+    () => thirdPartyLinks?.find(({ value }) => value === attributes.linkType) || {},
     [thirdPartyLinks, attributes.linkType],
   );
   const onLinkTypeChange = (linkType: string) => {
@@ -51,8 +50,10 @@ export function ThirdPartyLink() {
         <SelectField
           label={t('Link')}
           name={`${focusIdx}.attributes.href`}
-          options={links}
-          disabled={links?.length < 2}
+          options={linkObject?.options || []}
+          disabled={
+            linkObject?.options?.length < 2 && linkObject?.disabledWithOne === true
+          }
           className='fix-select-zindex'
         />
       );
