@@ -85,9 +85,10 @@ export function ThirdPartyLink(props: LinkProps) {
       onSubmit={onSubmit}
     >
       {({ handleSubmit, values, form }: any) => {
-        const options =
-          thirdPartyLinks?.find(({ value }) => value === values.linkType)?.options || [];
-
+        const linkObj =
+          thirdPartyLinks?.find(({ value }) => value === values.linkType) || {};
+        const options = linkObj?.options || [];
+        const shouldLockOnOne = linkObj?.disabledWithOne === true;
         const onLinkTypeChange = (linkType: string) => {
           const options =
             thirdPartyLinks?.find(({ value }) => value === linkType)?.options || [];
@@ -124,7 +125,7 @@ export function ThirdPartyLink(props: LinkProps) {
                     label={t('Link')}
                     name='link'
                     options={options}
-                    disabled={options?.length < 2}
+                    disabled={options?.length < 2 && shouldLockOnOne}
                     getPopupContainer={node => node}
                   />
                 ) : (
