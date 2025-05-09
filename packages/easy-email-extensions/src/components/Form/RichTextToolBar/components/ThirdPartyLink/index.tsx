@@ -68,6 +68,7 @@ export function ThirdPartyLink(props: LinkProps) {
         values.linkNode.setAttribute('data-link-type', values.linkType || 'custom');
         values.linkNode.setAttribute(
           'target',
+          // @ts-ignore,
           values.blank === '_blank' ? '_blank' : '_self',
         );
       }
