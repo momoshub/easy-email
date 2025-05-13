@@ -69,7 +69,7 @@ export function ThirdPartyLink(props: LinkProps) {
         values.linkNode.setAttribute(
           'target',
           // @ts-ignore,
-          values.blank === '_blank' ? '_blank' : '_self',
+          values.blank ? '_blank' : '_self',
         );
       }
       props.onChange(values);
@@ -148,11 +148,11 @@ export function ThirdPartyLink(props: LinkProps) {
                       name='blank'
                       options={[
                         {
-                          value: '_self',
+                          value: false,
                           label: t('Open in Same Tab'),
                         },
                         {
-                          value: '_blank',
+                          value: true,
                           label: t('Open in New Tab'),
                         },
                       ]}
