@@ -509,7 +509,7 @@ export default function Editor() {
                 }
               >
                 <EmailEditor
-                  isLoading={true}
+                  isLoading={false}
                   toolPanel={{ prefix: <Button>Send Test Email</Button> }}
                 />
               </StandardLayout>
