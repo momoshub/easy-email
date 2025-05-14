@@ -384,7 +384,7 @@ export default function Editor() {
   if (!initialValues) return null;
 
   return (
-    <div>
+    <div style={{ padding: '1rem' }}>
       <style>{themeStyleText}</style>
       <EmailEditorProvider
         key={id}
@@ -469,9 +469,9 @@ export default function Editor() {
                 compact={!smallScene}
                 categories={defaultCategories}
                 extensionActiveKey={['Layout', 'Content', 'Custom']}
-                extraTabs={[
+                prefixTabs={[
                   {
-                    title: 'Auto Generate',
+                    title: 'Generate',
                     content: <div>Auto Generate</div>,
                   },
                 ]}
@@ -509,7 +509,7 @@ export default function Editor() {
                 }
               >
                 <EmailEditor
-                  extraTop={<div style={{ height: 10 }}>extraTop</div>}
+                  isLoading={false}
                   toolPanel={{ prefix: <Button>Send Test Email</Button> }}
                 />
               </StandardLayout>

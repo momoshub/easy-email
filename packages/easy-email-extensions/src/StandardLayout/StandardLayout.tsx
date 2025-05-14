@@ -93,6 +93,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
     compact = true,
     categories = defaultCategories,
     extraTabs = [],
+    prefixTabs = [],
   } = props;
 
   const { setFocusIdx } = useFocusIdx();
@@ -111,7 +112,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
     >
       <ConfigProvider locale={enUS}>
         <Card
-          style={{ padding: 0 }}
+          style={{ padding: 0, borderRadius: 16, overflow: 'hidden' }}
           bodyStyle={{
             padding: 0,
             height: containerHeight,
@@ -131,6 +132,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
                 showSourceCode={showSourceCode}
                 activeTab={activeTab}
                 extraTabs={extraTabs}
+                prefixTabs={prefixTabs}
               />
             )}
             <Layout style={{ height: containerHeight, flex: 1 }}>{props.children}</Layout>
@@ -139,6 +141,7 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
                 showSourceCode={showSourceCode}
                 activeTab={activeTab}
                 extraTabs={extraTabs}
+                prefixTabs={prefixTabs}
               />
             )}
             {compact ? (

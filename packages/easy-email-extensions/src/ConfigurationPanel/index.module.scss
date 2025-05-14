@@ -13,10 +13,23 @@
           display: block;
           text-align: center;
           width: 100%;
+          color: #757575;
+
           &::before {
             display: none;
           }
         }
+        &.arco-tabs-header-title-active {
+          .arco-tabs-header-title-text {
+            color: #282e3e;
+          }
+        }
+      }
+
+      .arco-tabs-header-ink {
+        height: 2px;
+        border-radius: 500px;
+        background-color: #282e3e;
       }
     }
   }

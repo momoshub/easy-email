@@ -21,10 +21,12 @@ export function EditPanel({
   showSourceCode,
   extraTabs,
   activeTab,
+  prefixTabs,
 }: {
   showSourceCode: boolean;
   extraTabs?: ExtraTab[];
   activeTab?: string;
+  prefixTabs?: ExtraTab[];
 }) {
   const { height } = useEditorProps();
   const { compact = true } = useExtensionProps();
@@ -49,6 +51,17 @@ export function EditPanel({
           </div>
         )}
       >
+        {prefixTabs?.map(tab => (
+          <TabPane
+            key={`${key++}`}
+            title={tab.title}
+          >
+            <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
+              <div>{tab.content}</div>
+            </FullHeightOverlayScrollbars>
+          </TabPane>
+        ))}
+
         {activeTab === 'EDIT' && (
           <TabPane
             key={`${key++}`}

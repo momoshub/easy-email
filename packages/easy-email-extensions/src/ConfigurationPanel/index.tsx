@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react/jsx-wrap-multilines */
 import { Tabs } from '@arco-design/web-react';
+import { IconLeft } from '@arco-design/web-react/icon';
 import { AttributePanel } from '@extensions/AttributePanel';
 import { SourceCodePanel } from '@extensions/SourceCodePanel';
 import { FullHeightOverlayScrollbars } from '@extensions/components/FullHeightOverlayScrollbars';
-import { IconLeft } from '@arco-design/web-react/icon';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 
 export interface ConfigurationPanelProps {
