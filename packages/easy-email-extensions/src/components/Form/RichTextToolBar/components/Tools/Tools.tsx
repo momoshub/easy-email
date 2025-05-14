@@ -48,7 +48,7 @@ export function Tools(props: ToolsProps) {
       const uuid = (+new Date()).toString();
       if (cmd === 'createLink') {
         const linkData = val as LinkParams;
-        const target = linkData.blank ? '_blank' : '';
+        const target = linkData.blank ? '_blank' : '_self';
         let link: HTMLAnchorElement;
         if (linkData.linkNode) {
           link = linkData.linkNode;
