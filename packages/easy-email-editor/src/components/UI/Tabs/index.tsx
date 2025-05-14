@@ -1,10 +1,11 @@
 import { classnames } from '@/utils/classnames';
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import './index.scss';
 
 export interface TabsProps {
+  tabBarCenterContent?: React.ReactNode;
   tabBarExtraContent?: React.ReactNode;
   style?: React.CSSProperties;
   className?: string;
@@ -56,7 +57,7 @@ const Tabs: React.FC<TabsProps> = props => {
           distribution='equalSpacing'
           alignment='center'
         >
-          <Stack alignment='center'>
+          <div className='easy-email-editor-tabWrapper-content'>
             {React.Children.map(
               props.children as any,
               (item: { props: { tab: TabPaneProps }; key: string }, index) => {
@@ -77,7 +78,8 @@ const Tabs: React.FC<TabsProps> = props => {
                 );
               },
             )}
-          </Stack>
+          </div>
+          {props.tabBarCenterContent}
           {props.tabBarExtraContent}
         </Stack>
       </div>
@@ -106,4 +108,4 @@ const TabPane: React.FC<TabPaneProps> = props => {
   return <>{props.children}</>;
 };
 
-export { Tabs, TabPane };
+export { TabPane, Tabs };

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import '@/assets/font/iconfont.css';
 import { TabPane, Tabs } from '@/components/UI/Tabs';
 import { EASY_EMAIL_EDITOR_ID, FIXED_CONTAINER_ID } from '@/constants';
@@ -63,10 +64,10 @@ export const EmailEditor = ({ extraTop, toolPanel }: EmailEditorProps) => {
           onBeforeChange={onBeforeChangeTab}
           onChange={onChangeTab}
           style={{ height: '100%', width: '100%' }}
+          tabBarCenterContent={isPreview ? null : <ToolsPanel />}
           tabBarExtraContent={
             <div className='tool-panel'>
               {toolPanel?.prefix}
-              {isPreview ? null : <ToolsPanel />}
               {toolPanel?.postfix}
             </div>
           }
