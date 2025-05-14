@@ -384,7 +384,7 @@ export default function Editor() {
   if (!initialValues) return null;
 
   return (
-    <div>
+    <div style={{ padding: '1rem' }}>
       <style>{themeStyleText}</style>
       <EmailEditorProvider
         key={id}
@@ -508,10 +508,7 @@ export default function Editor() {
                   ] as ThirdPartyLink[]
                 }
               >
-                <EmailEditor
-                  extraTop={<div style={{ height: 10 }}>extraTop</div>}
-                  toolPanel={{ prefix: <Button>Send Test Email</Button> }}
-                />
+                <EmailEditor toolPanel={{ prefix: <Button>Send Test Email</Button> }} />
               </StandardLayout>
               <AutoSaveAndRestoreEmail />
             </>
