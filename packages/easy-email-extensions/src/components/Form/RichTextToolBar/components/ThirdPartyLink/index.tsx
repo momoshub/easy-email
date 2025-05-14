@@ -9,7 +9,7 @@ import { ToolItem } from '../ToolItem';
 
 export interface LinkParams {
   link: string;
-  blank: boolean;
+  blank: string;
   underline: boolean;
   linkNode: HTMLAnchorElement | null;
   linkType?: string;
@@ -43,13 +43,13 @@ export function ThirdPartyLink(props: LinkProps) {
 
   const initialValues = useMemo((): LinkParams => {
     let link = '';
-    let blank = true;
+    let blank = '_blank';
     let underline = true;
     let linkNode: HTMLAnchorElement | null = getLinkNode(props.currentRange);
     let linkType = 'custom';
     if (linkNode) {
       link = linkNode.getAttribute('href') || '';
-      blank = linkNode.getAttribute('target') === '_blank';
+      blank = linkNode.getAttribute('target') === '_blank' ? '_blank' : '_self';
       underline = linkNode.style.textDecoration === 'underline';
       linkType = linkNode.getAttribute('data-link-type') || 'custom';
     }
@@ -69,7 +69,7 @@ export function ThirdPartyLink(props: LinkProps) {
         values.linkNode.setAttribute(
           'target',
           // @ts-ignore,
-          values.blank ? '_blank' : '_self',
+          values.blank === '_blank' ? '_blank' : '_self',
         );
       }
       props.onChange(values);
@@ -148,11 +148,11 @@ export function ThirdPartyLink(props: LinkProps) {
                       name='blank'
                       options={[
                         {
-                          value: false,
+                          value: '_self',
                           label: t('Open in Same Tab'),
                         },
                         {
-                          value: true,
+                          value: '_blank',
                           label: t('Open in New Tab'),
                         },
                       ]}
