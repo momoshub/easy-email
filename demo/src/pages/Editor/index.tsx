@@ -469,9 +469,9 @@ export default function Editor() {
                 compact={!smallScene}
                 categories={defaultCategories}
                 extensionActiveKey={['Layout', 'Content', 'Custom']}
-                extraTabs={[
+                prefixTabs={[
                   {
-                    title: 'Auto Generate',
+                    title: 'Generate',
                     content: <div>Auto Generate</div>,
                   },
                 ]}
@@ -508,7 +508,10 @@ export default function Editor() {
                   ] as ThirdPartyLink[]
                 }
               >
-                <EmailEditor toolPanel={{ prefix: <Button>Send Test Email</Button> }} />
+                <EmailEditor
+                  isLoading={true}
+                  toolPanel={{ prefix: <Button>Send Test Email</Button> }}
+                />
               </StandardLayout>
               <AutoSaveAndRestoreEmail />
             </>

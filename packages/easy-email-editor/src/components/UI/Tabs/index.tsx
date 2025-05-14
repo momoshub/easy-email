@@ -93,6 +93,7 @@ const Tabs: React.FC<TabsProps> = props => {
               style={{
                 display: visible ? undefined : 'none',
                 height: 'calc(100% - 50px)',
+                position: 'relative',
               }}
             >
               {item}
