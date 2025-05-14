@@ -14,10 +14,9 @@ import { Bold } from '../Bold';
 import { FontFamily } from '../FontFamily';
 import { FontSize } from '../FontSize';
 import { Italic } from '../Italic';
-import { LinkParams } from '../Link';
 import { MergeTags } from '../MergeTags';
 import { StrikeThrough } from '../StrikeThrough';
-import { ThirdPartyLink } from '../ThirdPartyLink';
+import { LinkParams, ThirdPartyLink } from '../ThirdPartyLink';
 import { ToolItem } from '../ToolItem';
 import { Underline } from '../Underline';
 import { Unlink } from '../Unlink';
@@ -48,7 +47,7 @@ export function Tools(props: ToolsProps) {
       const uuid = (+new Date()).toString();
       if (cmd === 'createLink') {
         const linkData = val as LinkParams;
-        const target = linkData.blank ? '_blank' : '_self';
+        const target = linkData.blank === '_blank' ? '_blank' : '_self';
         let link: HTMLAnchorElement;
         if (linkData.linkNode) {
           link = linkData.linkNode;
