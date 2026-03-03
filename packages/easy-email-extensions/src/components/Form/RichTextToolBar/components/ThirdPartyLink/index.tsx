@@ -103,7 +103,7 @@ export function ThirdPartyLink(props: LinkProps) {
             trigger='click'
             color='#fff'
             position='tl'
-            content={
+            content={(
               <div style={{ color: '#333' }}>
                 {Boolean(thirdPartyLinks?.length && thirdPartyLinks?.length > 0) && (
                   <Grid.Col span={24}>
@@ -136,6 +136,17 @@ export function ThirdPartyLink(props: LinkProps) {
                       label={'URL'}
                       labelHidden
                       placeholder={t('https://www.example.com')}
+                      validate={(val: string) => {
+                        if (!val?.trim()) return undefined;
+                        const v = val.trim();
+                        if (v === '#') return undefined;
+                        if (/^https?:\/\/.+/i.test(v)) return undefined;
+                        if (/^mailto:.+/i.test(v)) return undefined;
+                        if (/^tel:.+/i.test(v)) return undefined;
+                        if (/^\/.*/.test(v) || /^\.\/.*/.test(v)) return undefined;
+                        if (/\{\{.+?\}\}/.test(v)) return undefined;
+                        return t('Please enter a valid URL');
+                      }}
                     />
                   </div>
                 )}
@@ -194,7 +205,7 @@ export function ThirdPartyLink(props: LinkProps) {
                   </button>
                 </Grid.Row>
               </div>
-            }
+            )}
           >
             <ToolItem
               isActive={Boolean(initialValues.link)}
